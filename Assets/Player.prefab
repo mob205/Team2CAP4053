@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6311800254876403042}
   - component: {fileID: 1811329901352765219}
-  - component: {fileID: 3941115083311657156}
   - component: {fileID: 152466835898707793}
+  - component: {fileID: 3941115083311657156}
   - component: {fileID: 2228610662166511868}
   - component: {fileID: 8817658888134747939}
   - component: {fileID: -8627576014754911615}
+  - component: {fileID: -8164095535791406854}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -45,6 +46,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927568607140628226}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &152466835898707793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927568607140628226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0f295132d20e9439ba31d6f408ddaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed:
+    UseConstant: 1
+    ConstantValue: 10
+    Variable: {fileID: 11400000, guid: b5444c63f0d25b242a0e5627825883c7, type: 2}
+  Acceleration:
+    UseConstant: 1
+    ConstantValue: 150
+    Variable: {fileID: 11400000, guid: 3b7ee568d9d5bf04f896ac2de001aadc, type: 2}
+  Deceleration:
+    UseConstant: 1
+    ConstantValue: 100
+    Variable: {fileID: 11400000, guid: 6d0a990f3968fbc4bb3edc780a5aebcb, type: 2}
 --- !u!23 &3941115083311657156
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -87,21 +112,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &152466835898707793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927568607140628226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0f295132d20e9439ba31d6f408ddaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxSpeed>k__BackingField: 10
-  <Acceleration>k__BackingField: 150
-  <Deceleration>k__BackingField: 50
 --- !u!114 &2228610662166511868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,8 +139,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152466835898707793}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: -8164095535791406854}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -145,8 +155,8 @@ MonoBehaviour:
     m_ActionName: Player/Move[/DualSenseGamepadHID/leftStick,/DualSenseGamepadHID1/leftStick]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152466835898707793}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: -8164095535791406854}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnUse
         m_Mode: 0
         m_Arguments:
@@ -212,3 +222,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8164095535791406854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927568607140628226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f45004c8fe1e674daeef09ec3aaaddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
