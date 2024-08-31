@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Movement _movement;
+    private PlayerInteractor _interactor;
 
     // TODO: there's probably a better way to generate unique IDs, if they're even needed at all
     private static int nextID = 0;
@@ -15,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _movement = GetComponent<Movement>();
+        _interactor = GetComponent<PlayerInteractor>(); 
         _playerID = nextID++;
     }
     public void OnMove(InputAction.CallbackContext context)
@@ -25,7 +25,18 @@ public class PlayerController : MonoBehaviour
     {
         if(context.started)
         {
-            Debug.Log($"{_playerID} pressed A!");
+            _interactor.StartInteract();
+        }
+        else if(context.canceled)
+        {
+            _interactor.StopInteract();
+        }
+    }
+    public void OnDrop(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            _interactor.UnequipTool();
         }
     }
 }

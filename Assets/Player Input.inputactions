@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInput",
+    "name": "Player Input",
     "maps": [
         {
             "name": "Player",
@@ -18,6 +18,15 @@
                     "name": "Use",
                     "type": "Button",
                     "id": "c490ab98-b04e-41b5-b6e0-42d76ee4b8e4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Drop Item",
+                    "type": "Button",
+                    "id": "539ad544-abed-4a5c-abcc-9760bafc0a9a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -44,6 +53,17 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b6350e54-0545-40c1-9288-20b30a89100d",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Drop Item",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

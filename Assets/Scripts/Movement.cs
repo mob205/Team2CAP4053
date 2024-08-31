@@ -2,15 +2,14 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 [RequireComponent(typeof(Rigidbody))]
 public class Movement : MonoBehaviour
 {
-    [field: SerializeField] public float MaxSpeed { get; private set; } = 10f;
-    [field: SerializeField] public float Acceleration { get; private set; } = 150f;
-    [field: SerializeField] public float Deceleration { get; private set; } = 100f;
+    [field: SerializeField] public float MaxSpeed { get; set; } = 10f;
+    [field: SerializeField] public float Acceleration { get; set; } = 150f;
+    [field: SerializeField] public float Deceleration { get; set; } = 100f;
 
     private Rigidbody _rb;
    
@@ -23,7 +22,7 @@ public class Movement : MonoBehaviour
     }
     public void InputMove(Vector2 moveInput)
     {
-        _moveInput = moveInput;
+        _moveInput = moveInput.normalized;
     }
     private void FixedUpdate()
     {
