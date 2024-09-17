@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour, IInteractable
 {
+    [field: Header("Gameplay")]
     public ToolType RequiredTool { get; private set; }
 
     [Tooltip("Amount of time needed to interact with an item to repair it, in seconds")]
@@ -25,8 +26,12 @@ public class EnemySpawner : MonoBehaviour, IInteractable
     [Tooltip("The number of times a check for an item to break should happen every second")]
     [SerializeField] int _breakChecksPerSecond = 4;
 
-    //[Tooltip("The enemy that will periodically spawn when broken")]
-    //[SerializeField] GameObject _enemy;
+    [Header("Audio")]
+    [SerializeField] AudioEvent _completeRepairSound;
+    [SerializeField] AudioEvent _completeBreakSound;
+
+
+
 
     enum State
     { 
@@ -35,7 +40,8 @@ public class EnemySpawner : MonoBehaviour, IInteractable
         Broken,
     }
 
-    PlayerInteractor _interactor;
+    private PlayerInteractor _interactor;
+    private AudioSource _audioSource;
 
     private State _currentState;
     private bool _isRepairing;
@@ -46,6 +52,21 @@ public class EnemySpawner : MonoBehaviour, IInteractable
     private float _spawnTimer;          // Time left for a broken item to spawn an enemy
     private float _breakingTimer;       // Time left for this item to break once it starts breaking
     private float _breakCheckTimer;     // Time left for this item to potentially start breaking, if repaired
+
+    private void Update()
+    {
+        if (_currentState == State.Repaired)
+        {
+            _timeSinceLastBroken += Time.deltaTime;
+        }
+        UpdateRepair();
+        UpdateBreaking();
+    }
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     public bool IsInteractable()
     {
@@ -62,7 +83,6 @@ public class EnemySpawner : MonoBehaviour, IInteractable
         }
         
     }
-
     public void StopInteract(PlayerInteractor player)
     {
         if(_interactor != null)
@@ -83,6 +103,11 @@ public class EnemySpawner : MonoBehaviour, IInteractable
             {
                 _currentState = State.Repaired;
                 _isRepairing = false;
+
+                if (_audioSource && _completeBreakSound)
+                {
+                    _completeRepairSound.Play(_audioSource);
+                }
             }
         }
     }
@@ -108,8 +133,12 @@ public class EnemySpawner : MonoBehaviour, IInteractable
             {
                 _currentState = State.Broken;
                 Debug.Log("Broken!");
-                Debug.Log("Spawning monster!");
                 _spawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
+
+                if (_audioSource && _completeBreakSound)
+                {
+                    _completeBreakSound.Play(_audioSource);
+                }
             }
         }
         // Change from repaired to breaking
@@ -135,15 +164,5 @@ public class EnemySpawner : MonoBehaviour, IInteractable
     private bool HasCorrectTool(PlayerInteractor player)
     {
         return (player.HeldTool == null && RequiredTool == null) || (player.HeldTool != null && player.HeldTool.ToolType == RequiredTool);
-    }
-
-    void Update()
-    {
-        if (_currentState == State.Repaired)
-        {
-            _timeSinceLastBroken += Time.deltaTime;
-        }
-        UpdateRepair();
-        UpdateBreaking();
     }
 }
