@@ -54,7 +54,6 @@ public class DebugInteractor : MonoBehaviour, IInteractable
 
     private bool HasCorrectTool(PlayerInteractor player)
     {
-        Debug.Log("Checking for correct tool.");
         return (player.HeldTool == null && RequiredTool == null) || (player.HeldTool != null && player.HeldTool.ToolType == RequiredTool);
     }
 
