@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa4ddecad8e323439a4ef01dc44aa59, type: 3}
-  m_Name: Ding
+  m_Script: {fileID: 11500000, guid: 15288e212ff58624bae7501d1047df12, type: 3}
+  m_Name: Broken Floorboard Counter
   m_EditorClassIdentifier: 
-  Clips:
-  - {fileID: 8300000, guid: 95fc7553f554a12438399d82973d4f82, type: 3}
-  MinPitch: 0.74
-  MaxPitch: 1.5
-  MinVolume: 0.125
-  MaxVolume: 0.45
+  Value: 0

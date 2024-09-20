@@ -1,37 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEngine.InputSystem;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour, IInteractable
 {
     [field: Header("Gameplay")]
     public ToolType RequiredTool { get; private set; }
 
-    [Tooltip("Amount of time needed to interact with an item to repair it, in seconds")]
-    [SerializeField] float _repairDuration = 4f;
+    [Tooltip("A SO to share the number of floorboards currently broken")]
+    [SerializeField] private ScriptableInt _counter;
 
-    [Tooltip("Amount of time needed for this item to fully break, in second.")]
-    [SerializeField] float _breakingDuration = 5f;
+    [Tooltip("The maximum number of spawners of that share the counter SO that can be breaking/broken at a time")]
+    [SerializeField] private int _maxBroken = 3;
+
+    [Tooltip("Amount of time needed to interact with a breaking/broken spawner to repair it, in seconds")]
+    [SerializeField] private float _repairDuration = 4f;
+
+    [Tooltip("Amount of time needed for this spawner to fully break, in second.")]
+    [SerializeField] private float _breakingDuration = 5f;
+
+    [Tooltip("Amount of time after repairing boards where they will not perform a break check")]
+    [SerializeField] private float _repairGracePeriod = 5f;
 
     [Tooltip("Minimum amount of time it takes for a monster to spawn, in seconds")]
-    [SerializeField] float _spawnDelayMinimum;
+    [SerializeField] private float _spawnDelayMinimum;
 
     [Tooltip("Maximum amount of time it takes for a monster to spawn, in seconds")]
-    [SerializeField] float _spawnDelayMaximum;
+    [SerializeField] private float _spawnDelayMaximum;
 
-    [Tooltip("Rate at which the likelihood of this item begins breaking increases. Likelihood is % chance of it happening any given check")]
-    [SerializeField] double _breakChancePerMinute;
+    [Tooltip("Rate at which the likelihood of this spawner begins breaking increases. Likelihood is % chance of it happening any given check")]
+    [SerializeField] private float _baseBreakChancePerMinute;
 
-    [Tooltip("The number of times a check for an item to break should happen every second")]
-    [SerializeField] int _breakChecksPerSecond = 4;
+    [Tooltip("Factor to increase the spawner's likelihood to break with average distance from all players")]
+    [SerializeField]
+    private float _breakChanceDistanceFactor;
+
+    [Tooltip("The number of times a check for this spawner to break happens every second")]
+    [SerializeField] private int _breakChecksPerSecond = 4;
 
     [Header("Audio")]
-    [SerializeField] AudioEvent _completeRepairSound;
-    [SerializeField] AudioEvent _completeBreakSound;
-
-
-
+    [SerializeField] private AudioEvent _completeRepairSound;
+    [SerializeField] private AudioEvent _completeBreakSound;
 
     enum State
     { 
@@ -39,6 +48,8 @@ public class EnemySpawner : MonoBehaviour, IInteractable
         Breaking,
         Broken,
     }
+
+    List<GameObject> players = new List<GameObject>();
 
     private PlayerInteractor _interactor;
     private AudioSource _audioSource;
@@ -68,6 +79,36 @@ public class EnemySpawner : MonoBehaviour, IInteractable
         _audioSource = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        _counter.Value = 0;
+        if(PlayerInputManager.instance)
+        {
+            PlayerInputManager.instance.onPlayerJoined += OnPlayerJoin;
+            PlayerInputManager.instance.onPlayerLeft += OnPlayerLeave;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if(PlayerInputManager.instance)
+        {
+            PlayerInputManager.instance.onPlayerJoined -= OnPlayerJoin;
+            PlayerInputManager.instance.onPlayerLeft -= OnPlayerLeave;
+        }
+    }
+
+    void OnPlayerJoin(PlayerInput playerInput)
+    {
+        Debug.Log("Spawned");
+        players.Add(playerInput.gameObject);
+    }
+
+    void OnPlayerLeave(PlayerInput playerInput)
+    {
+        players.Remove(playerInput.gameObject);
+    }
+
     public bool IsInteractable()
     {
         return _currentState != State.Repaired;
@@ -80,12 +121,14 @@ public class EnemySpawner : MonoBehaviour, IInteractable
             Debug.Log("Repairing...");
             _isRepairing = true;
             _repairTimer = _repairDuration;
+            _breakCheckTimer = _repairGracePeriod;
+            _interactor = player;
         }
-        
     }
+
     public void StopInteract(PlayerInteractor player)
     {
-        if(_interactor != null)
+        if (_interactor == player)
         {
             Debug.Log("Stopped repairing!");
             _isRepairing = false;
@@ -96,21 +139,23 @@ public class EnemySpawner : MonoBehaviour, IInteractable
 
     public void UpdateRepair()
     {
-        if (_isRepairing)
+        if (!_isRepairing) { return; }
+        
+        _repairTimer -= Time.deltaTime;
+        if (_repairTimer < 0)
         {
-            _repairTimer -= Time.deltaTime;
-            if (_repairTimer < 0)
-            {
-                _currentState = State.Repaired;
-                _isRepairing = false;
+            _currentState = State.Repaired;
+            _isRepairing = false;
 
-                if (_audioSource && _completeBreakSound)
-                {
-                    _completeRepairSound.Play(_audioSource);
-                }
+            --_counter.Value;
+
+            if (_audioSource && _completeBreakSound)
+            {
+                _completeRepairSound.Play(_audioSource);
             }
         }
     }
+
     public void UpdateBreaking()
     {
         // Spawns monsters if broken
@@ -148,19 +193,41 @@ public class EnemySpawner : MonoBehaviour, IInteractable
             _currentState = State.Breaking;
             _timeSinceLastBroken = 0;
             _breakingTimer = _breakingDuration;
+            ++_counter.Value;
+
         }
     }
 
     private bool CanSpawn()
     {
-        if(_breakCheckTimer > 0)
+        if (_breakCheckTimer > 0)
         {
             _breakCheckTimer -= Time.deltaTime;
             return false;
         }
+
         _breakCheckTimer = 1f / _breakChecksPerSecond;
-        return (Random.Range(0f, 100f) < _timeSinceLastBroken * (_breakChancePerMinute / 60));
+
+        float distAvg = 0;
+        if (players.Count > 0)
+        {
+            float distSum = 0;
+            foreach (var player in players)
+            {
+                distSum += (transform.position - player.transform.position).sqrMagnitude;
+            }
+            distAvg = distSum / players.Count;
+            Debug.Log(distAvg);
+            distAvg /= 1000;
+        }
+        
+        float timeChance = _timeSinceLastBroken * (_baseBreakChancePerMinute / 60);
+        float distChance = distAvg * _breakChanceDistanceFactor;
+        float totalChance = (_maxBroken - _counter.Value) * (timeChance + distChance);
+        Debug.Log($"Time chance: {timeChance} | Dist chance: {distChance} | Total chance: {totalChance}");
+        return (Random.Range(0f, 100f) < totalChance);
     }
+
     private bool HasCorrectTool(PlayerInteractor player)
     {
         return (player.HeldTool == null && RequiredTool == null) || (player.HeldTool != null && player.HeldTool.ToolType == RequiredTool);
