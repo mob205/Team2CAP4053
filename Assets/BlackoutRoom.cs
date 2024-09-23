@@ -15,6 +15,7 @@ public class BlackoutRoom : MonoBehaviour
     private void Start()
     {
         _mat = GetComponent<Renderer>().material;
+        SetColors(1, darknessTransparency);
     }
 
     private void OnTriggerEnter(Collider other)
