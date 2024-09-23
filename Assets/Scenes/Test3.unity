@@ -450,8 +450,9 @@ MonoBehaviour:
   frontWalls:
   - {fileID: 1363459600}
   - {fileID: 1184576755}
-  wallTransparency: 0.05
-  darknessTransparency: 0.8
+  _activeWallTransparency: 0.05
+  _inactiveRoomTransparency: 0.8
+  _transitionTime: 0.2
 --- !u!65 &95402592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3382,8 +3383,9 @@ MonoBehaviour:
   frontWalls:
   - {fileID: 790223267}
   - {fileID: 1819328828}
-  wallTransparency: 0.05
-  darknessTransparency: 0.8
+  _activeWallTransparency: 0.05
+  _inactiveRoomTransparency: 0.8
+  _transitionTime: 0.2
 --- !u!1 &2071248209
 GameObject:
   m_ObjectHideFlags: 0
