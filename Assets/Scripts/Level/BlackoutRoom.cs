@@ -1,31 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
+using UnityEngine.Events;
 using UnityEngine;
+using UnityEditor.Experimental.GraphView;
 
-public class BlackoutRoom : MonoBehaviour
+public class BlackoutRoom : Activator
 {
     [Tooltip("References to walls in the level that should be made semi-transparent when a player enters it1")]
     [SerializeField] private GameObject[] frontWalls;
 
-    [Tooltip("The transparency of front walls when the room is active (i.e. a player is in it)")]
+    [Tooltip("The transparency of front walls when the room is hidden (i.e. a player is in it)")]
     [Range(0f, 1f)]
     [SerializeField] private float _activeWallTransparency;
 
-    [Tooltip("The transparency of the dark cube that obscures the room when the room is inactive")]
+    [Tooltip("The transparency of the dark cube that obscures the room when the room is visible")]
     [Range(0f, 1f)]
     [SerializeField] private float _inactiveRoomTransparency;
 
     [Tooltip("The amount of time, in seconds, that it should take for the transparencies to fully change")]
-    [SerializeField] private float _transitionTime; 
+    [SerializeField] private float _transitionTime;
 
 
     private Material _mat;
     private Material[] _wallMaterials;
 
-    private int _playerCount = 0;
+    private int _direction = 1;
 
-    private bool _isActive;
 
     private void Start()
     {
@@ -46,8 +44,6 @@ public class BlackoutRoom : MonoBehaviour
         {
             deltaWall = Time.deltaTime * ((1 - _activeWallTransparency) / _transitionTime);
             deltaRoom = Time.deltaTime * _inactiveRoomTransparency / _transitionTime;
-
-            Debug.Log($"dWall: {deltaWall} | dRoom: {deltaRoom}");
         }
         else
         {
@@ -55,39 +51,16 @@ public class BlackoutRoom : MonoBehaviour
             deltaRoom = 1;
         }
 
-        int direction;
-        if(_isActive)
-        {
-            direction = -1;
-        }
-        else
-        {
-            direction = 1;
-        }
-
-        UpdateColors(deltaWall * direction, deltaRoom * direction);
+        UpdateColors(deltaWall * _direction, deltaRoom * _direction);
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void Activate()
     {
-        ++_playerCount; 
-        if(_playerCount > 0)
-        {
-            _isActive = true;
-            //Debug.Log("Entering");
-            //SetColors(wallTransparency, 0);
-        }
+        _direction = -1;
     }
-    
-    private void OnTriggerExit(Collider other)
+    protected override void Deactivate()
     {
-        --_playerCount;
-        if(_playerCount <= 0)
-        {
-            _isActive = false;
-            //Debug.Log("Exiting");
-            //SetColors(1, darknessTransparency);
-        }
+        _direction = 1;
     }
 
     private void UpdateColors(float deltaWall, float deltaRoom)
