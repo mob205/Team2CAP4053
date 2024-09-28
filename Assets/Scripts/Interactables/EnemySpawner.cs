@@ -111,7 +111,7 @@ public class EnemySpawner : MonoBehaviour, IInteractable
 
     public bool IsInteractable()
     {
-        return _currentState != State.Repaired;
+        return _currentState != State.Repaired && _interactor == null;
     }
 
     public void StartInteract(PlayerInteractor player)
