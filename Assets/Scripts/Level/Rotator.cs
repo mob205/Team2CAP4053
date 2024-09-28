@@ -32,8 +32,6 @@ public class Rotator : Activator
         }
         _timer = Mathf.Clamp(_timer, 0, _transitionTime);
 
-        Debug.Log(_timer);
-
         Quaternion targetRot = _initRot * Quaternion.Euler(_rotationOffset);
         _rotationTarget.rotation = Quaternion.Slerp(_initRot, targetRot, _timer / _transitionTime);
     }
