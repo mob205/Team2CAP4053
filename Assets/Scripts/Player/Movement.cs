@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     private Vector2 _moveInput;
     private Vector2 _frameVelocity;
 
+    private float _facingAngle;
+
     private void Awake()
     { 
         _rb = GetComponent<Rigidbody>();
@@ -37,7 +39,10 @@ public class Movement : MonoBehaviour
         else
         {
             _frameVelocity = Vector2.MoveTowards(_frameVelocity, _moveInput * MaxSpeed, Acceleration * Time.fixedDeltaTime);
+            _facingAngle = Mathf.Rad2Deg * Mathf.Atan2(-_frameVelocity.y, _frameVelocity.x);
         }
         _rb.velocity = new Vector3(_frameVelocity.x, 0, _frameVelocity.y);
+        transform.rotation = Quaternion.Euler(0, _facingAngle, 0);
+
     }
 }

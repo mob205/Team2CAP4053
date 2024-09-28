@@ -18,6 +18,7 @@ public class PlayerInteractor : MonoBehaviour
         HeldTool = tool;
         HeldTool.transform.parent = _toolPos;
         HeldTool.transform.localPosition = Vector3.zero;
+        HeldTool.transform.localRotation = _toolPos.localRotation;
         return true;
     }
     public void UnequipTool()

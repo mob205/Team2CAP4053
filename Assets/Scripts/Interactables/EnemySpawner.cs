@@ -165,7 +165,7 @@ public class EnemySpawner : MonoBehaviour, IInteractable
             CurrentSpawnTimer -= Time.deltaTime;
             if(CurrentSpawnTimer <= 0)
             {
-                Debug.Log("Spawning monster!");
+                Debug.Log($"Spawning monster at {name}");
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
             }
         }
@@ -177,7 +177,7 @@ public class EnemySpawner : MonoBehaviour, IInteractable
             if(CurrentBreakingTimer < 0)
             {
                 _currentState = State.Broken;
-                Debug.Log("Broken!");
+                Debug.Log($"Broken at {name}");
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
 
                 if (_audioSource && _completeBreakSound)
@@ -189,7 +189,7 @@ public class EnemySpawner : MonoBehaviour, IInteractable
         // Change from repaired to breaking
         if (_currentState == State.Repaired && CanSpawn())
         {
-            Debug.Log("Breaking!!!");
+            Debug.Log($"Breaking at {name}");
             _currentState = State.Breaking;
             _timeSinceLastBroken = 0;
             CurrentBreakingTimer = _breakingDuration;

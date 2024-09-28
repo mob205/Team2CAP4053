@@ -27,7 +27,7 @@ public class RepairProgressBar : MonoBehaviour
 
     private void Update()
     {
-        // This can be hooked into an OnStartRepair/OnEndRepair event on EnemySpawner if needed
+        // This can be hooked onto events on EnemySpawner if needed
         if(_spawner.IsRepairing)
         {
             _progressBarUI.gameObject.SetActive(true);
