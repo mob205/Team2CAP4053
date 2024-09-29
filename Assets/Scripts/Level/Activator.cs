@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public abstract class Activator : MonoBehaviour
 {
     [Tooltip("Layers to check for activations")]
-    [SerializeField] private LayerMask _mask;
+    [SerializeField] private LayerMask _activationLayers;
 
     [SerializeField] private UnityEvent _onActivate;
     [SerializeField] private UnityEvent _onDeactivate;
@@ -16,7 +16,7 @@ public abstract class Activator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(IsInMask(other.gameObject.layer))
+        if(Helpers.IsInMask(_activationLayers, other.gameObject.layer))
         {
             ++_playerCount;
             if(!_isActive)
@@ -30,7 +30,7 @@ public abstract class Activator : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(IsInMask(other.gameObject.layer))
+        if(Helpers.IsInMask(_activationLayers, other.gameObject.layer))
         {
             --_playerCount;
             if(_playerCount == 0 && _isActive)
@@ -40,11 +40,6 @@ public abstract class Activator : MonoBehaviour
                 _onDeactivate?.Invoke();
             }
         }
-    }
-
-    private bool IsInMask(int layer)
-    {
-        return (_mask & (1 << layer)) != 0;
     }
 
     protected abstract void Activate();

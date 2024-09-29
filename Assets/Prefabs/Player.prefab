@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 152466835898707793}
   - component: {fileID: 5391505193654126142}
   - component: {fileID: -8164095535791406854}
+  - component: {fileID: 7398559929577939413}
   - component: {fileID: 3941115083311657156}
   - component: {fileID: 2228610662166511868}
   - component: {fileID: 8817658888134747939}
@@ -120,6 +121,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f45004c8fe1e674daeef09ec3aaaddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7398559929577939413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927568607140628226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a40a4bd65d65240a888e1f82fd9a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!23 &3941115083311657156
 MeshRenderer:
   m_ObjectHideFlags: 0
