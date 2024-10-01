@@ -19,7 +19,7 @@ public class GameStateManager : MonoBehaviour
     {
         if(_numRevivesUsed)
         {
-            _numRevivesUsed.Reset();
+            _numRevivesUsed.Value = 0;
         }
 
         if(PlayerInputManager.instance)

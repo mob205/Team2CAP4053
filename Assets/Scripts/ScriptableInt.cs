@@ -5,9 +5,4 @@ using UnityEngine;
 public class ScriptableInt : ScriptableObject
 {
     public int Value;
-
-    public void Reset()
-    {
-        Value = 0;
-    }
 }

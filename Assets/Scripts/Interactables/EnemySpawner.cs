@@ -149,6 +149,9 @@ public class EnemySpawner : DurationInteractable
             if(CurrentBreakingTimer < 0)
             {
                 _currentState = State.Broken;
+
+                // Switch to broken model
+
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
 
                 if (_audioSource && _completeBreakSound)
@@ -160,8 +163,8 @@ public class EnemySpawner : DurationInteractable
         // Change from repaired to breaking
         if (_currentState == State.Repaired && CanBreak())
         {
-            // Break Here
-            Debug.Log($"Breaking at {name}");
+            // Switch model/play animation/etc.
+
             _currentState = State.Breaking;
             _timeSinceLastBroken = 0;
             CurrentBreakingTimer = _breakingDuration;
