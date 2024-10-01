@@ -2,11 +2,8 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class EnemySpawner : MonoBehaviour, IInteractable
+public class EnemySpawner : DurationInteractable
 {
-    [field: Header("Gameplay")]
-    [field: SerializeField] public ToolType RequiredTool { get; private set; }
-
     [Tooltip("Amount of time needed to interact with a breaking/broken spawner to repair it, in seconds")]
     [field: SerializeField] public float MaxRepairDuration { get; private set; } = 4f;
 
@@ -39,7 +36,10 @@ public class EnemySpawner : MonoBehaviour, IInteractable
     [SerializeField] private int _breakChecksPerSecond = 4;
 
     [Header("Audio")]
+    [Tooltip("Sound to be played after a successful repair")]
     [SerializeField] private AudioEvent _completeRepairSound;
+
+    [Tooltip("Sound to be played after the spawner breaks")]
     [SerializeField] private AudioEvent _completeBreakSound;
 
     enum State
@@ -49,8 +49,6 @@ public class EnemySpawner : MonoBehaviour, IInteractable
         Broken,
     }
 
-
-    public float CurrentRepairTimer { get; private set; }   // Time left to repair broken item
     public float CurrentSpawnTimer { get; private set; }   // Time left for a broken item to spawn an enemy
     public float CurrentBreakingTimer { get; private set; }   // Time left for this item to break once it starts breaking
     public float BreakCheckTimer { get; private set; }   // Time left for this item to potentially start breaking, if repaired
@@ -58,20 +56,19 @@ public class EnemySpawner : MonoBehaviour, IInteractable
 
     private List<GameObject> _players = new List<GameObject>();
 
-    private PlayerInteractor _interactor;
     private AudioSource _audioSource;
     private State _currentState;
     private float _timeSinceLastBroken;
     
    
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         if (_currentState == State.Repaired)
         {
             _timeSinceLastBroken += Time.deltaTime;
         }
-        UpdateRepair();
         UpdateBreaking();
     }
 
@@ -109,51 +106,26 @@ public class EnemySpawner : MonoBehaviour, IInteractable
         _players.Remove(playerInput.gameObject);
     }
 
-    public bool IsInteractable()
+    public override bool IsInteractable(ToolType tool)
     {
-        return _currentState != State.Repaired && _interactor == null;
+        return _currentState != State.Repaired && base.IsInteractable(tool);
     }
 
-    public void StartInteract(PlayerInteractor player)
+    protected override void CompleteInteraction()
     {
-        if(_interactor == null && HasCorrectTool(player))
+        _currentState = State.Repaired;
+        --_counter.Value;
+        BreakCheckTimer = _repairGracePeriod;
+
+        if(_audioSource && _completeRepairSound)
         {
-            Debug.Log("Repairing...");
-            IsRepairing = true;
-            CurrentRepairTimer = MaxRepairDuration;
-            BreakCheckTimer = _repairGracePeriod;
-            _interactor = player;
+            _completeRepairSound.Play(_audioSource);
         }
     }
 
-    public void StopInteract(PlayerInteractor player)
+    protected override float GetInteractionDuration()
     {
-        if (_interactor == player)
-        {
-            Debug.Log("Stopped repairing!");
-            IsRepairing = false;
-            CurrentRepairTimer = MaxRepairDuration;
-            _interactor = null;
-        }
-    }
-
-    public void UpdateRepair()
-    {
-        if (!IsRepairing) { return; }
-        
-        CurrentRepairTimer -= Time.deltaTime;
-        if (CurrentRepairTimer < 0)
-        {
-            _currentState = State.Repaired;
-            IsRepairing = false;
-
-            --_counter.Value;
-
-            if (_audioSource && _completeBreakSound)
-            {
-                _completeRepairSound.Play(_audioSource);
-            }
-        }
+        return MaxRepairDuration;
     }
 
     public void UpdateBreaking()
@@ -165,7 +137,7 @@ public class EnemySpawner : MonoBehaviour, IInteractable
             CurrentSpawnTimer -= Time.deltaTime;
             if(CurrentSpawnTimer <= 0)
             {
-                Debug.Log($"Spawning monster at {name}");
+                // Spawn monster here
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
             }
         }
@@ -177,7 +149,6 @@ public class EnemySpawner : MonoBehaviour, IInteractable
             if(CurrentBreakingTimer < 0)
             {
                 _currentState = State.Broken;
-                Debug.Log($"Broken at {name}");
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
 
                 if (_audioSource && _completeBreakSound)
@@ -187,8 +158,9 @@ public class EnemySpawner : MonoBehaviour, IInteractable
             }
         }
         // Change from repaired to breaking
-        if (_currentState == State.Repaired && CanSpawn())
+        if (_currentState == State.Repaired && CanBreak())
         {
+            // Break Here
             Debug.Log($"Breaking at {name}");
             _currentState = State.Breaking;
             _timeSinceLastBroken = 0;
@@ -197,7 +169,7 @@ public class EnemySpawner : MonoBehaviour, IInteractable
         }
     }
 
-    private bool CanSpawn()
+    private bool CanBreak()
     {
         if (BreakCheckTimer > 0)
         {
@@ -225,8 +197,5 @@ public class EnemySpawner : MonoBehaviour, IInteractable
         return (Random.Range(0f, 100f) < totalChance);
     }
 
-    private bool HasCorrectTool(PlayerInteractor player)
-    {
-        return (player.HeldTool == null && RequiredTool == null) || (player.HeldTool != null && player.HeldTool.ToolType == RequiredTool);
-    }
+    
 }

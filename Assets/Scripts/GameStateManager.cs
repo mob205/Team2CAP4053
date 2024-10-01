@@ -5,7 +5,11 @@ using UnityEngine.InputSystem;
 
 public class GameStateManager : MonoBehaviour
 {
+    [Tooltip("How long the level should last, in seconds")]
     [field: SerializeField] public float LevelDuration { get; private set; }
+
+    [Tooltip("SO representing the number of revives used. Needs to be reset at the start of every level")]
+    [SerializeField] ScriptableInt _numRevivesUsed;
     public float TimeRemaining { get; private set; }
 
     public int PlayersAlive { get; private set; }
@@ -13,6 +17,11 @@ public class GameStateManager : MonoBehaviour
 
     private void Start()
     {
+        if(_numRevivesUsed)
+        {
+            _numRevivesUsed.Reset();
+        }
+
         if(PlayerInputManager.instance)
         {
             PlayerInputManager.instance.onPlayerJoined += OnJoin;

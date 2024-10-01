@@ -36,7 +36,7 @@ public class DebugInteractor : MonoBehaviour, IInteractable
     public void StartInteract(PlayerInteractor player)
     {
         Debug.Log("Interacting!");
-        if(_interactor == null && HasCorrectTool(player))
+        if(_interactor == null)
         {
             _interactor = player;
             _isInteracting = true;
@@ -52,13 +52,8 @@ public class DebugInteractor : MonoBehaviour, IInteractable
         }
     }
 
-    private bool HasCorrectTool(PlayerInteractor player)
+    public bool IsInteractable(ToolType tool)
     {
-        return (player.HeldTool == null && RequiredTool == null) || (player.HeldTool != null && player.HeldTool.ToolType == RequiredTool);
-    }
-
-    public bool IsInteractable()
-    {
-        return true;
+        return tool == RequiredTool;
     }
 }

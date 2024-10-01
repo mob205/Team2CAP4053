@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RepairProgressBar : MonoBehaviour
+public class InteractProgressBar : MonoBehaviour
 {
-    [SerializeField] private EnemySpawner _spawner;
+    [SerializeField] private DurationInteractable _interactable;
     private Slider _progressBarUI;
 
     private void Start()
     {
-        _spawner = GetComponentInParent<EnemySpawner>();
         _progressBarUI = GetComponentInChildren<Slider>();
 
-        if (!_spawner)
+        if (!_interactable)
         {
-            Debug.LogError("No enemy spawner provided to this RepairProgressBar. Destroying.");
+            Debug.LogError($"No interactable provided to progress bar {name}. Destroying");
             Destroy(this);
         }
         if (!_progressBarUI)
         {
-            Debug.LogError("No slider UI is child to this RepairProgressBar. Destroying.");
+            Debug.LogError($"No slider UI found on progress bar {name}. Destroying");
             Destroy(this);
         }
     }
@@ -28,10 +27,10 @@ public class RepairProgressBar : MonoBehaviour
     private void Update()
     {
         // This can be hooked onto events on EnemySpawner if needed
-        if(_spawner.IsRepairing)
+        if(_interactable.IsInProgress)
         {
             _progressBarUI.gameObject.SetActive(true);
-            _progressBarUI.value = 1 - (_spawner.CurrentRepairTimer / _spawner.MaxRepairDuration);
+            _progressBarUI.value = 1 - (_interactable.TimeRemaining / _interactable.MaxDuration);
         }
         else
         {

@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f694e5adf9f0dd24789356b3ab44a823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawner: {fileID: 7293466062322248602}
+  _interactable: {fileID: 7293466062322248602}
 --- !u!1 &7132513813287690811
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0454140c02f354846883e7b1d088bf33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <RequiredTool>k__BackingField: {fileID: 0}
+  <RequiredTool>k__BackingField: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
   <MaxRepairDuration>k__BackingField: 4
   _counter: {fileID: 11400000, guid: 80060eb87930ad14d9286351d57f5930, type: 2}
   _maxBroken: 3
@@ -359,7 +359,7 @@ MonoBehaviour:
   _repairGracePeriod: 5
   _spawnDelayMinimum: 2
   _spawnDelayMaximum: 5
-  _baseBreakChancePerMinute: 1
+  _baseBreakChancePerMinute: 100
   _breakChanceDistanceFactor: 0.05
   _breakChecksPerSecond: 4
   _completeRepairSound: {fileID: 11400000, guid: 6a08bf06903641e4780b8a8ba22b16cd, type: 2}
@@ -541,7 +541,6 @@ GameObject:
   m_Component:
   - component: {fileID: 716301895420240673}
   - component: {fileID: 2948234724740832685}
-  - component: {fileID: 1335953785569018585}
   m_Layer: 5
   m_Name: Progress Bar
   m_TagString: Untagged
@@ -621,16 +620,3 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1335953785569018585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7472170283216356641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f694e5adf9f0dd24789356b3ab44a823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawner: {fileID: 0}

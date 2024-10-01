@@ -25,8 +25,8 @@ public class Tool : MonoBehaviour, IInteractable
         Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo);
         transform.position = new Vector3(transform.position.x, hitInfo.point.y, transform.position.z);
     }
-    public bool IsInteractable()
+    public bool IsInteractable(ToolType tool)
     {
-        return !_isHeld;
+        return !_isHeld && tool == null;
     }
 }

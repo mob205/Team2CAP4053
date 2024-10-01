@@ -9,5 +9,6 @@ public interface IInteractable
     public void StartInteract(PlayerInteractor player);
     public void StopInteract(PlayerInteractor player);
 
-    public bool IsInteractable();
+    // Checks if this item can be interacted with the interactor's held tool
+    public bool IsInteractable(ToolType tool);
 }
