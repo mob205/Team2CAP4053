@@ -5,16 +5,24 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private LayerMask _enemyLayer;
 
-    public UnityEvent<PlayerHealth> OnDeath;
+    public bool IsDead { get; private set; }
 
-    private bool _isDead;
+    public UnityEvent<PlayerHealth> OnDeath;
+    public UnityEvent<PlayerHealth> OnRevive;
+
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!_isDead && Helpers.IsInMask(_enemyLayer, collision.gameObject.layer))
+        if(!IsDead && Helpers.IsInMask(_enemyLayer, collision.gameObject.layer))
         {
-            _isDead = true;
+            IsDead = true;
             OnDeath?.Invoke(this);
         }
+    }
+
+    public void Revive()
+    {
+        IsDead = false;
+        OnRevive?.Invoke(this);
     }
 }

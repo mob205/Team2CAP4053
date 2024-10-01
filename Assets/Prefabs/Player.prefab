@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5391505193654126142}
   - component: {fileID: -8164095535791406854}
   - component: {fileID: 7398559929577939413}
+  - component: {fileID: 1022659389866345080}
   - component: {fileID: 3941115083311657156}
   - component: {fileID: 2228610662166511868}
   - component: {fileID: 8817658888134747939}
@@ -151,6 +152,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnRevive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -8164095535791406854}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ChangeInputAllow
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1022659389866345080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927568607140628226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc05d604d1a74964dad2e84ea483a986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <RequiredTool>k__BackingField: {fileID: 11400000, guid: 2cdbd2126f4d1cc4b8a1d314d6da1edc, type: 2}
+  _revivesUsed: {fileID: 11400000, guid: bcaafe1469e9a5743b33a3a21c45e5ba, type: 2}
+  _reviveDurations:
+  - 4
+  - 7
+  - 10
+  - 20
+  - 30
+  _playerHealth: {fileID: 7398559929577939413}
 --- !u!23 &3941115083311657156
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -311,7 +348,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -329,10 +366,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 439
+    m_Bits: 311
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0

@@ -51,6 +51,7 @@ public class GameStateManager : MonoBehaviour
         if(health)
         {
             health.OnDeath.AddListener(OnDeath);
+            health.OnRevive.AddListener(OnRevive);
         }
         else
         {
@@ -73,11 +74,15 @@ public class GameStateManager : MonoBehaviour
         CheckAliveStatus();
     }
 
+    private void OnRevive(PlayerHealth player)
+    {
+        ++PlayersAlive;
+    }
     private void CheckAliveStatus()
     {
         if(PlayersAlive <= 0)
         {
-            Debug.Log("DEFEAT!");
+            // Defeat stuff here
         }
     }
 
@@ -86,7 +91,7 @@ public class GameStateManager : MonoBehaviour
         TimeRemaining -= deltaTime;
         if(TimeRemaining <= 0)
         {
-            Debug.Log("VICTORY!");
+            // Time victory stuff here
         }
     }
 }

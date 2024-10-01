@@ -20,8 +20,10 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
 
     public virtual void StartInteract(PlayerInteractor player)
     {
+        Debug.Log("Attempting to start interacting");
         if(_interactor == null)
         {
+            Debug.Log("Interact start successful");
             _interactor = player;
             TimeRemaining = MaxDuration;
             IsInProgress = true;
@@ -41,6 +43,7 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
     {
         if(!IsInProgress) { return; }
         TimeRemaining -= Time.deltaTime;
+        Debug.Log($"Time remaining: {TimeRemaining}");
 
         if (TimeRemaining <= 0)
         {

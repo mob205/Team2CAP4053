@@ -12,20 +12,17 @@ public class PlayerSpawnCustomizer : MonoBehaviour
 
     private int m_numPlayers = 0;
 
-    PlayerInputManager m_manager;
-
-    private void Awake()
+    private void Start()
     {
-        m_manager = GetComponent<PlayerInputManager>();
+        PlayerInputManager.instance.onPlayerJoined += OnPlayerJoined;
     }
 
     public void OnPlayerJoined(PlayerInput input)
     {
         GameObject player = input.gameObject;
-        player.transform.position = m_spawnPoints[m_numPlayers].position;
 
-        Debug.Log($"Setting material to {m_materials[m_numPlayers].name}");
-        player.GetComponent<MeshRenderer>().SetMaterials(new List<Material>{ m_materials[m_numPlayers]});
+        player.transform.position = m_spawnPoints[m_numPlayers % m_spawnPoints.Length].position;
+        player.GetComponent<MeshRenderer>().SetMaterials(new List<Material>{ m_materials[m_numPlayers % m_materials.Length]});
 
         ++m_numPlayers;
     }
