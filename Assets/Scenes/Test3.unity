@@ -2182,6 +2182,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 572426988933956699, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 717129261673889689, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -2210,6 +2214,14 @@ PrefabInstance:
       propertyPath: _fleeTool
       value: 
       objectReference: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
+    - target: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
+      propertyPath: _runSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
+      propertyPath: _walkSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
       propertyPath: sightRange
       value: 50
@@ -3409,7 +3421,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 439
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -3720,7 +3732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950097502312384497, guid: 0016bd35138c8994d829f5361b2d3e2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 8950097502312384497, guid: 0016bd35138c8994d829f5361b2d3e2a, type: 3}
       propertyPath: m_LocalPosition.z

@@ -199,6 +199,4 @@ public class EnemySpawner : DurationInteractable
         float totalChance = (_maxBroken - _counter.Value) * (timeChance + distChance);
         return (Random.Range(0f, 100f) < totalChance);
     }
-
-    
 }

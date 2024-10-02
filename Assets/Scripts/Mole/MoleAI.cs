@@ -24,16 +24,19 @@ public class MoleAI : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
 
     [SerializeField] private float _walkPointRange;
-
     [SerializeField] private float _sightRange;
-    [SerializeField] private float _attackRange;
-    //public LayerMask whatIsGround, _player, whatIsHammer;
+
+    [Tooltip("Speed to move at when chasing or fleeing")]
+    [SerializeField] private float _runSpeed;
+
+    [Tooltip("Speed to move at when patrolling")]
+    [SerializeField] private float _walkSpeed;
+
+    //[SerializeField] private float _attackRange;
 
     // Patrolling
     private Vector3 _walkPoint;
     private bool _isWalkPointSet;
-
-
 
 
     //Attacking
@@ -55,14 +58,17 @@ public class MoleAI : MonoBehaviour
         if (CheckFlee(hits, out Transform fleePos)) // Nearby tool to flee from
         {
             Flee(fleePos);
+            return;
         }
-        else if(hits.Length == 0) // No nearby players
+
+        Transform closestPlayer = FindClosestPlayer(hits);
+        if(closestPlayer == null)
         {
             Patrol();
         }
         else
         {
-            ChasePlayer(FindClosestPlayer(hits));
+            ChasePlayer(closestPlayer);
         }
     }
 
@@ -80,37 +86,23 @@ public class MoleAI : MonoBehaviour
         return false;
     }
 
-    private Transform FindClosestPlayer(RaycastHit[] players) {
-
-        Transform best = null;
-        float minDist = Mathf.Infinity;
-
-        foreach (var player in players)
-        {
-            float dist = (player.transform.position - transform.position).sqrMagnitude;
-            if (dist < minDist)
-            {
-                best = player.transform;
-                minDist = dist;
-            }
-        }
-        return best;
-    }
-
     // Move away from fleePosition
     private void Flee(Transform fleePosition)
     {
         CurrentState = MoleState.Fleeing;
+        _navAgent.speed = _runSpeed;
 
         // Vector player to me
         Vector3 dirToPlayer = transform.position - fleePosition.position;
         Vector3 newPos = transform.position + dirToPlayer;
+
         _navAgent.SetDestination (newPos);
     }
 
     private void Patrol()
     {
         CurrentState = MoleState.Patrolling;
+        _navAgent.speed = _walkSpeed;
 
         if (!_isWalkPointSet) SearchWalkPoint();
             _navAgent.SetDestination(_walkPoint);
@@ -120,6 +112,14 @@ public class MoleAI : MonoBehaviour
         // Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
             _isWalkPointSet = false;
+    }
+
+    private void ChasePlayer(Transform target)
+    {
+        CurrentState = MoleState.Chasing;
+        _navAgent.speed = _runSpeed;
+
+        _navAgent.SetDestination(target.position);
     }
 
     private void SearchWalkPoint()
@@ -134,16 +134,38 @@ public class MoleAI : MonoBehaviour
             _isWalkPointSet = true;
     }
 
-    private void ChasePlayer(Transform target)
+    private bool IsValidPlayer(RaycastHit player)
     {
-        CurrentState = MoleState.Chasing;
-        _navAgent.SetDestination(target.position);
+        // Perform line of sight raycast
+        if(player.collider.gameObject.TryGetComponent(out PlayerHealth playerHealth))
+        {
+            return !playerHealth.IsDead;
+        }
+        return false;
+    }
+
+    private Transform FindClosestPlayer(RaycastHit[] players)
+    {
+        Transform best = null;
+        float minDist = Mathf.Infinity;
+
+        foreach (var player in players)
+        {
+            if(!IsValidPlayer(player)) { continue; }
+            float dist = (player.transform.position - transform.position).sqrMagnitude;
+            if (dist < minDist)
+            {
+                best = player.transform;
+                minDist = dist;
+            }
+        }
+        return best;
     }
 
     //private void attackPlayer()
     //{
     //    moleState = "attacking";
-        
+
     //    // make sure enemy doesn't move
     //    agent.SetDestination(transform.position);
 
@@ -160,10 +182,8 @@ public class MoleAI : MonoBehaviour
     //    }
     //}
 
-    private void ResetAttack()
-    {
-        _hasAttacked = false;
-    }
-
-
+    //private void ResetAttack()
+    //{
+    //    _hasAttacked = false;
+    //}
 }

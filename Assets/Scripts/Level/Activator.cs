@@ -16,7 +16,6 @@ public abstract class Activator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
         if(Helpers.IsInMask(_activationLayers, other.gameObject.layer))
         {
             ++_playerCount;
@@ -31,7 +30,6 @@ public abstract class Activator : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exit");
         if(Helpers.IsInMask(_activationLayers, other.gameObject.layer))
         {
             --_playerCount;
