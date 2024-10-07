@@ -353,12 +353,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <RequiredTool>k__BackingField: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
   <MaxRepairDuration>k__BackingField: 4
+  _repairGracePeriod: 5
+  _spawnedEnemyObj: {fileID: 4310102443980061787, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
+  _spawnDelayMinimum: 2
+  _spawnDelayMaximum: 5
   _counter: {fileID: 11400000, guid: 80060eb87930ad14d9286351d57f5930, type: 2}
   _maxBroken: 3
   _breakingDuration: 5
-  _repairGracePeriod: 5
-  _spawnDelayMinimum: 2
-  _spawnDelayMaximum: 5
   _baseBreakChancePerMinute: 100
   _breakChanceDistanceFactor: 0.05
   _breakChecksPerSecond: 4

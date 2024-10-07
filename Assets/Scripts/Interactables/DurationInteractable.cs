@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class DurationInteractable : MonoBehaviour, IInteractable
 {
+    [field: Header("General")]
     [field: SerializeField] public ToolType RequiredTool { get; private set; }
 
     public float MaxDuration { get { return GetInteractionDuration(); } }

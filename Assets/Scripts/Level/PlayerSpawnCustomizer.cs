@@ -12,11 +12,6 @@ public class PlayerSpawnCustomizer : MonoBehaviour
 
     private int m_numPlayers = 0;
 
-    private void Start()
-    {
-        PlayerInputManager.instance.onPlayerJoined += OnPlayerJoined;
-    }
-
     public void OnPlayerJoined(PlayerInput input)
     {
         GameObject player = input.gameObject;

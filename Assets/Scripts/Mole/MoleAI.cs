@@ -22,6 +22,7 @@ public class MoleAI : MonoBehaviour
 
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private LayerMask _viewBlocking;
 
     [SerializeField] private float _walkPointRange;
     [SerializeField] private float _sightRange;
@@ -92,6 +93,8 @@ public class MoleAI : MonoBehaviour
         CurrentState = MoleState.Fleeing;
         _navAgent.speed = _runSpeed;
 
+        _isWalkPointSet = false;
+
         // Vector player to me
         Vector3 dirToPlayer = transform.position - fleePosition.position;
         Vector3 newPos = transform.position + dirToPlayer;
@@ -119,6 +122,8 @@ public class MoleAI : MonoBehaviour
         CurrentState = MoleState.Chasing;
         _navAgent.speed = _runSpeed;
 
+        _isWalkPointSet = false;
+
         _navAgent.SetDestination(target.position);
     }
 
@@ -136,11 +141,17 @@ public class MoleAI : MonoBehaviour
 
     private bool IsValidPlayer(RaycastHit player)
     {
-        // Perform line of sight raycast
+        var diff = player.transform.position - transform.position;
+        if(Physics.Raycast(transform.position, diff.normalized, diff.magnitude, _viewBlocking))
+        {
+            // Not visible
+            return false;
+        }
         if(player.collider.gameObject.TryGetComponent(out PlayerHealth playerHealth))
         {
             return !playerHealth.IsDead;
         }
+        // No player health - probably not a player and something went wrong
         return false;
     }
 

@@ -1,11 +1,33 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.AI;
 
 public class EnemySpawner : DurationInteractable
 {
+    [field: Header("Repairing")]
     [Tooltip("Amount of time needed to interact with a breaking/broken spawner to repair it, in seconds")]
     [field: SerializeField] public float MaxRepairDuration { get; private set; } = 4f;
+
+    [Tooltip("Amount of time after repairing boards where they will not perform a break check")]
+    [SerializeField] private float _repairGracePeriod = 5f;
+
+
+    [Header("Spawning")]
+
+    [SerializeField] private GameObject _spawnedEnemyObj;
+
+    [Tooltip("Minimum amount of time it takes for a monster to spawn, in seconds")]
+    [SerializeField] private float _spawnDelayMinimum;
+
+    [Tooltip("Maximum amount of time it takes for a monster to spawn, in seconds")]
+    [SerializeField] private float _spawnDelayMaximum;
+
+#if UNITY_EDITOR
+    [SerializeField] private bool _debugAllowSpawning;
+#endif
+
+    [Header("Breaking")]
 
     [Tooltip("A SO to share the number of floorboards currently broken")]
     [SerializeField] private ScriptableInt _counter;
@@ -16,21 +38,11 @@ public class EnemySpawner : DurationInteractable
     [Tooltip("Amount of time needed for this spawner to fully break, in second.")]
     [SerializeField] private float _breakingDuration = 5f;
 
-    [Tooltip("Amount of time after repairing boards where they will not perform a break check")]
-    [SerializeField] private float _repairGracePeriod = 5f;
-
-    [Tooltip("Minimum amount of time it takes for a monster to spawn, in seconds")]
-    [SerializeField] private float _spawnDelayMinimum;
-
-    [Tooltip("Maximum amount of time it takes for a monster to spawn, in seconds")]
-    [SerializeField] private float _spawnDelayMaximum;
-
     [Tooltip("Rate at which the likelihood of this spawner begins breaking increases. Likelihood is % chance of it happening any given check")]
     [SerializeField] private float _baseBreakChancePerMinute;
 
     [Tooltip("Factor to increase the spawner's likelihood to break with average distance from all players")]
-    [SerializeField]
-    private float _breakChanceDistanceFactor;
+    [SerializeField] private float _breakChanceDistanceFactor;
 
     [Tooltip("The number of times a check for this spawner to break happens every second")]
     [SerializeField] private int _breakChecksPerSecond = 4;
@@ -59,8 +71,6 @@ public class EnemySpawner : DurationInteractable
     private AudioSource _audioSource;
     private State _currentState;
     private float _timeSinceLastBroken;
-    
-   
 
     protected override void Update()
     {
@@ -130,14 +140,27 @@ public class EnemySpawner : DurationInteractable
 
     public void UpdateBreaking()
     {
+
+
+
         // Spawns monsters if broken
         // Don't spawn monsters if player is actively repairing
-        if(_currentState == State.Broken && !IsRepairing)
+        if (_currentState == State.Broken && !IsRepairing)
         {
             CurrentSpawnTimer -= Time.deltaTime;
             if(CurrentSpawnTimer <= 0)
             {
-                // Spawn monster here
+
+#if UNITY_EDITOR
+                if (_debugAllowSpawning)
+                {
+                    Instantiate(_spawnedEnemyObj, transform.position, transform.rotation);
+                }
+#else
+                Instantiate(_spawnedEnemyObj, transform.position, transform.rotation);
+
+#endif
+
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
             }
         }
@@ -160,6 +183,7 @@ public class EnemySpawner : DurationInteractable
                 }
             }
         }
+
         // Change from repaired to breaking
         if (_currentState == State.Repaired && CanBreak())
         {
