@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private int _playerID;
     private bool _allowInput = true;
 
+    public Vector2 MoveInput { get; private set; }
+
     private void Awake()
     {
         _movement = GetComponent<Movement>();
@@ -20,8 +22,13 @@ public class PlayerController : MonoBehaviour
     }
     public void OnMove(InputAction.CallbackContext context)
     {
-        if(!_allowInput) { return; }
-        _movement.InputMove(context.ReadValue<Vector2>());
+        if(!_allowInput)
+        {
+            MoveInput = Vector2.zero;
+            return; 
+        }
+        MoveInput = context.ReadValue<Vector2>();
+        _movement.InputMove(MoveInput);
     }
     public void OnUse(InputAction.CallbackContext context)
     {
