@@ -51,8 +51,12 @@ public class EnemySpawner : DurationInteractable
     [Tooltip("Sound to be played after a successful repair")]
     [SerializeField] private AudioEvent _completeRepairSound;
 
+    [Tooltip("Sound to be played while a repair is ongoing")]
+    [SerializeField] private AudioEvent _inProgressRepairSound;
+
     [Tooltip("Sound to be played after the spawner breaks")]
     [SerializeField] private AudioEvent _completeBreakSound;
+
 
     enum State
     { 
@@ -61,10 +65,10 @@ public class EnemySpawner : DurationInteractable
         Broken,
     }
 
-    public float CurrentSpawnTimer { get; private set; }   // Time left for a broken item to spawn an enemy
-    public float CurrentBreakingTimer { get; private set; }   // Time left for this item to break once it starts breaking
-    public float BreakCheckTimer { get; private set; }   // Time left for this item to potentially start breaking, if repaired
-    public bool IsRepairing { get; private set; }
+    public float CurrentSpawnTimer      { get; private set; }   // Time left for a broken item to spawn an enemy
+    public float CurrentBreakingTimer   { get; private set; }   // Time left for this item to break once it starts breaking
+    public float BreakCheckTimer        { get; private set; }   // Time left for this item to potentially start breaking, if repaired
+    public bool IsRepairing             { get; private set; }
 
     private List<GameObject> _players = new List<GameObject>();
 
@@ -116,6 +120,27 @@ public class EnemySpawner : DurationInteractable
         _players.Remove(playerInput.gameObject);
     }
 
+    public override void StartInteract(PlayerInteractor player)
+    {
+        base.StartInteract(player);
+
+        if(_inProgressRepairSound && _audioSource)
+        {
+            // Set audio source here to loop if needed, then toggle off in StopInteract()
+            _inProgressRepairSound.Play(_audioSource);
+        }
+    }
+
+    public override void StopInteract(PlayerInteractor player)
+    {
+        base.StopInteract(player);
+
+        if(_audioSource)
+        {
+            _audioSource.Stop();
+        }
+    }
+
     public override bool IsInteractable(ToolType tool)
     {
         return _currentState != State.Repaired && base.IsInteractable(tool);
@@ -140,9 +165,6 @@ public class EnemySpawner : DurationInteractable
 
     public void UpdateBreaking()
     {
-
-
-
         // Spawns monsters if broken
         // Don't spawn monsters if player is actively repairing
         if (_currentState == State.Broken && !IsRepairing)
@@ -165,8 +187,8 @@ public class EnemySpawner : DurationInteractable
             }
         }
 
-        // Change from breaking to broken
-        if (_currentState == State.Breaking)
+        // Change from breaking to broken. Don't break if actively repairing
+        if (_currentState == State.Breaking && !IsInProgress)
         {
             CurrentBreakingTimer -= Time.deltaTime;
             if(CurrentBreakingTimer < 0)

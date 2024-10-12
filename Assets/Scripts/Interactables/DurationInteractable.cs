@@ -21,21 +21,16 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
 
     public virtual void StartInteract(PlayerInteractor player)
     {
-        if(_interactor == null)
-        {
-            _interactor = player;
-            TimeRemaining = MaxDuration;
-            IsInProgress = true;
-        }
+
+        _interactor = player;
+        TimeRemaining = MaxDuration;
+        IsInProgress = true;
     }
 
     public virtual void StopInteract(PlayerInteractor player)
     {
-        if(_interactor == player)
-        {
-            _interactor = null;
-            IsInProgress = false;
-        }
+        _interactor = null;
+        IsInProgress = false;
     }
 
     protected virtual void Update()
@@ -49,6 +44,7 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
             CompleteInteraction();
         }
     }
+
     protected abstract void CompleteInteraction();
     protected abstract float GetInteractionDuration();
 }

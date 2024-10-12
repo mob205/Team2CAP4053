@@ -11,7 +11,6 @@ public class Tool : MonoBehaviour, IInteractable
     
     public void StartInteract(PlayerInteractor player)
     {
-        if (_isHeld) return;
         _isHeld = player.EquipTool(this);
     }
 

@@ -19,6 +19,5 @@ public class EnemyInteractable : MonoBehaviour, IInteractable
 
     public void StopInteract(PlayerInteractor player)
     {
-
     }
 }
