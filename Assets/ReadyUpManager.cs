@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class ReadyUpManager : MonoBehaviour
 {
@@ -13,19 +12,33 @@ public class ReadyUpManager : MonoBehaviour
 
     private Dictionary<PlayerInput, bool> _readyStates = new();
 
+    public static event Action OnReadyUp;
+
+    private bool _hasStarted;
+
     public void OnPlayerJoined(PlayerInput player)
     {
         player.actions[_readyAction.reference.action.id.ToString()].started += (context) => OnPlayerReadyUp(player, context);
+        _readyStates.Add(player, false);
         ++_numPlayers;
     }
 
     private void OnPlayerReadyUp(PlayerInput player, InputAction.CallbackContext context)
     {
-        if(!_readyStates.ContainsKey(player))
+        if(!_hasStarted)
         {
-            _readyStates.Add(player, false);
+            _readyStates[player] = !_readyStates[player];
+            TryReady();
         }
-        _readyStates[player] = !_readyStates[player];
+    }
 
+    private void TryReady()
+    {
+        foreach(var readyStatus in _readyStates.Values)
+        {
+            if(!readyStatus) { return; }
+        }
+        _hasStarted = true;
+        OnReadyUp?.Invoke();
     }
 }
