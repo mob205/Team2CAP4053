@@ -15,7 +15,7 @@ public class EnableOnReady : MonoBehaviour
         {
             item.SetActive(false);
         }
-        ReadyUpManager.OnReadyUp += EnableAll;
+        ReadyUpManager.Instance.OnReadyUp.AddListener(EnableAll);
     }
     private void EnableAll()
     {

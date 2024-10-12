@@ -15,6 +15,8 @@ public class GameStateManager : MonoBehaviour
     public int PlayersAlive { get; private set; }
     public int TotalPlayers { get; private set; }
 
+    private bool _isTicking;
+
     private void Start()
     {
         if(_numRevivesUsed)
@@ -42,13 +44,20 @@ public class GameStateManager : MonoBehaviour
 
     private void Update()
     {
-        TickTimer(Time.deltaTime);
+        if(_isTicking)
+        {
+            TickTimer(Time.deltaTime);
+        }
+    }
+
+    public void StartTicking()
+    {
+        _isTicking = true;
     }
 
     private void OnJoin(PlayerInput player)
     {
-        var health = player.GetComponent<PlayerHealth>();
-        if(health)
+        if(player.TryGetComponent(out PlayerHealth health))
         {
             health.OnDeath.AddListener(OnDeath);
             health.OnRevive.AddListener(OnRevive);

@@ -19,6 +19,6 @@ public class TimerUI : MonoBehaviour
 
     private void Update()
     {
-        _textUI.text = ((int)_stateManager.TimeRemaining).ToString();
+        _textUI.text = Mathf.CeilToInt(_stateManager.TimeRemaining).ToString();
     }
 }
