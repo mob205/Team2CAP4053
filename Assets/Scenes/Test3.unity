@@ -4098,19 +4098,19 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 8315869688790216407, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
-      propertyPath: m_spawnPoints.Array.data[0]
+      propertyPath: _spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 2071248210}
     - target: {fileID: 8315869688790216407, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
-      propertyPath: m_spawnPoints.Array.data[1]
+      propertyPath: _spawnPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1668911575}
     - target: {fileID: 8315869688790216407, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
-      propertyPath: m_spawnPoints.Array.data[2]
+      propertyPath: _spawnPoints.Array.data[2]
       value: 
       objectReference: {fileID: 1963673068}
     - target: {fileID: 8315869688790216407, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
-      propertyPath: m_spawnPoints.Array.data[3]
+      propertyPath: _spawnPoints.Array.data[3]
       value: 
       objectReference: {fileID: 786300816}
     m_RemovedComponents: []

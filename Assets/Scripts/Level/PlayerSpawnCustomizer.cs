@@ -7,29 +7,27 @@ public class PlayerSpawnCustomizer : MonoBehaviour
 {
     [field: SerializeField] public int MaxPlayers { get; private set; } = 4;
 
-    [SerializeField] private Transform[] m_spawnPoints;
-    [SerializeField] private Material[] m_materials;
+    [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private GameObject[] _playerPrefabs;
 
-    // Array to hold different player prefabs
-    [SerializeField] private GameObject[] m_playerPrefabs;
+    private PlayerInputManager _inputManager;
 
-    private int m_numPlayers = 0;
+    private int _numPlayers = 0;
 
+
+    private void Awake()
+    {
+        _inputManager = GetComponent<PlayerInputManager>();
+        _inputManager.playerPrefab = _playerPrefabs[0];
+    }
     public void OnPlayerJoined(PlayerInput input)
     {
-        // Select the appropriate player prefab for the current player
-        GameObject playerPrefab = m_playerPrefabs[m_numPlayers % m_playerPrefabs.Length];
+        GameObject player = input.gameObject;
 
-        // Instantiate the player at the spawn point
-        GameObject player = Instantiate(playerPrefab, m_spawnPoints[m_numPlayers % m_spawnPoints.Length].position, Quaternion.identity);
-
-        // Assign the input to the new player
-        player.GetComponent<PlayerInput>().SwitchCurrentControlScheme(input.currentControlScheme);
-
-        // Customize the player with a material
-        player.GetComponent<MeshRenderer>().SetMaterials(new List<Material> { m_materials[m_numPlayers % m_materials.Length] });
+        player.transform.position = _spawnPoints[_numPlayers % _spawnPoints.Length].position;
 
         // Update player count
-        ++m_numPlayers;
+        ++_numPlayers;
+        _inputManager.playerPrefab = _playerPrefabs[_numPlayers % _playerPrefabs.Length];
     }
 }

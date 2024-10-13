@@ -116,16 +116,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxPlayers>k__BackingField: 4
-  m_spawnPoints:
+  _spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  m_materials:
-  - {fileID: 2100000, guid: c3ad92e8ef250e24c914ae53cd255840, type: 2}
-  - {fileID: 2100000, guid: 7f2ec2dd9ecb9414b85125f125b98d6a, type: 2}
-  - {fileID: 2100000, guid: b3bae1fe7b5805541ab2df8d8547033a, type: 2}
-  - {fileID: 2100000, guid: cd836a689d714fa4f9b1403d8feef652, type: 2}
+  _playerPrefabs:
+  - {fileID: 927568607140628226, guid: 4d64d6d7f7d4b0c44b715ffa8da2dbf1, type: 3}
+  - {fileID: 4948395831838786266, guid: 1e740d600af8322408e906ed13ef34fd, type: 3}
+  - {fileID: 6750719865998541181, guid: 883571629b9c0c142a04dee7830eb42b, type: 3}
+  - {fileID: 4822424384675739066, guid: ba72334f2039ce042b6a81a657cf8902, type: 3}
 --- !u!114 &8029905756050354791
 MonoBehaviour:
   m_ObjectHideFlags: 0
