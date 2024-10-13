@@ -3,7 +3,77 @@ guid: 56cf9b979fbf8b94f9e46d879c333cc3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: 176c2d1f4b78678489e3a7ae2936185b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: c6e42d5847c3dd846bc63bce2f121889, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dots
+    second: {fileID: 2100000, guid: 873d5506d52b6944496dd8f768040349, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyes
+    second: {fileID: 2100000, guid: 6de912e4182fbe045860267024fe50b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hair
+    second: {fileID: 2100000, guid: be287ab807e229841bdac512f6445f51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hat
+    second: {fileID: 2100000, guid: 5784bd3a3271bcd4ba05a20c571fa9ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inner mouth
+    second: {fileID: 2100000, guid: 4a24162d8a4f66a419d6090a076d2832, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jeans
+    second: {fileID: 2100000, guid: bd08c4e069c020d4d850e223963df83f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jumper
+    second: {fileID: 2100000, guid: 83f29e7a77f88c649b806217e477779e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: laces
+    second: {fileID: 2100000, guid: 05ae7181966d6d549946638e12ed1310, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: scondary colour
+    second: {fileID: 2100000, guid: 68cf77a4705adcc40b8c62b1f5ad4c49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teeth
+    second: {fileID: 2100000, guid: f297381e5246c754abc72d7415301f9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tick
+    second: {fileID: 2100000, guid: a8f66b643ba27e047bd6e0acbc8d4607, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tounge
+    second: {fileID: 2100000, guid: d0b5908371045b247a1b84e19e9378b7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
