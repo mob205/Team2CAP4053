@@ -26,7 +26,6 @@ public class PlayerSpawnCustomizer : MonoBehaviour
 
         player.transform.position = _spawnPoints[_numPlayers % _spawnPoints.Length].position;
 
-        // Update player count
         ++_numPlayers;
         _inputManager.playerPrefab = _playerPrefabs[_numPlayers % _playerPrefabs.Length];
     }
