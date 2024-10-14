@@ -1,7 +1,7 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class EnemySpawner : DurationInteractable
 {
@@ -57,6 +57,8 @@ public class EnemySpawner : DurationInteractable
     [Tooltip("Sound to be played after the spawner breaks")]
     [SerializeField] private AudioEvent _completeBreakSound;
 
+    public UnityEvent OnBreak;
+    public UnityEvent OnRepair;
 
     enum State
     { 
@@ -156,6 +158,8 @@ public class EnemySpawner : DurationInteractable
         {
             _completeRepairSound.Play(_audioSource);
         }
+
+        OnRepair?.Invoke();
     }
 
     protected override float GetInteractionDuration()
@@ -203,6 +207,8 @@ public class EnemySpawner : DurationInteractable
                 {
                     _completeBreakSound.Play(_audioSource);
                 }
+
+                OnBreak?.Invoke();
             }
         }
 

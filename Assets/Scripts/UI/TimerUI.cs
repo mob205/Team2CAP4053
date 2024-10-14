@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class TimerUI : MonoBehaviour
 {
-    [SerializeField] private GameStateManager _stateManager;
-
+    private GameStateManager _stateManager;
     private TextMeshProUGUI _textUI;
 
     private void Start()
     {
+        _stateManager = FindObjectOfType<GameStateManager>();
         if(_stateManager == null)
         {
-            Debug.Log("No state manager provided to timerUI.");
+            Debug.Log("No state manager found.");
             Destroy(this);
         }
         _textUI = GetComponent<TextMeshProUGUI>();

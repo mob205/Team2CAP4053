@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8315869688790216407}
   - component: {fileID: 8029905756050354791}
   - component: {fileID: 6846145323877246979}
+  - component: {fileID: 7885671376069132636}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -182,3 +183,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <LevelDuration>k__BackingField: 15
   _numRevivesUsed: {fileID: 11400000, guid: bcaafe1469e9a5743b33a3a21c45e5ba, type: 2}
+--- !u!114 &7885671376069132636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2821446785865351724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3035050d4884b014e8c4aecd086b4508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _basePointsPerSecond: 0
+  _decreasePerBreak: 0
+  _spawnerBreakPenalty: 0
+  _playerDeathPenalty: 0

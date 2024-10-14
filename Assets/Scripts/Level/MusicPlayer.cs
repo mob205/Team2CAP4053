@@ -18,6 +18,6 @@ public class MusicPlayer : MonoBehaviour
     {
         _pregameMusic.Stop();
         _transition.Play();
-        _gameMusic.PlayDelayed(_transition.clip.length * .8f); // .8 is a magic number here but it feels too delayed otherwise
+        _gameMusic.PlayDelayed(_transition.clip.length * .75f); // .8 is a magic number here but it feels too delayed otherwise
     }
 }
