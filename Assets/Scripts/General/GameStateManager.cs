@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,12 +9,27 @@ public class GameStateManager : MonoBehaviour
 
     [Tooltip("SO representing the number of revives used. Provide this so it can be reset at the start of every level")]
     [SerializeField] ScriptableInt _numRevivesUsed;
-    public float TimeRemaining { get; private set; }
 
+    public UnityEvent OnGameWin;
+    public UnityEvent OnGameLose;
+    public UnityEvent OnGameEnd;
+
+    public static GameStateManager Instance { get; private set; }
+
+    public float TimeRemaining { get; private set; }
     public int PlayersAlive { get; private set; }
     public int TotalPlayers { get; private set; }
 
     private bool _isTicking;
+
+    private void Awake()
+    {
+        if(Instance != null)
+        {
+            Destroy(this);
+        }
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -23,24 +37,9 @@ public class GameStateManager : MonoBehaviour
         {
             _numRevivesUsed.Value = 0;
         }
-
-        if(PlayerInputManager.instance)
-        {
-            PlayerInputManager.instance.onPlayerJoined += OnJoin;
-            PlayerInputManager.instance.onPlayerLeft += OnLeave;
-        }
-
         TimeRemaining = LevelDuration;
     }
 
-    private void Destroy()
-    {
-        if(PlayerInputManager.instance)
-        {
-            PlayerInputManager.instance.onPlayerJoined -= OnJoin;
-            PlayerInputManager.instance.onPlayerLeft -= OnLeave;
-        }
-    }
 
     private void Update()
     {
@@ -55,7 +54,7 @@ public class GameStateManager : MonoBehaviour
         _isTicking = true;
     }
 
-    private void OnJoin(PlayerInput player)
+    public void OnJoin(PlayerInput player)
     {
         if(player.TryGetComponent(out PlayerHealth health))
         {
@@ -89,10 +88,18 @@ public class GameStateManager : MonoBehaviour
     }
     private void CheckAliveStatus()
     {
-        if(PlayersAlive <= 0)
+        Debug.Log(PlayersAlive);
+        if (PlayersAlive <= 0)
         {
-            // Defeat stuff here
+            EndGame();
+            OnGameLose?.Invoke();
         }
+    }
+    
+    private void EndGame()
+    {
+        _isTicking = false;
+        OnGameEnd?.Invoke();
     }
 
     private void TickTimer(float deltaTime)
@@ -100,7 +107,8 @@ public class GameStateManager : MonoBehaviour
         TimeRemaining -= deltaTime;
         if(TimeRemaining <= 0)
         {
-            // Time victory stuff here
+            EndGame();
+            OnGameWin?.Invoke();
         }
     }
 }

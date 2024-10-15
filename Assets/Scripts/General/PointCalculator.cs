@@ -20,7 +20,7 @@ public class PointCalculator : MonoBehaviour
 
     public float Points { get; private set; }
 
-    private bool _canAddPoints;
+    private bool _gameInProgress;
 
     private int _numSpawnersBroken;
 
@@ -33,34 +33,33 @@ public class PointCalculator : MonoBehaviour
             spawner.OnRepair.AddListener(OnSpawnerRepair);
         }
     }
-    private void Start()
-    {
-        ReadyUpManager.Instance.OnReadyUp.AddListener(OnReadyUp);
-    }
 
     private void Update()
     {
-        if(_canAddPoints)
+        if(_gameInProgress)
         {
             Points += (_basePointsPerSecond - (_decreasePerBreak * _numSpawnersBroken)) * Time.deltaTime;
         }
-
-        Debug.Log(Points);
     }
 
-    private void OnReadyUp()
+    public void OnReadyUp()
     {
         var players = FindObjectsByType<PlayerHealth>(FindObjectsSortMode.None);
         foreach (var player in players)
         {
             player.OnDeath.AddListener(OnPlayerDeath);
         }
+        _gameInProgress = true;
+    }
 
-        _canAddPoints = true;
+    public void OnGameEnd()
+    {
+        _gameInProgress = false;
     }
 
     private void OnSpawnerBreak()
     {
+        if (!_gameInProgress) { return; }
         Points -= _spawnerBreakPenalty;
         ++_numSpawnersBroken;
     }
@@ -72,6 +71,7 @@ public class PointCalculator : MonoBehaviour
 
     private void OnPlayerDeath(PlayerHealth health)
     {
+        if (!_gameInProgress) { return; }
         Points -= _playerDeathPenalty;
     }
 }

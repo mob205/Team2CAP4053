@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnableOnReady : MonoBehaviour
+public class EnableInLevel : MonoBehaviour
 {
     [Tooltip("Objects to enable when the Ready signal is given")]
     [SerializeField] private GameObject[] _enableOnReady;
@@ -16,12 +16,20 @@ public class EnableOnReady : MonoBehaviour
             item.SetActive(false);
         }
         ReadyUpManager.Instance.OnReadyUp.AddListener(EnableAll);
+        GameStateManager.Instance.OnGameEnd.AddListener(DisableAll);
     }
     private void EnableAll()
     {
         foreach(var item in _enableOnReady)
         {
             item.SetActive(true);
+        }
+    }
+    private void DisableAll()
+    {
+        foreach(var item in _enableOnReady)
+        {
+            item.SetActive(false);
         }
     }
 }
