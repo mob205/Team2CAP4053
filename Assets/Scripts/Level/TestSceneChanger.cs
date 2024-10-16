@@ -32,6 +32,9 @@ public class TestSceneChanger : MonoBehaviour
         {
             player.actions[_nextAction.action.id.ToString()].started -= ChangeSceneDelayed;
         }
-        Invoke(nameof(ChangeScene), 0);
+        if(this)
+        {
+            Invoke(nameof(ChangeScene), 0);
+        }
     }
 }

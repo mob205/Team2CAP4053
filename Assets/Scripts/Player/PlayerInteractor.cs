@@ -42,7 +42,7 @@ public class PlayerInteractor : MonoBehaviour
         Vector3 cur = transform.position;
         foreach(var inter in _nearby)
         {
-            if(!inter.Key.IsInteractable(GetHeldToolType())) { continue; }
+            if(!inter.Value || !inter.Key.IsInteractable(GetHeldToolType())) { continue; }
             float dist = (inter.Value.position - cur).sqrMagnitude;
             if(dist < closest)
             {

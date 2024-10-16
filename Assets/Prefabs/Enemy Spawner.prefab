@@ -357,6 +357,7 @@ MonoBehaviour:
   _spawnedEnemyObj: {fileID: 4310102443980061787, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
   _spawnDelayMinimum: 2
   _spawnDelayMaximum: 5
+  _debugAllowSpawning: 0
   _counter: {fileID: 11400000, guid: 80060eb87930ad14d9286351d57f5930, type: 2}
   _maxBroken: 3
   _breakingDuration: 5
@@ -364,7 +365,14 @@ MonoBehaviour:
   _breakChanceDistanceFactor: 0.05
   _breakChecksPerSecond: 4
   _completeRepairSound: {fileID: 11400000, guid: 6a08bf06903641e4780b8a8ba22b16cd, type: 2}
+  _inProgressRepairSound: {fileID: 0}
   _completeBreakSound: {fileID: 0}
+  OnBreak:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRepair:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!33 &4193564816916170563
 MeshFilter:
   m_ObjectHideFlags: 0

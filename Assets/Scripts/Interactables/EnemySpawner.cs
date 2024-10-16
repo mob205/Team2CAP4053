@@ -60,6 +60,13 @@ public class EnemySpawner : DurationInteractable
     public UnityEvent OnBreak;
     public UnityEvent OnRepair;
 
+    [Header("Test Colors")]
+    [SerializeField] Color _repairedColor;
+    [SerializeField] Color _breakingColor;
+    [SerializeField] Color _brokenColor;
+
+    private Material _mat;
+
     enum State
     { 
         Repaired,
@@ -70,7 +77,6 @@ public class EnemySpawner : DurationInteractable
     public float CurrentSpawnTimer      { get; private set; }   // Time left for a broken item to spawn an enemy
     public float CurrentBreakingTimer   { get; private set; }   // Time left for this item to break once it starts breaking
     public float BreakCheckTimer        { get; private set; }   // Time left for this item to potentially start breaking, if repaired
-    public bool IsRepairing             { get; private set; }
 
     private List<GameObject> _players = new List<GameObject>();
 
@@ -91,6 +97,7 @@ public class EnemySpawner : DurationInteractable
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+        _mat = GetComponent<MeshRenderer>().material;
     }
 
     private void Start()
@@ -159,6 +166,9 @@ public class EnemySpawner : DurationInteractable
             _completeRepairSound.Play(_audioSource);
         }
 
+        // Change to repaired model
+        _mat.color = _repairedColor;
+
         OnRepair?.Invoke();
     }
 
@@ -171,7 +181,7 @@ public class EnemySpawner : DurationInteractable
     {
         // Spawns monsters if broken
         // Don't spawn monsters if player is actively repairing
-        if (_currentState == State.Broken && !IsRepairing)
+        if (_currentState == State.Broken && !IsInProgress)
         {
             CurrentSpawnTimer -= Time.deltaTime;
             if(CurrentSpawnTimer <= 0)
@@ -200,6 +210,7 @@ public class EnemySpawner : DurationInteractable
                 _currentState = State.Broken;
 
                 // Switch to broken model
+                _mat.color = _brokenColor;
 
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
 
@@ -216,6 +227,7 @@ public class EnemySpawner : DurationInteractable
         if (_currentState == State.Repaired && CanBreak())
         {
             // Switch model/play animation/etc.
+            _mat.color = _breakingColor;
 
             _currentState = State.Breaking;
             _timeSinceLastBroken = 0;
