@@ -732,7 +732,7 @@ MonoBehaviour:
     m_Bits: 1
   _viewBlocking:
     serializedVersion: 2
-    m_Bits: 521
+    m_Bits: 520
   _walkPointRange: 50
   _runSpeed: 2
   _walkSpeed: 1

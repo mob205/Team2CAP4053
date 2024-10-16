@@ -69,8 +69,13 @@ public class PlayerInteractor : MonoBehaviour
         var interactable = other.GetComponent<IInteractable>();
         if(interactable != null)
         {
-            interactable.StopInteract(this);
             _nearby.Remove(interactable);
+            
+            if(interactable == _curInteractable)
+            {
+                interactable.StopInteract(this);
+                _curInteractable = null;
+            }
         }
     }
 
