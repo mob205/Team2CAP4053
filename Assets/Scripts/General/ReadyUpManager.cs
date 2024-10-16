@@ -21,7 +21,7 @@ public class ReadyUpManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
         {
             Destroy(this);
         }

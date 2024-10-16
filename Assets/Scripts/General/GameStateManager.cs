@@ -1,6 +1,7 @@
 using UnityEngine.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameStateManager : MonoBehaviour
     public UnityEvent OnGameEnd;
 
     public static GameStateManager Instance { get; private set; }
+
+    public List<PlayerInput> Players { get; private set; } = new();
 
     public float TimeRemaining { get; private set; }
     public int PlayersAlive { get; private set; }
@@ -66,6 +69,8 @@ public class GameStateManager : MonoBehaviour
             Debug.LogError("No PlayerHealth found on this player object.");
         }
 
+        Players.Add(player);
+
         ++PlayersAlive;
         ++TotalPlayers;
     }
@@ -74,6 +79,7 @@ public class GameStateManager : MonoBehaviour
         --PlayersAlive;
         --TotalPlayers;
         CheckAliveStatus();
+        Players.Remove(player);
     }
 
     private void OnDeath(PlayerHealth player)
@@ -88,7 +94,6 @@ public class GameStateManager : MonoBehaviour
     }
     private void CheckAliveStatus()
     {
-        Debug.Log(PlayersAlive);
         if (PlayersAlive <= 0)
         {
             EndGame();

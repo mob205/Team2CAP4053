@@ -768,6 +768,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bdbf49e10818b4eb7db3f0a9da6872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nextAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Next
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 74c9b39a-fb86-4c30-86e7-341df26597d7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 5558965666655375692, guid: b2d2b760a0bc1bd478287ad0dd5f0f55, type: 3}
 --- !u!114 &288291313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2548,6 +2560,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bdbf49e10818b4eb7db3f0a9da6872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nextAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Next
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 1b59aeb6-8a78-44ed-8831-597b3259cd74
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 5558965666655375692, guid: b2d2b760a0bc1bd478287ad0dd5f0f55, type: 3}
 --- !u!1 &1042906637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,6 +4809,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bdbf49e10818b4eb7db3f0a9da6872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nextAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 69d90de6-2bbc-46eb-9a77-91a4fda9149b
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!4 &1891161554
 Transform:
   m_ObjectHideFlags: 0
@@ -5501,17 +5537,41 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: OnGameWin.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: OnGameLose.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1767877172}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameWin.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1107430909}
+      objectReference: {fileID: 989839877}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameLose.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1168787006}
+      objectReference: {fileID: 288291312}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: OnGameWin.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TestSubscribe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: OnGameLose.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TestSubscribe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: OnGameWin.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TestSceneChanger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: OnGameLose.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TestSceneChanger, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8315869688790216407, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: _spawnPoints.Array.data[0]
       value: 
