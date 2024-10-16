@@ -2888,7 +2888,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5181447135560425452}
-  m_Mesh: {fileID: 5306332447776161348, guid: 1bf1cd8578dd52f4ca6fb896de3c2f57, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 00a50f4501fba2d479acef72fbf97892, type: 2}
 --- !u!65 &807803601723164168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3542,7 +3542,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8257127134712534337}
-  m_Mesh: {fileID: -7194535320391010713, guid: 1bf1cd8578dd52f4ca6fb896de3c2f57, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 707d259ee1a192b46b33dd63d92137bc, type: 2}
 --- !u!23 &1109726174906803846
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6604,6 +6604,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7061380254226260008, guid: 5d713d1975a6f98439e06d0c60b53455, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: b348ee6c48d864144aa93878cd2d1b2b, type: 2}
     - target: {fileID: 7568110984064189077, guid: 5d713d1975a6f98439e06d0c60b53455, type: 3}
       propertyPath: frontWalls.Array.data[7]
       value: 
@@ -9690,7 +9694,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5206042613088200181}
-  m_Mesh: {fileID: -6763583421306502351, guid: 1bf1cd8578dd52f4ca6fb896de3c2f57, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e9120643f877c7d4ab045957d6b8e7c3, type: 2}
 --- !u!114 &3930860539907959997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13787,7 +13791,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3008421549955328912}
-  m_Mesh: {fileID: 1654167623372299304, guid: 1bf1cd8578dd52f4ca6fb896de3c2f57, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 23ccda39147a7bb4c91af35d2868d242, type: 2}
 --- !u!64 &5474888712896244214
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15054,6 +15058,10 @@ PrefabInstance:
       propertyPath: frontWalls.Array.data[7]
       value: 
       objectReference: {fileID: 8731491136751902137}
+    - target: {fileID: 8486261085292429475, guid: 5f22aa544bfa97e4489ea544359b2741, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 2d557010aee43d04aa4fdfbf71a409f9, type: 2}
     - target: {fileID: 8532954879828041773, guid: 5f22aa544bfa97e4489ea544359b2741, type: 3}
       propertyPath: m_Name
       value: LeftFogWall
@@ -16233,6 +16241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightFogWall
       objectReference: {fileID: 0}
+    - target: {fileID: 2234615773906410123, guid: a770efb62dd03b841b15de88854be83a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: dc45d399951351749b66a313dda9b592, type: 2}
     - target: {fileID: 4790647347997292720, guid: a770efb62dd03b841b15de88854be83a, type: 3}
       propertyPath: frontWalls.Array.data[7]
       value: 
