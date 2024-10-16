@@ -6,15 +6,16 @@ public class TestSceneChanger : MonoBehaviour
 {
 
     [SerializeField] private InputActionProperty _nextAction;
+    [SerializeField] string _scene;
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(_scene);
     }
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(_scene);
     }
 
     public void TestSubscribe()
