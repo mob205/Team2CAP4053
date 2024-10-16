@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 208255483}
   - component: {fileID: 208255482}
   - component: {fileID: 208255481}
+  - component: {fileID: 208255485}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -468,6 +469,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &208255485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208255479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8eca1c779f03be4a85c5fafdf1fb96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &236686390
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +698,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 208255481}
+      - m_Target: {fileID: 208255485}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnQuitButton
         m_Mode: 1
@@ -818,7 +831,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 208255481}
+      - m_Target: {fileID: 208255485}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnPlayButton
         m_Mode: 1
@@ -1476,7 +1489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c99350811cbb822458943892b61d3cb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2e0608c020ffb7488f054921efd66cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

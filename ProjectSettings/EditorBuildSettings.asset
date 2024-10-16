@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test3.unity
     guid: 8faf59eba0132b04b8eb4dec4c008c91
+  - enabled: 1
+    path: Assets/Scenes/WTHLevel1.unity
+    guid: d2465d3b26bb9344ea7ea0a5301e8a8b
   m_configObjects: {}
