@@ -8,6 +8,7 @@ public class AnimationStateController : MonoBehaviour
     int isMovingHash;
     int isDeadHash;
     int reviveHash;
+    int IsToolingHash;
 
     // Speed of rotation when changing direction
     public float rotationSpeed = 10f;
@@ -22,6 +23,7 @@ public class AnimationStateController : MonoBehaviour
         isMovingHash = Animator.StringToHash("IsMoving");
         isDeadHash = Animator.StringToHash("IsDead");
         reviveHash = Animator.StringToHash("Revive");
+        IsToolingHash = Animator.StringToHash("IsTooling");
 
         // Try to get the PlayerHealth component on the same GameObject
         player = GetComponentInParent<PlayerController>();
@@ -72,7 +74,20 @@ public class AnimationStateController : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
-    }
+
+        // Check if the player is holding a tool and interacting with an EnemySpawner
+        bool isTooling = false;
+
+        if (player.GetComponent<PlayerInteractor>().HeldTool != null && player.GetComponent<PlayerInteractor>()._curInteractable is EnemySpawner)
+        {
+            // Player is interacting with the EnemySpawner
+            isTooling = true;
+        }
+
+
+        // Set IsTooling in the animator based on the tool interaction status
+        animator.SetBool(IsToolingHash, isTooling);
+}
 
     // Handle death event from PlayerHealth
     void OnPlayerDeath(PlayerHealth player)

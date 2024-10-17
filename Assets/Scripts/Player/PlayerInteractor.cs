@@ -9,7 +9,7 @@ public class PlayerInteractor : MonoBehaviour
     [SerializeField] private Transform _toolPos;
 
     private Dictionary<IInteractable, Transform> _nearby = new Dictionary<IInteractable, Transform>();
-    private IInteractable _curInteractable;
+    public IInteractable _curInteractable;
 
     public bool EquipTool(Tool tool)
     {

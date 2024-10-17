@@ -131,7 +131,7 @@ public class EnemySpawner : DurationInteractable
 
     public override void StartInteract(PlayerInteractor player)
     {
-        base.StartInteract(player);
+        base.StartInteract(player); 
 
         if(_inProgressRepairSound && _audioSource)
         {
