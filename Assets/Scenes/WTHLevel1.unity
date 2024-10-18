@@ -223,6 +223,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 959
+      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (1)
@@ -1439,6 +1447,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 959
+      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (6)
@@ -2149,6 +2165,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 959
+      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (3)
@@ -2694,6 +2718,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 959
+      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (5)
@@ -2954,6 +2986,14 @@ PrefabInstance:
     - target: {fileID: 1660463916037443666, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 959
       objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
@@ -3287,6 +3327,14 @@ PrefabInstance:
     - target: {fileID: 1660463916037443666, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 959
       objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
@@ -4172,6 +4220,14 @@ PrefabInstance:
     - target: {fileID: 1660463916037443666, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 959
       objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name

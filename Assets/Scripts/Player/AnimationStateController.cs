@@ -16,6 +16,7 @@ public class AnimationStateController : MonoBehaviour
     // Reference to PlayerHealth script
     private PlayerController player;
     private PlayerHealth playerHealth;
+    private PlayerInteractor playerInteractor;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class AnimationStateController : MonoBehaviour
         // Try to get the PlayerHealth component on the same GameObject
         player = GetComponentInParent<PlayerController>();
         playerHealth = player.GetComponent<PlayerHealth>();
+        playerInteractor = player.GetComponent<PlayerInteractor>();
 
         // If not found, attempt to find it in the scene (you may need to customize this)
         if (playerHealth == null)
@@ -77,13 +79,10 @@ public class AnimationStateController : MonoBehaviour
 
         // Check if the player is holding a tool and interacting with an EnemySpawner
         bool isTooling = false;
-
-        if (player.GetComponent<PlayerInteractor>().HeldTool != null && player.GetComponent<PlayerInteractor>()._curInteractable is EnemySpawner)
+        if(playerInteractor.CurrentInteractable is EnemySpawner)
         {
-            // Player is interacting with the EnemySpawner
-            isTooling = true;
+            isTooling = ((EnemySpawner)playerInteractor.CurrentInteractable).IsInProgress;
         }
-
 
         // Set IsTooling in the animator based on the tool interaction status
         animator.SetBool(IsToolingHash, isTooling);

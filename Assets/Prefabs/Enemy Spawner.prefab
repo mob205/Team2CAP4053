@@ -373,6 +373,9 @@ MonoBehaviour:
   OnRepair:
     m_PersistentCalls:
       m_Calls: []
+  _repairedColor: {r: 0, g: 0, b: 0, a: 0}
+  _breakingColor: {r: 0, g: 0, b: 0, a: 0}
+  _brokenColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &4193564816916170563
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -433,10 +436,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 959
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0

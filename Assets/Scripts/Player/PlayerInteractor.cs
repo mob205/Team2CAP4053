@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerInteractor : MonoBehaviour
 {
     public Tool HeldTool { get; private set; }
+    public IInteractable CurrentInteractable { get; private set; }
 
     [SerializeField] private Transform _toolPos;
 
     private Dictionary<IInteractable, Transform> _nearby = new Dictionary<IInteractable, Transform>();
-    public IInteractable _curInteractable;
 
     public bool EquipTool(Tool tool)
     {
@@ -18,7 +18,7 @@ public class PlayerInteractor : MonoBehaviour
         HeldTool = tool;
         HeldTool.transform.parent = _toolPos;
         HeldTool.transform.localPosition = Vector3.zero;
-        HeldTool.transform.localRotation = _toolPos.localRotation;
+        HeldTool.transform.rotation = _toolPos.rotation;
         return true;
     }
     public void UnequipTool()
@@ -32,8 +32,8 @@ public class PlayerInteractor : MonoBehaviour
     }
     public void StartInteract()
     {
-        _curInteractable = GetClosestInteractable();
-        _curInteractable?.StartInteract(this);
+        CurrentInteractable = GetClosestInteractable();
+        CurrentInteractable?.StartInteract(this);
     }
     private IInteractable GetClosestInteractable()
     {
@@ -54,7 +54,9 @@ public class PlayerInteractor : MonoBehaviour
     }
     public void StopInteract()
     {
-        _curInteractable?.StopInteract(this);
+        Debug.Log("Stopping interactions");
+        CurrentInteractable?.StopInteract(this);
+        CurrentInteractable = null;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -71,10 +73,9 @@ public class PlayerInteractor : MonoBehaviour
         {
             _nearby.Remove(interactable);
             
-            if(interactable == _curInteractable)
+            if(interactable == CurrentInteractable)
             {
                 interactable.StopInteract(this);
-                _curInteractable = null;
             }
         }
     }
