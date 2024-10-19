@@ -18,6 +18,15 @@ public class AnimationStateController : MonoBehaviour
     private PlayerHealth playerHealth;
     private PlayerInteractor playerInteractor;
 
+    //PARTICLE SYSTEMS
+
+    [Space(20)]
+    //[Header("EFFECTS")]
+    [Space(10)]
+   
+    // The following particle systems are used as tire smoke when the car drifts.
+    public ParticleSystem SmokeParticleSystem;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -30,6 +39,7 @@ public class AnimationStateController : MonoBehaviour
         player = GetComponentInParent<PlayerController>();
         playerHealth = player.GetComponent<PlayerHealth>();
         playerInteractor = player.GetComponent<PlayerInteractor>();
+
 
         // If not found, attempt to find it in the scene (you may need to customize this)
         if (playerHealth == null)
@@ -63,10 +73,12 @@ public class AnimationStateController : MonoBehaviour
         if (!isMovingAnim && isMovingInput)
         {
             animator.SetBool(isMovingHash, true);
+            SmokeParticleSystem.Play();
         }
         if (isMovingAnim && !isMovingInput)
         {
             animator.SetBool(isMovingHash, false);
+            SmokeParticleSystem.Stop();
         }
 
         // If there's any movement, rotate the character to face the movement direction
@@ -79,20 +91,21 @@ public class AnimationStateController : MonoBehaviour
 
         // Check if the player is holding a tool and interacting with an EnemySpawner
         bool isTooling = false;
-        if(playerInteractor.CurrentInteractable is EnemySpawner)
+        if (playerInteractor.CurrentInteractable is EnemySpawner)
         {
             isTooling = ((EnemySpawner)playerInteractor.CurrentInteractable).IsInProgress;
         }
 
         // Set IsTooling in the animator based on the tool interaction status
         animator.SetBool(IsToolingHash, isTooling);
-}
+    }
 
     // Handle death event from PlayerHealth
     void OnPlayerDeath(PlayerHealth player)
     {
         // Stop movement immediately
         animator.SetBool(isMovingHash, false);
+        SmokeParticleSystem.Stop();
 
         // Trigger death animation
         animator.SetTrigger(isDeadHash);  // Ensure 'IsDead' is a trigger in your Animator
