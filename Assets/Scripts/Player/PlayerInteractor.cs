@@ -54,7 +54,6 @@ public class PlayerInteractor : MonoBehaviour
     }
     public void StopInteract()
     {
-        Debug.Log("Stopping interactions");
         CurrentInteractable?.StopInteract(this);
         CurrentInteractable = null;
     }

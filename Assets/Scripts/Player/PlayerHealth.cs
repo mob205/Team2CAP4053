@@ -12,16 +12,20 @@ public class PlayerHealth : MonoBehaviour
     public UnityEvent<PlayerHealth> OnDeath;
     public UnityEvent<PlayerHealth> OnRevive;
 
-
-
     private void OnCollisionEnter(Collision collision)
     {
-        if(!IsDead && Helpers.IsInMask(_enemyLayer, collision.gameObject.layer))
+        
+    }
+
+    public void Kill()
+    {
+        if (!IsDead)
         {
             IsDead = true;
             OnDeath?.Invoke(this);
             _mainCollider.excludeLayers |= _playerLayer;
         }
+        
     }
 
     public void Revive()
