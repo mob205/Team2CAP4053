@@ -23,6 +23,9 @@ public class EnemySpawner : DurationInteractable
     [Tooltip("Maximum amount of time it takes for a monster to spawn, in seconds")]
     [SerializeField] private float _spawnDelayMaximum;
 
+    [Tooltip("Offset from enemy spawner to spawn enemies from")]
+    [SerializeField] private Vector3 _spawnOffset;
+
 #if UNITY_EDITOR
     [SerializeField] private bool _debugAllowSpawning;
 #endif
@@ -190,10 +193,10 @@ public class EnemySpawner : DurationInteractable
 #if UNITY_EDITOR
                 if (_debugAllowSpawning)
                 {
-                    Instantiate(_spawnedEnemyObj, transform.position, transform.rotation);
+                    Instantiate(_spawnedEnemyObj, transform.position + _spawnOffset, transform.rotation);
                 }
 #else
-                Instantiate(_spawnedEnemyObj, transform.position, transform.rotation);
+                Instantiate(_spawnedEnemyObj, transform.position + _spawnOffset, transform.rotation);
 
 #endif
 
