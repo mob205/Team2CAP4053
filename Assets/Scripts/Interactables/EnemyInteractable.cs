@@ -12,7 +12,6 @@ public class EnemyInteractable : MonoBehaviour, IInteractable
 
     public void StartInteract(PlayerInteractor player)
     {
-        Debug.Log("Interacted");
         // Some death effect here
         Destroy(transform.parent.gameObject);
     }

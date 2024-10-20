@@ -14,7 +14,6 @@ public class GameStateManager : MonoBehaviour
     public UnityEvent OnGameWin;
     public UnityEvent OnGameLose;
     public UnityEvent OnGameEnd;
-
     public static GameStateManager Instance { get; private set; }
 
     public List<PlayerInput> Players { get; private set; } = new();
@@ -23,7 +22,7 @@ public class GameStateManager : MonoBehaviour
     public int PlayersAlive { get; private set; }
     public int TotalPlayers { get; private set; }
 
-    private bool _isTicking;
+    private bool _isGameActive;
 
     private void Awake()
     {
@@ -46,7 +45,7 @@ public class GameStateManager : MonoBehaviour
 
     private void Update()
     {
-        if(_isTicking)
+        if(_isGameActive)
         {
             TickTimer(Time.deltaTime);
         }
@@ -54,7 +53,7 @@ public class GameStateManager : MonoBehaviour
 
     public void StartTicking()
     {
-        _isTicking = true;
+        _isGameActive = true;
     }
 
     public void OnJoin(PlayerInput player)
@@ -103,8 +102,11 @@ public class GameStateManager : MonoBehaviour
     
     private void EndGame()
     {
-        _isTicking = false;
-        OnGameEnd?.Invoke();
+        if(_isGameActive)
+        {
+            _isGameActive = false;
+            OnGameEnd?.Invoke();
+        }
     }
 
     private void TickTimer(float deltaTime)
