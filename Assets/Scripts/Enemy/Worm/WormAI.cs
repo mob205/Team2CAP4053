@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class WormAI : MonoBehaviour
 {
+    [Header("Behavior")]
     [Tooltip("Max amount the worm can rotate, in degrees per second")]
     [SerializeField] private float _turnSpeed;
 
@@ -23,8 +24,24 @@ public class WormAI : MonoBehaviour
     [Tooltip("Position the worm will go to before despawning")]
     [SerializeField] private Vector3 _wormReturnPoint;
 
+    [Header("SFX")]
+    [SerializeField] private AudioEvent _roarSfx;
+
+    [Tooltip("Threshold of degrees off the target at which the worm will roar to alert of its attacks.")]
+    [SerializeField] private float _alertThreshold;
+
+
+
     private Transform _target;
     private float _attackTimer;
+    private bool _isWithinThreshold = false;
+
+    private AudioSource _audio;
+
+    private void Awake()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -38,11 +55,11 @@ public class WormAI : MonoBehaviour
         if (_attackTimer > 0 && _target)
         {
             MoveToTarget(_target.position);
+
         }
         else
         {
             MoveToTarget(_wormReturnPoint);
-
         }
 
         if(_attackTimer < -_despawnDelay)
@@ -91,7 +108,26 @@ public class WormAI : MonoBehaviour
         while(true)
         {
             _target = FindClosestPlayer();
+
+            if (_target)
+            {
+                bool curThresholdStatus = GetDegreeOfRotation(_target.position) < _alertThreshold;
+                if (_isWithinThreshold && !curThresholdStatus)
+                {
+                    _isWithinThreshold = false;
+                }
+                else if(!_isWithinThreshold && curThresholdStatus)
+                {
+                    _isWithinThreshold = true;
+                    _roarSfx.Play(_audio);
+                }
+            }
             yield return new WaitForSeconds(_retargetDelay);
         }
+    }
+
+    private float GetDegreeOfRotation(Vector3 target)
+    {
+        return (2 * Mathf.Acos(Quaternion.FromToRotation(transform.forward, target - transform.position).w)) * Mathf.Rad2Deg;
     }
 }

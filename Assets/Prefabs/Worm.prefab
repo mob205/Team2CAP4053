@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4656126293913132597}
   - component: {fileID: 1070227719009480197}
   - component: {fileID: 285378054339479145}
+  - component: {fileID: 6906763742810794861}
   m_Layer: 0
   m_Name: Worm Segment (2)
   m_TagString: Untagged
@@ -119,7 +120,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &6906763742810794861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736634193163467579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &2731082724549181993
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +149,7 @@ GameObject:
   - component: {fileID: 8980620500890390866}
   - component: {fileID: 1694407556520449812}
   - component: {fileID: 1145099277730158102}
+  - component: {fileID: 2323780139891543814}
   m_Layer: 0
   m_Name: Worm Segment (3)
   m_TagString: Untagged
@@ -239,7 +256,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &2323780139891543814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2731082724549181993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &2981983503310499777
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4708684512853313403}
   - component: {fileID: 6686326449874185604}
-  - component: {fileID: 328017629968727870}
+  - component: {fileID: 8527974721153446412}
   m_Layer: 8
   m_Name: Worm
   m_TagString: Untagged
@@ -268,8 +300,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 26.155, y: 7.69, z: 0.91}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7529180254342526898}
   m_Father: {fileID: 0}
@@ -286,27 +318,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874eddc41202fba449eb4f69009d1368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _turnSpeed: 100
-  _speed: 10
+  _turnSpeed: 20
+  _speed: 7
   _retargetDelay: 0.5
-  _attackLifetime: 15
+  _attackLifetime: 30
   _despawnDelay: 10
-  _wormReturnPoint: {x: 1000, y: 0, z: 0}
---- !u!114 &328017629968727870
-MonoBehaviour:
+  _wormReturnPoint: {x: 0, y: -1000, z: 0}
+  _roarSfx: {fileID: 11400000, guid: da4dbd7200d83884f929fd65d35cfe07, type: 2}
+  _alertThreshold: 25
+--- !u!82 &8527974721153446412
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2981983503310499777}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerLayer:
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6c239c9906d6a4f44b4061702693e5e9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
     serializedVersion: 2
-    m_Bits: 128
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3268669673371810677
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +435,7 @@ GameObject:
   - component: {fileID: 5264992937898272319}
   - component: {fileID: 5210139249453291565}
   - component: {fileID: 4085534862816172408}
+  - component: {fileID: 1374958388932768812}
   m_Layer: 0
   m_Name: Worm Segment (1)
   m_TagString: Untagged
@@ -426,7 +542,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &1374958388932768812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3268669673371810677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &5165384063527428170
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +571,7 @@ GameObject:
   - component: {fileID: 7355329687584689416}
   - component: {fileID: 632426270163727976}
   - component: {fileID: 8529419773890274137}
+  - component: {fileID: 7738810406400682912}
   m_Layer: 0
   m_Name: Worm Segment (3)
   m_TagString: Untagged
@@ -546,7 +678,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &7738810406400682912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165384063527428170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &5462100726970201890
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +707,7 @@ GameObject:
   - component: {fileID: 3503738425492341539}
   - component: {fileID: 2232625584177163796}
   - component: {fileID: 268267306200259198}
+  - component: {fileID: 6263515777502067751}
   m_Layer: 0
   m_Name: Worm Segment (2)
   m_TagString: Untagged
@@ -666,7 +814,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &6263515777502067751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5462100726970201890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &5489355631025791578
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +843,7 @@ GameObject:
   - component: {fileID: 818972467696967219}
   - component: {fileID: 6322448231916105029}
   - component: {fileID: 2955842382029047657}
+  - component: {fileID: 6500326618748372145}
   m_Layer: 0
   m_Name: Worm Segment (3)
   m_TagString: Untagged
@@ -785,7 +949,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &6500326618748372145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489355631025791578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &5491635340733743719
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +978,7 @@ GameObject:
   - component: {fileID: 1193457947173017690}
   - component: {fileID: 9188291787148537265}
   - component: {fileID: 8195794138810783421}
+  - component: {fileID: 17427992185023139}
   m_Layer: 0
   m_Name: Worm Segment (1)
   m_TagString: Untagged
@@ -905,7 +1085,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &17427992185023139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5491635340733743719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &5575453637438767425
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +1114,7 @@ GameObject:
   - component: {fileID: 428837202265226287}
   - component: {fileID: 4555951596769669038}
   - component: {fileID: 2519486006673362841}
+  - component: {fileID: 5836427487255700977}
   m_Layer: 0
   m_Name: Worm Segment (1)
   m_TagString: Untagged
@@ -1025,7 +1221,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &5836427487255700977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575453637438767425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &6006047055495131912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1250,7 @@ GameObject:
   - component: {fileID: 2001667851346928675}
   - component: {fileID: 6630424778698295079}
   - component: {fileID: 5581831080197700410}
+  - component: {fileID: 8583629352073708389}
   m_Layer: 0
   m_Name: Worm Segment (3)
   m_TagString: Untagged
@@ -1145,7 +1357,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &8583629352073708389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006047055495131912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &6310277290510075305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1386,7 @@ GameObject:
   - component: {fileID: 1992086180846299403}
   - component: {fileID: 2794537495844383781}
   - component: {fileID: 7978825802361393574}
+  - component: {fileID: 6409268346084468007}
   m_Layer: 0
   m_Name: Worm Segment (1)
   m_TagString: Untagged
@@ -1265,7 +1493,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &6409268346084468007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310277290510075305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &6799702216540777862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,6 +1522,7 @@ GameObject:
   - component: {fileID: 216069533617385141}
   - component: {fileID: 4545942566628890399}
   - component: {fileID: 3652001218284366564}
+  - component: {fileID: 4533227366978585953}
   m_Layer: 0
   m_Name: Worm Segment (1)
   m_TagString: Untagged
@@ -1385,7 +1629,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &4533227366978585953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6799702216540777862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &7082114152361904140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1658,7 @@ GameObject:
   - component: {fileID: 1037228453841701521}
   - component: {fileID: 278623913585404033}
   - component: {fileID: 733241855853695299}
+  - component: {fileID: 5113036107089684765}
   m_Layer: 0
   m_Name: Worm Segment (0)
   m_TagString: Untagged
@@ -1414,14 +1674,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7082114152361904140}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2041998265529612762}
   m_Father: {fileID: 4708684512853313403}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &7700580973443144935
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1505,7 +1765,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &5113036107089684765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7082114152361904140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &7734310743086820333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1794,7 @@ GameObject:
   - component: {fileID: 6730052374289543246}
   - component: {fileID: 3968535682367193740}
   - component: {fileID: 4320459932407202650}
+  - component: {fileID: 6324708613437181429}
   m_Layer: 0
   m_Name: Worm Segment (1)
   m_TagString: Untagged
@@ -1625,7 +1901,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &6324708613437181429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734310743086820333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &7814526592809696695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,6 +1930,7 @@ GameObject:
   - component: {fileID: 2035709112726786442}
   - component: {fileID: 52000733601945105}
   - component: {fileID: 6371530281528190158}
+  - component: {fileID: 3879744521949161622}
   m_Layer: 0
   m_Name: Worm Segment (2)
   m_TagString: Untagged
@@ -1745,7 +2037,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &3879744521949161622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814526592809696695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &9050051348622596839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,6 +2066,7 @@ GameObject:
   - component: {fileID: 263391220909267590}
   - component: {fileID: 7861797807918684280}
   - component: {fileID: 6443873255177607636}
+  - component: {fileID: 7407898701061817612}
   m_Layer: 0
   m_Name: Worm Segment (1)
   m_TagString: Untagged
@@ -1865,7 +2173,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &7407898701061817612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9050051348622596839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &9135250530050472113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,6 +2202,7 @@ GameObject:
   - component: {fileID: 3865344196188018795}
   - component: {fileID: 8868193616403136976}
   - component: {fileID: 6276455598274252116}
+  - component: {fileID: 6801827299155255412}
   m_Layer: 0
   m_Name: Worm Segment (2)
   m_TagString: Untagged
@@ -1985,4 +2309,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 1
+  _followDistance: 0.5
+--- !u!114 &6801827299155255412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9135250530050472113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f20d4530b62f794b9ffde7d6c829397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
