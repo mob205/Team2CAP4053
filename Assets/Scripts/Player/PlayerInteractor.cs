@@ -35,19 +35,25 @@ public class PlayerInteractor : MonoBehaviour
         CurrentInteractable = GetClosestInteractable();
         CurrentInteractable?.StartInteract(this);
     }
+
+    // Gets the closest interactable with the highest priority
     private IInteractable GetClosestInteractable()
     {
         IInteractable best = null;
         float closest = Mathf.Infinity;
+        int bestPriority = int.MinValue;
         Vector3 cur = transform.position;
+
         foreach(var inter in _nearby)
         {
-            if(!inter.Value || !inter.Key.IsInteractable(GetHeldToolType())) { continue; }
+            if(!inter.Value || !inter.Key.IsInteractable(GetHeldToolType())) { continue; }  // Only consider interactable if it can be interacted with
+
             float dist = (inter.Value.position - cur).sqrMagnitude;
-            if(dist < closest)
+            if(bestPriority < inter.Key.InteractionPriority || dist < closest)
             {
                 closest = dist;
                 best = inter.Key;
+                bestPriority = inter.Key.InteractionPriority;
             }
         }
         return best;

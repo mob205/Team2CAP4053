@@ -6,6 +6,8 @@ public class EnemyInteractable : MonoBehaviour, IInteractable
 {
     [field: SerializeField] public ToolType RequiredTool { get; private set; }
 
+    [field: SerializeField] public int InteractionPriority { get; private set; } = 1;
+
     private Enemy _parent;
     private void Awake()
     {

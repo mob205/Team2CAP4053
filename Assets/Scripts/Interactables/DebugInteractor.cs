@@ -5,6 +5,7 @@ using UnityEngine;
 public class DebugInteractor : MonoBehaviour, IInteractable
 {
     [field: SerializeField] public ToolType RequiredTool { get; private set; }
+    [field: SerializeField] public int InteractionPriority { get; private set; } = -999;
 
     [SerializeField] private float _passiveChangeSpeed = 5f;
     [SerializeField] private float _interactingChangeSpeed = 25f; 

@@ -7,6 +7,8 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
     [field: Header("General")]
     [field: SerializeField] public ToolType RequiredTool { get; private set; }
 
+    [field: SerializeField] public int InteractionPriority { get; private set; } = 0;
+
     public float MaxDuration { get { return GetInteractionDuration(); } }
 
     public float TimeRemaining { get; private set; }
