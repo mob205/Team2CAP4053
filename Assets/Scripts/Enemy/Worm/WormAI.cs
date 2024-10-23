@@ -37,6 +37,8 @@ public class WormAI : Enemy
 
     private AudioSource _audio;
 
+    public static event Action<Vector3> OnWormAttack;
+
     private void Awake()
     {
         _audio = GetComponent<AudioSource>();
@@ -84,19 +86,18 @@ public class WormAI : Enemy
         var players = FindObjectsByType<PlayerHealth>(FindObjectsSortMode.None);
 
         Transform best = null;
-        float bestW = 0;
+        float bestAngle = Mathf.Infinity;
 
         foreach(var player in players)
         {
             if (player.IsDead) continue;
-            var diff = player.transform.position - transform.position;
 
-            // w components further from 0 signify less rotation
-            var curW = Mathf.Abs(Quaternion.FromToRotation(transform.forward, diff).w);
-            if(curW > bestW)
+            var angle = GetDegreeOfRotation(player.transform.position);
+
+            if(angle < bestAngle)
             {
                 best = player.transform;
-                bestW = curW;
+                bestAngle = angle;
             }
         }
         return best;
@@ -111,6 +112,7 @@ public class WormAI : Enemy
             if (_target)
             {
                 bool curThresholdStatus = GetDegreeOfRotation(_target.position) < _alertThreshold;
+
                 if (_isWithinThreshold && !curThresholdStatus)
                 {
                     _isWithinThreshold = false;
@@ -118,7 +120,9 @@ public class WormAI : Enemy
                 else if(!_isWithinThreshold && curThresholdStatus)
                 {
                     _isWithinThreshold = true;
+
                     _roarSfx.Play(_audio);
+                    OnWormAttack?.Invoke(transform.position);
                 }
             }
             yield return new WaitForSeconds(_retargetDelay);
@@ -126,6 +130,6 @@ public class WormAI : Enemy
     }
     private float GetDegreeOfRotation(Vector3 target)
     {
-        return (2 * Mathf.Acos(Quaternion.FromToRotation(transform.forward, target - transform.position).w)) * Mathf.Rad2Deg;
+        return Vector3.Angle(transform.forward, target - transform.position);
     }
 }
