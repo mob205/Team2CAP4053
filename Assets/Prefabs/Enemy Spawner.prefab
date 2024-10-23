@@ -333,7 +333,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.141092, y: -15.404158, z: -9.338626}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.44999996, y: 0.45, z: 0.44999996}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 969991432082386337}
@@ -354,28 +354,29 @@ MonoBehaviour:
   <RequiredTool>k__BackingField: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
   <MaxRepairDuration>k__BackingField: 4
   _repairGracePeriod: 5
-  _spawnedEnemyObj: {fileID: 4310102443980061787, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-  _spawnDelayMinimum: 2
-  _spawnDelayMaximum: 5
-  _debugAllowSpawning: 0
+  _spawnedEnemyObj: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
+  _spawnDelayMinimum: 7
+  _spawnDelayMaximum: 15
+  _spawnOffset: {x: 0, y: 0, z: 0}
+  _debugAllowSpawning: 1
   _counter: {fileID: 11400000, guid: 80060eb87930ad14d9286351d57f5930, type: 2}
   _maxBroken: 3
   _breakingDuration: 5
-  _baseBreakChancePerMinute: 100
+  _baseBreakChancePerMinute: 8
   _breakChanceDistanceFactor: 0.05
   _breakChecksPerSecond: 4
   _completeRepairSound: {fileID: 11400000, guid: 6a08bf06903641e4780b8a8ba22b16cd, type: 2}
   _inProgressRepairSound: {fileID: 0}
-  _completeBreakSound: {fileID: 0}
+  _completeBreakSound: {fileID: 11400000, guid: cec7f32dc66d61a40898952ca8238e72, type: 2}
   OnBreak:
     m_PersistentCalls:
       m_Calls: []
   OnRepair:
     m_PersistentCalls:
       m_Calls: []
-  _repairedColor: {r: 0, g: 0, b: 0, a: 0}
-  _breakingColor: {r: 0, g: 0, b: 0, a: 0}
-  _brokenColor: {r: 0, g: 0, b: 0, a: 0}
+  _repairedColor: {r: 1, g: 1, b: 1, a: 0}
+  _breakingColor: {r: 0.8962264, g: 0.5427332, b: 0.5368903, a: 0}
+  _brokenColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!33 &4193564816916170563
 MeshFilter:
   m_ObjectHideFlags: 0

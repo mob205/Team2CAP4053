@@ -1,10 +1,10 @@
+using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MoleAI : MonoBehaviour
+public class MoleAI : Enemy
 {
-   
     public PlayerInteractor Target { get; set; }
 
     [Tooltip("Type of tool the mole flees from")]
@@ -31,7 +31,7 @@ public class MoleAI : MonoBehaviour
     private NavMeshAgent _navAgent;
     private Animator _animator;
 
-    public void Awake()
+    private void Awake()
     {
         _navAgent = GetComponent<NavMeshAgent>();
         _playerDetector = GetComponent<PlayerDetector>();

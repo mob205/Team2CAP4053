@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class WormAI : MonoBehaviour
+public class WormAI : Enemy
 {
     [Header("Behavior")]
     [Tooltip("Max amount the worm can rotate, in degrees per second")]
@@ -29,8 +30,6 @@ public class WormAI : MonoBehaviour
 
     [Tooltip("Threshold of degrees off the target at which the worm will roar to alert of its attacks.")]
     [SerializeField] private float _alertThreshold;
-
-
 
     private Transform _target;
     private float _attackTimer;
@@ -64,7 +63,7 @@ public class WormAI : MonoBehaviour
 
         if(_attackTimer < -_despawnDelay)
         {
-            Destroy(gameObject);
+            Kill();
         }
     }
 
@@ -125,7 +124,6 @@ public class WormAI : MonoBehaviour
             yield return new WaitForSeconds(_retargetDelay);
         }
     }
-
     private float GetDegreeOfRotation(Vector3 target)
     {
         return (2 * Mathf.Acos(Quaternion.FromToRotation(transform.forward, target - transform.position).w)) * Mathf.Rad2Deg;

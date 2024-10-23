@@ -7,19 +7,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private BoxCollider _mainCollider;
 
+    [SerializeField] private bool DebugIsInvulnerable = false;
+
     public bool IsDead { get; private set; }
 
     public UnityEvent<PlayerHealth> OnDeath;
     public UnityEvent<PlayerHealth> OnRevive;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
-
     public void Kill()
     {
-        if (!IsDead)
+        if (!IsDead && !DebugIsInvulnerable)
         {
             IsDead = true;
             OnDeath?.Invoke(this);

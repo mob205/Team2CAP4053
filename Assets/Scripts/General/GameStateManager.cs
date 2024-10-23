@@ -15,7 +15,6 @@ public class GameStateManager : MonoBehaviour
     public UnityEvent OnGameLose;
     public UnityEvent OnGameEnd;
     public static GameStateManager Instance { get; private set; }
-
     public List<PlayerInput> Players { get; private set; } = new();
 
     public float TimeRemaining { get; private set; }
@@ -24,9 +23,23 @@ public class GameStateManager : MonoBehaviour
 
     private bool _isGameActive;
 
+    private List<Enemy> _spawnedEnemies = new();
+
+    public void RegisterEnemy(Enemy enemy)
+    {
+        _spawnedEnemies.Add(enemy);
+        enemy.OnKilled += RemoveEnemy;
+    }
+
+
+    private void RemoveEnemy(Enemy enemy)
+    {
+        _spawnedEnemies.Remove(enemy);
+    }
+
     private void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
         {
             Destroy(this);
         }
@@ -35,7 +48,7 @@ public class GameStateManager : MonoBehaviour
 
     private void Start()
     {
-        if(_numRevivesUsed)
+        if (_numRevivesUsed)
         {
             _numRevivesUsed.Value = 0;
         }
@@ -45,7 +58,7 @@ public class GameStateManager : MonoBehaviour
 
     private void Update()
     {
-        if(_isGameActive)
+        if (_isGameActive)
         {
             TickTimer(Time.deltaTime);
         }
@@ -58,7 +71,7 @@ public class GameStateManager : MonoBehaviour
 
     public void OnJoin(PlayerInput player)
     {
-        if(player.TryGetComponent(out PlayerHealth health))
+        if (player.TryGetComponent(out PlayerHealth health))
         {
             health.OnDeath.AddListener(OnDeath);
             health.OnRevive.AddListener(OnRevive);
@@ -93,26 +106,33 @@ public class GameStateManager : MonoBehaviour
     }
     private void CheckAliveStatus()
     {
-        if (PlayersAlive <= 0)
+        if (PlayersAlive <= 0 && _isGameActive)
         {
             EndGame();
             OnGameLose?.Invoke();
         }
     }
-    
     private void EndGame()
     {
-        if(_isGameActive)
+        _isGameActive = false;
+        KillAllEnemies();
+        OnGameEnd?.Invoke();
+    }
+
+    private void KillAllEnemies()
+    {
+        foreach(var enemy in _spawnedEnemies)
         {
-            _isGameActive = false;
-            OnGameEnd?.Invoke();
+            enemy.OnKilled -= RemoveEnemy;
+            enemy.Kill();
         }
+        _spawnedEnemies.Clear();
     }
 
     private void TickTimer(float deltaTime)
     {
         TimeRemaining -= deltaTime;
-        if(TimeRemaining <= 0)
+        if (TimeRemaining <= 0 && _isGameActive)
         {
             EndGame();
             OnGameWin?.Invoke();
