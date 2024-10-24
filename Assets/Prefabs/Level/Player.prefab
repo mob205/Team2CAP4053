@@ -126,12 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a40a4bd65d65240a888e1f82fd9a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyLayer:
+  _deathIgnoreLayers:
     serializedVersion: 2
-    m_Bits: 256
-  _playerLayer:
-    serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   _mainCollider: {fileID: -8627576014754911615}
   DebugIsInvulnerable: 1
   OnDeath:
@@ -177,6 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <RequiredTool>k__BackingField: {fileID: 11400000, guid: 2cdbd2126f4d1cc4b8a1d314d6da1edc, type: 2}
+  <InteractionPriority>k__BackingField: 0
   _revivesUsed: {fileID: 11400000, guid: bcaafe1469e9a5743b33a3a21c45e5ba, type: 2}
   _reviveDurations:
   - 2
