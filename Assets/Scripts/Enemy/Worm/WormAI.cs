@@ -28,17 +28,15 @@ public class WormAI : Enemy
     [Header("SFX")]
     [SerializeField] private AudioEvent _roarSfx;
 
-    [Tooltip("Threshold of degrees off the target at which the worm will roar to alert of its attacks.")]
-    [SerializeField] private float _alertThreshold;
+    //[Tooltip("Threshold of degrees off the target at which the worm will roar to alert of its attacks.")]
+    //[SerializeField] private float _alertThreshold;
+    //private bool _isWithinThreshold = false;
+
 
     private Transform _target;
     private float _attackTimer;
-    private bool _isWithinThreshold = false;
 
     private AudioSource _audio;
-
-    public static event Action<Vector3> OnWormAttack;
-
     private void Awake()
     {
         _audio = GetComponent<AudioSource>();
@@ -67,6 +65,11 @@ public class WormAI : Enemy
         {
             Kill();
         }
+    }
+
+    public void OnWormAttack()
+    {
+        _roarSfx.Play(_audio);
     }
 
     private void MoveToTarget(Vector3 target)
@@ -109,22 +112,6 @@ public class WormAI : Enemy
         {
             _target = FindClosestPlayer();
 
-            if (_target)
-            {
-                bool curThresholdStatus = GetDegreeOfRotation(_target.position) < _alertThreshold;
-
-                if (_isWithinThreshold && !curThresholdStatus)
-                {
-                    _isWithinThreshold = false;
-                }
-                else if(!_isWithinThreshold && curThresholdStatus)
-                {
-                    _isWithinThreshold = true;
-
-                    _roarSfx.Play(_audio);
-                    OnWormAttack?.Invoke(transform.position);
-                }
-            }
             yield return new WaitForSeconds(_retargetDelay);
         }
     }

@@ -14,7 +14,7 @@ public abstract class Activator : MonoBehaviour
 
     protected bool _isActive;
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if(Helpers.IsInMask(_activationLayers, other.gameObject.layer))
         {
@@ -28,7 +28,7 @@ public abstract class Activator : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if(Helpers.IsInMask(_activationLayers, other.gameObject.layer))
         {

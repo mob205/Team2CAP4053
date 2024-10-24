@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &6906763742810794861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &2323780139891543814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +283,8 @@ GameObject:
   - component: {fileID: 4708684512853313403}
   - component: {fileID: 6686326449874185604}
   - component: {fileID: 8527974721153446412}
+  - component: {fileID: 7673923871982991603}
+  - component: {fileID: 1671247244680650381}
   m_Layer: 8
   m_Name: Worm
   m_TagString: Untagged
@@ -325,7 +327,6 @@ MonoBehaviour:
   _despawnDelay: 10
   _wormReturnPoint: {x: 0, y: -1000, z: 0}
   _roarSfx: {fileID: 11400000, guid: da4dbd7200d83884f929fd65d35cfe07, type: 2}
-  _alertThreshold: 25
 --- !u!82 &8527974721153446412
 AudioSource:
   m_ObjectHideFlags: 0
@@ -422,6 +423,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7673923871982991603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981983503310499777}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1671247244680650381
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981983503310499777}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3268669673371810677
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &1374958388932768812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,7 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &7738810406400682912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,7 +863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &6263515777502067751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &6500326618748372145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &17427992185023139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,7 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &5836427487255700977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &8583629352073708389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,7 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &6409268346084468007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1629,7 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &4533227366978585953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1765,7 +1814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &5113036107089684765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,7 +1950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &6324708613437181429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2037,7 +2086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &3879744521949161622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2173,7 +2222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &7407898701061817612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2309,7 +2358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6599980bea6d9c4ea615b4151c932e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followDistance: 0.45
+  _followDistance: 0.35
 --- !u!114 &6801827299155255412
 MonoBehaviour:
   m_ObjectHideFlags: 0

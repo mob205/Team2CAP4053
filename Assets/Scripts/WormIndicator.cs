@@ -1,32 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class WormIndicator : MonoBehaviour
 {
+    public UnityEvent<WormAI> OnWormEnter;
+    public UnityEvent<WormAI> OnWormExit;
 
-    [SerializeField] RectTransform _alertObj;
-
-    private Camera _cam;
-    private Canvas _canvas;
-
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        _cam = Camera.main;
-        _canvas = GetComponent<Canvas>();
-        WormAI.OnWormAttack += AlertWormAttack;
-    }
-
-    public void AlertWormAttack(Vector3 location)
-    {
-        if(_cam && _alertObj)
+        if(other.TryGetComponent(out WormAI worm))
         {
-            var pos = _cam.WorldToScreenPoint(location);
-
-            pos.x = Mathf.Clamp(pos.x, 0 - _alertObj.rect.x, _canvas.renderingDisplaySize.x + _alertObj.rect.x);
-            pos.y = Mathf.Clamp(pos.y, 0 - _alertObj.rect.y, _canvas.renderingDisplaySize.y + _alertObj.rect.y);
-
-            Instantiate(_alertObj, pos, Quaternion.identity, transform);
+            OnWormEnter?.Invoke(worm);
+            worm.OnKilled += OnWormKilled;
+            worm.OnWormAttack();
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.TryGetComponent(out WormAI worm))
+        {
+            OnWormExit?.Invoke(worm);
+        }
+    }
+
+    private void OnWormKilled(Enemy enemy)
+    {
+        if(enemy.TryGetComponent(out WormAI worm))
+        {
+            OnWormExit?.Invoke(worm);
+        }
+    }
+
 }

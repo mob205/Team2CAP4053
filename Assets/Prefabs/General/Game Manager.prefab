@@ -314,5 +314,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _basePointsPerSecond: 100
   _decreasePerBreak: 25
-  _spawnerBreakPenalty: 250
-  _playerDeathPenalty: 1000
+  _spawnerBreakPenalty: 0
+  _playerDeathPenalty: 250
