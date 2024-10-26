@@ -295,7 +295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -703,11 +707,11 @@ PrefabInstance:
       objectReference: {fileID: 6686326449874185604, guid: 0ea513ed354ffcc4f8b8da38bcc7ad63, type: 3}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _spawnDelayMaximum
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _spawnDelayMinimum
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _completeBreakSound
@@ -719,7 +723,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 100
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: <RequiredTool>k__BackingField
@@ -1189,7 +1197,7 @@ PrefabInstance:
       objectReference: {fileID: 6686326449874185604, guid: 0ea513ed354ffcc4f8b8da38bcc7ad63, type: 3}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _spawnDelayMaximum
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _spawnDelayMinimum
@@ -1205,7 +1213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 8
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: <RequiredTool>k__BackingField
@@ -1359,7 +1371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1939,7 +1955,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2211,7 +2231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2392,7 +2416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2549,6 +2577,10 @@ PrefabInstance:
     - target: {fileID: 2821446785865351724, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: m_Name
       value: Game Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: <LevelDuration>k__BackingField
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2729,7 +2761,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3180,11 +3216,11 @@ PrefabInstance:
       objectReference: {fileID: 6686326449874185604, guid: 0ea513ed354ffcc4f8b8da38bcc7ad63, type: 3}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _spawnDelayMaximum
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _spawnDelayMinimum
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _completeBreakSound
@@ -3196,7 +3232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 100
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: <RequiredTool>k__BackingField
@@ -3617,7 +3657,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4433,11 +4477,11 @@ PrefabInstance:
       objectReference: {fileID: 6686326449874185604, guid: 0ea513ed354ffcc4f8b8da38bcc7ad63, type: 3}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _spawnDelayMaximum
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _spawnDelayMinimum
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _completeBreakSound
@@ -4449,7 +4493,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: _baseBreakChancePerMinute
-      value: 100
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: <RequiredTool>k__BackingField
@@ -4520,6 +4568,14 @@ PrefabInstance:
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _baseBreakChancePerMinute
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
+      propertyPath: _breakChanceDistanceFactor
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
