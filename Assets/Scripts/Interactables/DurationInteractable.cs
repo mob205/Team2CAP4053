@@ -18,7 +18,7 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
 
     public virtual bool IsInteractable(ToolType tool)
     {
-        return _interactor == null && tool == RequiredTool;
+        return _interactor == null && (RequiredTool == null || tool == RequiredTool);
     }
 
     public virtual void StartInteract(PlayerInteractor player)
