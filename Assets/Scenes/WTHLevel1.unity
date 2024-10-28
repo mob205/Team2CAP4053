@@ -24178,9 +24178,9 @@ MonoBehaviour:
   <RequiredTool>k__BackingField: {fileID: 0}
   <InteractionPriority>k__BackingField: 0
   <MaxWindupDuration>k__BackingField: 4
-  <MaxWindDownDuration>k__BackingField: 20
-  _selfWindupDelay: 4
-  _spawnedEnemyObj: {fileID: 0}
+  <MaxWindDownDuration>k__BackingField: 4
+  _selfWindupDelay: 5
+  _spawnedEnemyObj: {fileID: 8783838554554634037, guid: a96287d46b1611f4db33c5e500c40b91, type: 3}
   _spawnOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &7920542675973807084
 Transform:

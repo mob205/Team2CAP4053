@@ -17,7 +17,6 @@ public class WindupEnemySpawner : DurationInteractable
     [SerializeField] private Vector3 _spawnOffset;
     public float WindupRatio { get { return 1 - Mathf.Clamp01(_windupRemaining / MaxWindDownDuration); } }
 
-
     float _windupRemaining;
     bool _hasSpawned = false;
 
@@ -31,7 +30,7 @@ public class WindupEnemySpawner : DurationInteractable
         _windupRemaining -= Time.deltaTime;
         base.Update();
 
-        if (_windupRemaining < 0 && !_hasSpawned)
+        if (_windupRemaining < 0 && !IsInProgress && !_hasSpawned)
         {
             _hasSpawned = true;
             SpawnEnemy();
@@ -46,8 +45,8 @@ public class WindupEnemySpawner : DurationInteractable
     private void SpawnEnemy()
     {
         Debug.Log("Spawn enemy");
-        //var enemy = Instantiate(_spawnedEnemyObj, transform.position + _spawnOffset, transform.rotation);
-        //GameStateManager.Instance.RegisterEnemy(enemy);
+        var enemy = Instantiate(_spawnedEnemyObj, transform.position + _spawnOffset, transform.rotation);
+        GameStateManager.Instance.RegisterEnemy(enemy);
     }
     protected override void CompleteInteraction()
     {
@@ -58,5 +57,9 @@ public class WindupEnemySpawner : DurationInteractable
     protected override float GetInteractionDuration()
     {
         return MaxWindupDuration;
+    }
+    public override bool IsInteractable(ToolType tool)
+    {
+        return base.IsInteractable(tool) && !_hasSpawned;
     }
 }

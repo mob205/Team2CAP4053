@@ -26,6 +26,7 @@ public class FXController : MonoBehaviour
     private void Start()
     {
         _spawners = FindObjectsByType<WindupEnemySpawner>(FindObjectsSortMode.None);
+        _volume.enabled = true;
     }
 
     void Update()

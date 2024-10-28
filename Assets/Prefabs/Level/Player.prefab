@@ -130,7 +130,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 384
   _mainCollider: {fileID: -8627576014754911615}
-  DebugIsInvulnerable: 1
+  DebugIsInvulnerable: 0
   OnDeath:
     m_PersistentCalls:
       m_Calls:
