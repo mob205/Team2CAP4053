@@ -4,9 +4,12 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [Tooltip("Layers to ignore collisions with when dead")]
-    [SerializeField] private LayerMask _deathIgnoreLayers;
 
     [SerializeField] private BoxCollider _mainCollider;
+    [SerializeField] private BoxCollider _interactableCollider;
+    [SerializeField] private BoxCollider _reviveCollider;
+
+    [SerializeField] private LayerMask _deathIgnoreLayers;
 
     [SerializeField] private bool DebugIsInvulnerable = false;
 
@@ -21,7 +24,10 @@ public class PlayerHealth : MonoBehaviour
         {
             IsDead = true;
             OnDeath?.Invoke(this);
+
             _mainCollider.excludeLayers |= _deathIgnoreLayers;
+            _interactableCollider.enabled = false;
+            _reviveCollider.enabled = true;
         }
         
     }
@@ -32,5 +38,7 @@ public class PlayerHealth : MonoBehaviour
         OnRevive?.Invoke(this);
 
         _mainCollider.excludeLayers &= ~_deathIgnoreLayers;
+        _interactableCollider.enabled = true;
+        _reviveCollider.enabled = false;
     }
 }

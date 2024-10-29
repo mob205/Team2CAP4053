@@ -80,6 +80,7 @@ public class PlayerInteractor : MonoBehaviour
             
             if(interactable == CurrentInteractable)
             {
+                Debug.Log($"Cancelling interaction with {other.name}");
                 interactable.StopInteract(this);
             }
         }

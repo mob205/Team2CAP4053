@@ -122,6 +122,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _killDelay: 1.25
   _teleportDistance: 1
-  _blocking:
+  _catDetectionRange: 1.8
+  _blockingLayer:
     serializedVersion: 2
     m_Bits: 521
+  _spareLayers:
+    serializedVersion: 2
+    m_Bits: 1024

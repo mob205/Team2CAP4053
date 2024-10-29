@@ -10,10 +10,11 @@ public class HatmanAI : Enemy
     [Tooltip("Offset away from player to teleport to")]
     [SerializeField] private float _teleportDistance;
 
-    [Tooltip("Distance the cat must be to prevent hatman from attacking")]
+    [Tooltip("Distance the cat must be from the target player to prevent hatman from attacking")]
     [SerializeField] private float _catDetectionRange;
 
-    [SerializeField] private LayerMask _blocking;
+    [SerializeField] private LayerMask _blockingLayer;
+    [SerializeField] private LayerMask _spareLayers;
        
     private PlayerHealth[] _players;
 
@@ -32,7 +33,12 @@ public class HatmanAI : Enemy
 
             transform.position = GetTeleportLocation(player.transform.position);
             yield return new WaitForSeconds(_killDelay);
-            player.Kill();
+
+            // Kill the player if a spare object is not nearby
+            if(!Physics.CheckSphere(player.transform.position, _catDetectionRange, _spareLayers))
+            {
+                player.Kill();
+            }
         }
         Debug.Log("Done!");
         transform.position = new Vector3(1000, 1000, 1000);
@@ -42,13 +48,11 @@ public class HatmanAI : Enemy
         foreach(var direction in _teleportDirections)
         {
             // Only teleport in this direction if that spot isn't being blocked
-            if(!Physics.Raycast(player, direction, _teleportDistance, _blocking))
+            if(!Physics.Raycast(player, direction, _teleportDistance, _blockingLayer))
             {
-                Debug.Log("Teleporting to " + direction);
                 return (direction * _teleportDistance) + player;
             }
         }
-        Debug.Log("Falling back");
         // Fallback, might end up in a wall still
         return (_teleportDirections[0] * _teleportDistance) + player;
     }

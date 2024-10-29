@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <RequiredTool>k__BackingField: {fileID: 0}
   <ToolType>k__BackingField: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
+  <InteractionPriority>k__BackingField: 1
 --- !u!65 &618496300936218278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,7 +134,9 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8789559428767004620, guid: d7060589acf206944978dac2bd5960ea, type: 3}
+    - {fileID: 8789559429585484997, guid: d7060589acf206944978dac2bd5960ea, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
