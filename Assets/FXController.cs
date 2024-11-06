@@ -31,7 +31,7 @@ public class FXController : MonoBehaviour
 
     void Update()
     {
-        float ratio = Mathf.NegativeInfinity;
+        float ratio = 0;
         foreach(var spawner in _spawners)
         {
             ratio = Mathf.Max(spawner.WindupRatio, ratio);

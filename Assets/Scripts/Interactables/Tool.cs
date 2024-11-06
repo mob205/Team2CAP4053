@@ -9,36 +9,43 @@ public class Tool : MonoBehaviour, IInteractable
 
     [field: SerializeField] public int InteractionPriority { get; private set; } = 1;
 
-    private bool _isHeld;
-
     private Collider _collider;
 
-    private void Awake()
+    protected bool _isHeld;
+    protected PlayerInteractor _heldPlayer;
+
+    protected virtual void Update()
     {
-        _collider = GetComponent<Collider>();
+        if(_isHeld && _heldPlayer)
+        {
+            transform.SetPositionAndRotation(_heldPlayer.ToolPos.position, _heldPlayer.ToolPos.rotation);
+        }
     }
 
-    public void StartInteract(PlayerInteractor player)
+    public virtual void StartInteract(PlayerInteractor player)
     {
         _isHeld = player.EquipTool(this);
         if (_isHeld)
         {
-            _collider.enabled = false;
+            _heldPlayer = player;
         }
     }
 
-    public void StopInteract(PlayerInteractor player)
+    public virtual void StopInteract(PlayerInteractor player)
     {
         // Do nothing, since the tool should be held even when the player released Interact input
     }
-    public void DropTool()
+    public virtual void OnDropTool()
     {
         _isHeld = false;
-        _collider.enabled = true;
+        _heldPlayer = null;
 
         Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo);
-        transform.position = new Vector3(transform.position.x, hitInfo.point.y, transform.position.z);
-        transform.rotation = Quaternion.identity;
+
+        transform.SetPositionAndRotation(
+            new Vector3(transform.position.x, hitInfo.point.y, transform.position.z), 
+            Quaternion.identity
+            );
     }
     public bool IsInteractable(ToolType tool)
     {

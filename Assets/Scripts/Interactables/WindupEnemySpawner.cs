@@ -20,7 +20,7 @@ public class WindupEnemySpawner : DurationInteractable
     float _windupRemaining;
     bool _hasSpawned = false;
 
-    private void Start()
+    private void Awake()
     {
         _windupRemaining = MaxWindDownDuration;
     }
@@ -44,7 +44,6 @@ public class WindupEnemySpawner : DurationInteractable
 
     private void SpawnEnemy()
     {
-        Debug.Log("Spawn enemy");
         var enemy = Instantiate(_spawnedEnemyObj, transform.position + _spawnOffset, transform.rotation);
         GameStateManager.Instance.RegisterEnemy(enemy);
     }

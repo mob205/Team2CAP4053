@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _toolPos: {fileID: 3630152523445510783}
+  <ToolPos>k__BackingField: {fileID: 3630152523445510783}
 --- !u!114 &-8164095535791406854
 MonoBehaviour:
   m_ObjectHideFlags: 0

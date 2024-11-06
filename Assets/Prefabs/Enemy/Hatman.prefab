@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3458723428332089732}
   - component: {fileID: 8783838554554634037}
   m_Layer: 0
-  m_Name: Hatman Test
+  m_Name: Hatman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

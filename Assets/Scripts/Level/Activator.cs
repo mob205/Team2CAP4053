@@ -19,7 +19,8 @@ public abstract class Activator : MonoBehaviour
         if(Helpers.IsInMask(_activationLayers, other.gameObject.layer))
         {
             ++_playerCount;
-            if(!_isActive)
+
+            if (!_isActive)
             {
                 _isActive = true;
                 Activate();
@@ -33,7 +34,8 @@ public abstract class Activator : MonoBehaviour
         if(Helpers.IsInMask(_activationLayers, other.gameObject.layer))
         {
             --_playerCount;
-            if(_playerCount == 0 && _isActive)
+
+            if (_playerCount == 0 && _isActive)
             {
                 _isActive = false;
                 Deactivate();

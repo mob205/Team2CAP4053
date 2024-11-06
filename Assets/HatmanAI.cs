@@ -13,7 +13,10 @@ public class HatmanAI : Enemy
     [Tooltip("Distance the cat must be from the target player to prevent hatman from attacking")]
     [SerializeField] private float _catDetectionRange;
 
+    [Tooltip("Layers that block the hatman from teleporting")]
     [SerializeField] private LayerMask _blockingLayer;
+
+    [Tooltip("Layers that will cause the hatman to spare target player, if nearby")]
     [SerializeField] private LayerMask _spareLayers;
        
     private PlayerHealth[] _players;
@@ -40,8 +43,7 @@ public class HatmanAI : Enemy
                 player.Kill();
             }
         }
-        Debug.Log("Done!");
-        transform.position = new Vector3(1000, 1000, 1000);
+        Kill();
     }
     private Vector3 GetTeleportLocation(Vector3 player)
     {

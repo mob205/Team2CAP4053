@@ -6,8 +6,7 @@ public class PlayerInteractor : MonoBehaviour
 {
     public Tool HeldTool { get; private set; }
     public IInteractable CurrentInteractable { get; private set; }
-
-    [SerializeField] private Transform _toolPos;
+    [field: SerializeField] public Transform ToolPos { get; private set; }
 
     private Dictionary<IInteractable, Transform> _nearby = new Dictionary<IInteractable, Transform>();
 
@@ -16,9 +15,6 @@ public class PlayerInteractor : MonoBehaviour
         if(tool == null || HeldTool != null) { return false; }
 
         HeldTool = tool;
-        HeldTool.transform.parent = _toolPos;
-        HeldTool.transform.localPosition = Vector3.zero;
-        HeldTool.transform.rotation = _toolPos.rotation;
         return true;
     }
     public void UnequipTool()
@@ -26,8 +22,7 @@ public class PlayerInteractor : MonoBehaviour
         if (HeldTool == null) { return; }
         StopInteract();
 
-        HeldTool.transform.parent = null;
-        HeldTool.DropTool();
+        HeldTool.OnDropTool();
         HeldTool = null;
     }
     public void StartInteract()
@@ -80,7 +75,6 @@ public class PlayerInteractor : MonoBehaviour
             
             if(interactable == CurrentInteractable)
             {
-                Debug.Log($"Cancelling interaction with {other.name}");
                 interactable.StopInteract(this);
             }
         }
