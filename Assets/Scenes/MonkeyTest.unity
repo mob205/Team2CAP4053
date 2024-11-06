@@ -220,13 +220,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87527923}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -5.55, y: 3.325, z: -13.89}
   m_LocalScale: {x: 0.19544636, y: 0.07197692, z: 0.23846887}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &602274616
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,8 +582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3814643d66725460baafa20b40cae400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sender: {fileID: 1364935188}
-  Reciever: {fileID: 1780337098}
+  TeleportDestination: {fileID: 1780337102}
+  TeleportLayers:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!65 &1364935190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -768,13 +770,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780337098}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -14.16, y: 3.322, z: -13.38}
   m_LocalScale: {x: 0.19544636, y: 0.07197692, z: 0.23846887}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1937437578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,6 +792,10 @@ PrefabInstance:
     - target: {fileID: 927568607140628226, guid: 4d64d6d7f7d4b0c44b715ffa8da2dbf1, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288476578679425589, guid: 4d64d6d7f7d4b0c44b715ffa8da2dbf1, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 1919
       objectReference: {fileID: 0}
     - target: {fileID: 6311800254876403042, guid: 4d64d6d7f7d4b0c44b715ffa8da2dbf1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -868,8 +874,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3814643d66725460baafa20b40cae400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sender: {fileID: 1937599635}
-  Reciever: {fileID: 87527923}
+  TeleportDestination: {fileID: 87527927}
+  TeleportLayers:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!65 &1937599637
 BoxCollider:
   m_ObjectHideFlags: 0

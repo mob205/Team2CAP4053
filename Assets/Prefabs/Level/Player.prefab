@@ -102,7 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fde06bf037f63e4d85f5c53cc628892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toolPos: {fileID: 3630152523445510783}
   <ToolPos>k__BackingField: {fileID: 3630152523445510783}
 --- !u!114 &-8164095535791406854
 MonoBehaviour:
@@ -400,7 +399,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: -1}
+  m_Center: {x: -1, y: 0, z: 0}
 --- !u!1 &1674006659238652731
 GameObject:
   m_ObjectHideFlags: 0
