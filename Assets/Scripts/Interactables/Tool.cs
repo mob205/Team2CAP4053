@@ -7,6 +7,8 @@ public class Tool : MonoBehaviour, IInteractable
     [field: SerializeField] public ToolType RequiredTool { get; private set; } = null;
     [field: SerializeField] public ToolType ToolType { get; private set; }
 
+    [field: SerializeField] public AudioEvent UseSound { get; private set; }
+
     [field: SerializeField] public int InteractionPriority { get; private set; } = 1;
 
     private Collider _collider;

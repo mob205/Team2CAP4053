@@ -46,7 +46,7 @@ public class CatAI : Tool
         base.StartInteract(player);
 
         _agent.isStopped = true;
-        _holdTimeRemaining = Random.Range(_catMinHoldDuration, _catMinHoldDuration);
+        _holdTimeRemaining = Random.Range(_catMinHoldDuration, _catMaxHoldDuration);
     }
 
     public override void OnDropTool()
