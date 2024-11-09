@@ -18,10 +18,14 @@ public class HatmanAI : Enemy
 
     [Tooltip("Layers that will cause the hatman to spare target player, if nearby")]
     [SerializeField] private LayerMask _spareLayers;
+
+    [SerializeField] private ParticleSystem _transitionParticles;
+    [SerializeField] private float _teleportDelay;
        
     private PlayerHealth[] _players;
 
-    private static Vector3[] _teleportDirections = { Vector3.forward, -Vector3.forward, Vector3.left, -Vector3.left };
+    private static readonly Vector3[] _teleportDirections = { Vector3.forward, -Vector3.forward, Vector3.left, -Vector3.left };
+
     private void Start()
     {
         _players = FindObjectsByType<PlayerHealth>(FindObjectsSortMode.None);
@@ -34,8 +38,18 @@ public class HatmanAI : Enemy
         {
             if (player == null || player.IsDead) continue;
 
-            transform.position = GetTeleportLocation(player.transform.position);
+
+            var teleportPosition = GetTeleportLocation(player.transform.position);
+
+            // Play entrance particle effects
+            Instantiate(_transitionParticles, teleportPosition, Quaternion.identity);
+
+            // Brief delay to allow particles to hide the teleport
+            yield return new WaitForSeconds(_teleportDelay);
+
+            transform.position = teleportPosition;
             transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+
             yield return new WaitForSeconds(_killDelay);
 
             // Kill the player if a spare object is not nearby
@@ -43,7 +57,11 @@ public class HatmanAI : Enemy
             {
                 player.Kill();
             }
+
+            // Play exit particle effects
+            Instantiate(_transitionParticles, transform.position, Quaternion.identity);
         }
+        yield return new WaitForSeconds(_teleportDelay);
         Kill();
     }
     private Vector3 GetTeleportLocation(Vector3 player)
