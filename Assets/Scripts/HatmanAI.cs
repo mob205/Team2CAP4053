@@ -42,7 +42,10 @@ public class HatmanAI : Enemy
             var teleportPosition = GetTeleportLocation(player.transform.position);
 
             // Play entrance particle effects
-            Instantiate(_transitionParticles, teleportPosition, Quaternion.identity);
+            if(_transitionParticles)
+            {
+                Instantiate(_transitionParticles, teleportPosition, Quaternion.identity);
+            }
 
             // Brief delay to allow particles to hide the teleport
             yield return new WaitForSeconds(_teleportDelay);
@@ -59,7 +62,10 @@ public class HatmanAI : Enemy
             }
 
             // Play exit particle effects
-            Instantiate(_transitionParticles, transform.position, Quaternion.identity);
+            if(_transitionParticles)
+            {
+                Instantiate(_transitionParticles, transform.position, Quaternion.identity);
+            }
         }
         yield return new WaitForSeconds(_teleportDelay);
         Kill();

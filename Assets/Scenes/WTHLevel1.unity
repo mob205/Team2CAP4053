@@ -3838,6 +3838,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6dc1bcf49d6e0bf47b7c0a40750f59bf, type: 3}
+    - target: {fileID: 2609600325734920342, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: fe2d1cd02ac8a0147bf50eb7d2f3feaf, type: 2}
     - target: {fileID: 7116176387748876850, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
       propertyPath: m_Name
       value: Music Player
@@ -8648,7 +8652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1280469191993102542
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12980,6 +12984,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 632585065684065495, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3216739742557352465, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.78745294
@@ -22779,7 +22787,7 @@ RectTransform:
   m_Father: {fileID: 6015900692266327174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
