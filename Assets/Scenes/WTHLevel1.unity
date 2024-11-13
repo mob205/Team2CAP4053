@@ -17615,6 +17615,7 @@ GameObject:
   - component: {fileID: 3911280892758447853}
   - component: {fileID: 5992122070025662663}
   - component: {fileID: 5474888712896244214}
+  - component: {fileID: 9050938755977366411}
   m_Layer: 0
   m_Name: Room.002
   m_TagString: Untagged
@@ -26748,6 +26749,27 @@ Transform:
   - {fileID: 5985274979008190018}
   m_Father: {fileID: 604094236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9050938755977366411
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5206042613088200181}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.7728581, y: 0.12000005, z: 2.4300003}
+  m_Center: {x: -2.5235693, y: 0.05999957, z: 1.2150003}
 --- !u!4 &9054739518207011214
 Transform:
   m_ObjectHideFlags: 0

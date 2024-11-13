@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa4ddecad8e323439a4ef01dc44aa59, type: 3}
   m_Name: Teleport
   m_EditorClassIdentifier: 
-  Clips: []
+  Clips:
+  - {fileID: 8300000, guid: 7afd9ea1a4d34471ca927cb3cc75c70d, type: 3}
   MinPitch: 0.5
   MaxPitch: 1.5
   MinVolume: 0.7
