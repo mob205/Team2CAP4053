@@ -124,6 +124,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _teleportParticles: {fileID: 1208347434222704543, guid: 6638b63ddd04c4641ada6a0d6215e56e, type: 3}
+  _teleportSFX: {fileID: 11400000, guid: 424275ef4f2233c4ca1b63159b211373, type: 2}
 --- !u!82 &6591107540819794193
 AudioSource:
   m_ObjectHideFlags: 0
