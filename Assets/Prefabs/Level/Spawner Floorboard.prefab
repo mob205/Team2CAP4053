@@ -390,7 +390,6 @@ MonoBehaviour:
   _spawnDelayMinimum: 7
   _spawnDelayMaximum: 15
   _spawnPoint: {fileID: 3725060379378856372}
-  _spawnOffset: {x: 0, y: 0, z: 0}
   _debugAllowSpawning: 1
   _counter: {fileID: 11400000, guid: 80060eb87930ad14d9286351d57f5930, type: 2}
   _maxBroken: 3
@@ -770,7 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 2
+  color: 0
   eraseRenderer: 0
 --- !u!114 &2454284863014745077
 MonoBehaviour:
@@ -785,6 +784,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activeColor: 0
-  _inactiveColor: 2
+  _inactiveColor: 3
   _flickerOnDuration: 0.5
   _flickerOffDuration: 0.5

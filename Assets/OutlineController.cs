@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class OutlineController : MonoBehaviour
 {
-    [SerializeField] private int _activeColor;
-    [SerializeField] private int _inactiveColor = 2;
-
     [SerializeField] private float _flickerOnDuration = .5f;
     [SerializeField] private float _flickerOffDuration = .5f;
 
@@ -19,46 +16,43 @@ public class OutlineController : MonoBehaviour
         _outline = GetComponent<Outline>();
     }
 
+    private void Start()
+    {
+        _outline.enabled = false;
+    }
+
     public void SetInactive()
     {
-        if(_flickerCoroutine != null)
-        {
-            StopCoroutine(_flickerCoroutine);
-        }
-        SetColor(_inactiveColor);
+        StopFlickering();
+        _outline.enabled = false;
     }
     public void SetActive()
     {
-        if(_flickerCoroutine != null)
-        {
-            StopCoroutine(_flickerCoroutine);
-        }
-        SetColor(_activeColor);
+        StopFlickering();
+        _outline.enabled = true;
     }
 
     public void StartFlickering()
     {
+        StopFlickering();
+        _flickerCoroutine = StartCoroutine(FlickerOutline());
+    }
+
+    public void StopFlickering()
+    {
         if(_flickerCoroutine != null)
         {
             StopCoroutine(_flickerCoroutine);
         }
-        _flickerCoroutine = StartCoroutine(FlickerOutline());
-    }
-
-    private void SetColor(int color)
-    {
-        _outline.color = color;
     }
 
     private IEnumerator FlickerOutline()
     {
         while(true)
         {
-            Debug.Log("ON");
-            SetColor(_activeColor);
+            _outline.enabled = true;
             yield return new WaitForSeconds(_flickerOnDuration);
-            Debug.Log("OFF");
-            SetColor(_inactiveColor);
+            _outline.enabled = false;
             yield return new WaitForSeconds(_flickerOffDuration);
         }
     }
