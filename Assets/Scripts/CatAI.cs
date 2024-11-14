@@ -31,12 +31,10 @@ public class CatAI : Tool
         base.Update();
         if(_isHeld && _holdTimeRemaining >= 0)
         {
-            Debug.Log("B");
             _holdTimeRemaining -= Time.deltaTime;
         }
         else if(_isHeld && _holdTimeRemaining < 0)
         {
-            Debug.Log("A");
             // Forces player to drop tool
             _heldPlayer.UnequipTool();
         }
@@ -51,7 +49,6 @@ public class CatAI : Tool
 
     public override void OnDropTool()
     {
-        Debug.Log("EFGH");
         base.OnDropTool();
 
         _agent.isStopped = false;
