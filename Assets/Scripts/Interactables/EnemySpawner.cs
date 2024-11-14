@@ -22,8 +22,8 @@ public class EnemySpawner : DurationInteractable
     [Tooltip("Maximum amount of time it takes for a monster to spawn, in seconds")]
     [SerializeField] private float _spawnDelayMaximum;
 
-    [Tooltip("Offset from enemy spawner to spawn enemies from")]
-    [SerializeField] private Vector3 _spawnOffset;
+    [Tooltip("Where to spawn enemies from")]
+    [SerializeField] private Transform _spawnPoint;
 
 #if UNITY_EDITOR
     [SerializeField] private bool _debugAllowSpawning;
@@ -151,7 +151,7 @@ public class EnemySpawner : DurationInteractable
                 if (!_debugAllowSpawning) { return; }
 #endif
 
-                var enemy = Instantiate(_spawnedEnemyObj, transform.position + _spawnOffset, transform.rotation);
+                var enemy = Instantiate(_spawnedEnemyObj, _spawnPoint.position, _spawnPoint.rotation);
                 GameStateManager.Instance.RegisterEnemy(enemy);
 
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
