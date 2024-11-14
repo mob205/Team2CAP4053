@@ -883,7 +883,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.238, y: 0.189, z: -33.465786}
-  m_LocalScale: {x: 0.44999996, y: 0.45, z: 0.44999996}
+  m_LocalScale: {x: 0.44999984, y: 0.45, z: 0.44999984}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7811726346357995162}
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0454140c02f354846883e7b1d088bf33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <RequiredTool>k__BackingField: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
+  <RequiredTool>k__BackingField: {fileID: 11400000, guid: 19e39217a8e59484aa1544efa3bb0957, type: 2}
   <InteractionPriority>k__BackingField: 0
   <MaxRepairDuration>k__BackingField: 4
   _repairGracePeriod: 5
