@@ -32,7 +32,7 @@ public class InteractProgressBar : MonoBehaviour
             _progressBarUI.gameObject.SetActive(true);
             _progressBarUI.value = 1 - (_interactable.TimeRemaining / _interactable.MaxDuration);
         }
-        else
+        else if(!_interactable.IsInProgress)
         {
             _progressBarUI.gameObject.SetActive(false);
         }

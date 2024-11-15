@@ -9,29 +9,36 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
 
     [field: SerializeField] public int InteractionPriority { get; private set; } = 0;
 
+    [field: SerializeField] public int NumInteractorsRequired { get; private set; } = 1;
+
+    public int CurrentNumInteractors { get { return _interactors.Count; } }
+
     public float MaxDuration { get { return GetInteractionDuration(); } }
 
     public float TimeRemaining { get; private set; }
     public bool IsInProgress { get; private set; }
 
-    private PlayerInteractor _interactor;
+    private List<PlayerInteractor> _interactors = new List<PlayerInteractor>();
 
     public virtual bool IsInteractable(ToolType tool)
     {
-        return _interactor == null && (RequiredTool == null || tool == RequiredTool);
+        return _interactors.Count < NumInteractorsRequired && (RequiredTool == null || tool == RequiredTool);
     }
 
     public virtual void StartInteract(PlayerInteractor player)
     {
+        _interactors.Add(player);
 
-        _interactor = player;
-        TimeRemaining = MaxDuration;
-        IsInProgress = true;
+        if(_interactors.Count == NumInteractorsRequired)
+        {
+            TimeRemaining = MaxDuration;
+            IsInProgress = true;
+        }
     }
 
     public virtual void StopInteract(PlayerInteractor player)
     {
-        _interactor = null;
+        _interactors.Remove(player);
         IsInProgress = false;
     }
 
