@@ -14,6 +14,8 @@ public class GameStateManager : MonoBehaviour
     public UnityEvent OnGameWin;
     public UnityEvent OnGameLose;
     public UnityEvent OnGameEnd;
+    public UnityEvent OnGameStart;
+    
     public static GameStateManager Instance { get; private set; }
     public List<PlayerInput> Players { get; private set; } = new();
 
@@ -30,7 +32,6 @@ public class GameStateManager : MonoBehaviour
         _spawnedEnemies.Add(enemy);
         enemy.OnKilled += RemoveEnemy;
     }
-
 
     private void RemoveEnemy(Enemy enemy)
     {
@@ -64,9 +65,10 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void StartTicking()
+    public void StartGame()
     {
         _isGameActive = true;
+        OnGameStart?.Invoke();
     }
 
     public void OnJoin(PlayerInput player)
