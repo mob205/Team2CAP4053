@@ -27,12 +27,12 @@ public class InteractProgressBar : MonoBehaviour
     private void Update()
     {
         // This can be hooked onto events on EnemySpawner if needed
-        if(_interactable.IsInProgress)
+        if(_interactable.IsInProgress && !_progressBarUI.gameObject.activeSelf)
         {
             _progressBarUI.gameObject.SetActive(true);
             _progressBarUI.value = 1 - (_interactable.TimeRemaining / _interactable.MaxDuration);
         }
-        else
+        else if(!_interactable.IsInProgress && _progressBarUI.gameObject.activeSelf)
         {
             _progressBarUI.gameObject.SetActive(false);
         }
