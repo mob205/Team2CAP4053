@@ -27,12 +27,12 @@ public class InteractCountDisplay : MonoBehaviour
     private void Update()
     {
         // This can be hooked onto events on EnemySpawner if needed
-        if (_interactable.CurrentNumInteractors > 0 && !_text.gameObject.activeSelf)
+        if (_interactable.CurrentNumInteractors > 0)
         {
             _text.gameObject.SetActive(true);
             _text.text = $"{_interactable.CurrentNumInteractors} / {_interactable.NumInteractorsRequired}";
         }
-        else if(_interactable.CurrentNumInteractors == 0 && _text.gameObject.activeSelf)
+        else if(_interactable.CurrentNumInteractors == 0)
         {
             _text.gameObject.SetActive(false);
         }
