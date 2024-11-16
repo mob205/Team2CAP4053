@@ -32,5 +32,4 @@ public class WormIndicator : MonoBehaviour
             OnWormExit?.Invoke(worm);
         }
     }
-
 }

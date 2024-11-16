@@ -107,17 +107,6 @@ public class EnemySpawner : DurationInteractable
     {
         _players.Remove(playerInput.gameObject);
     }
-
-    public override void StartInteract(PlayerInteractor player)
-    {
-        base.StartInteract(player); 
-    }
-
-    public override void StopInteract(PlayerInteractor player)
-    {
-        base.StopInteract(player);
-    }
-
     public override bool IsInteractable(ToolType tool)
     {
         return _currentState != State.Repaired && base.IsInteractable(tool);
@@ -137,7 +126,7 @@ public class EnemySpawner : DurationInteractable
         return MaxRepairDuration;
     }
 
-    public void UpdateBreaking()
+    private void UpdateBreaking()
     {
         // Spawns monsters if broken
         // Don't spawn monsters if player is actively repairing
