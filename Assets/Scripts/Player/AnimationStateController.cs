@@ -59,11 +59,13 @@ public class AnimationStateController : MonoBehaviour
 
     void Update()
     {
+
         // If the player is dead, do not allow movement
         if (playerHealth != null && playerHealth.IsDead)
         {
             // Ensure IsMoving is set to false when dead
             animator.SetBool(isMovingHash, false);
+            animator.SetBool(IsToolingHash, false);
             return;
         }
 
