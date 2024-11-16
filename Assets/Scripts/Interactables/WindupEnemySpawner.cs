@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WindupEnemySpawner : DurationInteractable
 {
@@ -17,10 +18,13 @@ public class WindupEnemySpawner : DurationInteractable
     [SerializeField] private Vector3 _spawnOffset;
     public float WindupRatio { get { return 1 - Mathf.Clamp01(_windupRemaining / MaxWindDownDuration); } }
 
+    public UnityEvent OnWindUp;
+
     float _windupRemaining;
     bool _hasSpawned = false;
 
-    private void Start()
+
+    private void Awake()
     {
         _windupRemaining = MaxWindDownDuration;
     }
@@ -44,7 +48,6 @@ public class WindupEnemySpawner : DurationInteractable
 
     private void SpawnEnemy()
     {
-        Debug.Log("Spawn enemy");
         var enemy = Instantiate(_spawnedEnemyObj, transform.position + _spawnOffset, transform.rotation);
         GameStateManager.Instance.RegisterEnemy(enemy);
     }
@@ -52,6 +55,7 @@ public class WindupEnemySpawner : DurationInteractable
     {
         _windupRemaining = MaxWindDownDuration;
         _hasSpawned = false;
+        OnWindUp?.Invoke();
     }
 
     protected override float GetInteractionDuration()

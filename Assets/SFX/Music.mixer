@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Music
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters:
+  - guid: 31914669db2f41c4aa08b10357cd0683
+    name: Pitch
+  m_AudioMixerGroupViews:
+  - guids:
+    - 1d720dcf8a8f4d44aa2d6941516dc1b4
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 1d720dcf8a8f4d44aa2d6941516dc1b4
+  m_Children: []
+  m_Volume: 71180cdc07ac1744ab3cf63ebd068271
+  m_Pitch: 31914669db2f41c4aa08b10357cd0683
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 73a073809db681c4ab67ce0cb8e2c1c0
+  m_EffectName: Attenuation
+  m_MixLevel: 7566288d06b03ed428ba309e20e5a971
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 63854dfccb54aa24786bad4e7cf68ede
+  m_FloatValues:
+    323518e67f7078e4ba9cbf804050e1a5: 22000
+    17d297d84a614ba4c850f5517b64c98e: 2.14
+    31914669db2f41c4aa08b10357cd0683: 1
+    2db8efe9e7265c34ba3381cee8899e08: 3.31
+    fe9130cf23ef9024e83e1f30b7ea3753: 22000
+  m_TransitionOverrides: {}

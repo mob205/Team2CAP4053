@@ -168,7 +168,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6846145323877246979}
         m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
-        m_MethodName: StartTicking
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532979af8c0353548b046ae680332d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LevelDuration>k__BackingField: 60
+  <LevelDuration>k__BackingField: 90
   _numRevivesUsed: {fileID: 11400000, guid: bcaafe1469e9a5743b33a3a21c45e5ba, type: 2}
   OnGameWin:
     m_PersistentCalls:
@@ -300,6 +300,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnGameStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7885671376069132636
 MonoBehaviour:
   m_ObjectHideFlags: 0

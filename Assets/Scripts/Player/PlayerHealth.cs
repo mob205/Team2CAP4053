@@ -18,6 +18,10 @@ public class PlayerHealth : MonoBehaviour
     public UnityEvent<PlayerHealth> OnDeath;
     public UnityEvent<PlayerHealth> OnRevive;
 
+    private void Start()
+    {
+        _reviveCollider.enabled = false;
+    }
     public void Kill()
     {
         if (!IsDead && !DebugIsInvulnerable)

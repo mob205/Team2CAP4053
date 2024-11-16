@@ -22,8 +22,8 @@ public class EnemySpawner : DurationInteractable
     [Tooltip("Maximum amount of time it takes for a monster to spawn, in seconds")]
     [SerializeField] private float _spawnDelayMaximum;
 
-    [Tooltip("Offset from enemy spawner to spawn enemies from")]
-    [SerializeField] private Vector3 _spawnOffset;
+    [Tooltip("Where to spawn enemies from")]
+    [SerializeField] private Transform _spawnPoint;
 
 #if UNITY_EDITOR
     [SerializeField] private bool _debugAllowSpawning;
@@ -49,25 +49,11 @@ public class EnemySpawner : DurationInteractable
     [Tooltip("The number of times a check for this spawner to break happens every second")]
     [SerializeField] private int _breakChecksPerSecond = 4;
 
-    [Header("Audio")]
-    [Tooltip("Sound to be played after a successful repair")]
-    [SerializeField] private AudioEvent _completeRepairSound;
+    private float _breakChanceModifier = 1;
 
-    [Tooltip("Sound to be played while a repair is ongoing")]
-    [SerializeField] private AudioEvent _inProgressRepairSound;
-
-    [Tooltip("Sound to be played after the spawner breaks")]
-    [SerializeField] private AudioEvent _completeBreakSound;
-
+    public UnityEvent OnStartBreaking;
     public UnityEvent OnBreak;
     public UnityEvent OnRepair;
-
-    [Header("Test Colors")]
-    [SerializeField] Color _repairedColor;
-    [SerializeField] Color _breakingColor;
-    [SerializeField] Color _brokenColor;
-
-    private Material _mat;
 
     enum State
     { 
@@ -82,7 +68,6 @@ public class EnemySpawner : DurationInteractable
 
     private List<GameObject> _players = new List<GameObject>();
 
-    private AudioSource _audioSource;
     private State _currentState;
     private float _timeSinceLastBroken;
 
@@ -94,12 +79,6 @@ public class EnemySpawner : DurationInteractable
             _timeSinceLastBroken += Time.deltaTime;
         }
         UpdateBreaking();
-    }
-
-    private void Awake()
-    {
-        _audioSource = GetComponent<AudioSource>();
-        _mat = GetComponent<MeshRenderer>().material;
     }
 
     private void Start()
@@ -130,28 +109,6 @@ public class EnemySpawner : DurationInteractable
     {
         _players.Remove(playerInput.gameObject);
     }
-
-    public override void StartInteract(PlayerInteractor player)
-    {
-        base.StartInteract(player); 
-
-        if(_inProgressRepairSound && _audioSource)
-        {
-            // Set audio source here to loop if needed, then toggle off in StopInteract()
-            _inProgressRepairSound.Play(_audioSource);
-        }
-    }
-
-    public override void StopInteract(PlayerInteractor player)
-    {
-        base.StopInteract(player);
-
-        if(_audioSource)
-        {
-            _audioSource.Stop();
-        }
-    }
-
     public override bool IsInteractable(ToolType tool)
     {
         return _currentState != State.Repaired && base.IsInteractable(tool);
@@ -163,14 +120,6 @@ public class EnemySpawner : DurationInteractable
         --_counter.Value;
         BreakCheckTimer = _repairGracePeriod;
 
-        if(_audioSource && _completeRepairSound)
-        {
-            _completeRepairSound.Play(_audioSource);
-        }
-
-        // Change to repaired model
-        _mat.color = _repairedColor;
-
         OnRepair?.Invoke();
     }
 
@@ -179,7 +128,7 @@ public class EnemySpawner : DurationInteractable
         return MaxRepairDuration;
     }
 
-    public void UpdateBreaking()
+    private void UpdateBreaking()
     {
         // Spawns monsters if broken
         // Don't spawn monsters if player is actively repairing
@@ -193,7 +142,7 @@ public class EnemySpawner : DurationInteractable
                 if (!_debugAllowSpawning) { return; }
 #endif
 
-                var enemy = Instantiate(_spawnedEnemyObj, transform.position + _spawnOffset, transform.rotation);
+                var enemy = Instantiate(_spawnedEnemyObj, _spawnPoint.position, _spawnPoint.rotation);
                 GameStateManager.Instance.RegisterEnemy(enemy);
 
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
@@ -208,15 +157,7 @@ public class EnemySpawner : DurationInteractable
             {
                 _currentState = State.Broken;
 
-                // Switch to broken model
-                _mat.color = _brokenColor;
-
                 CurrentSpawnTimer = Random.Range(_spawnDelayMinimum, _spawnDelayMaximum);
-
-                if (_audioSource && _completeBreakSound)
-                {
-                    _completeBreakSound.Play(_audioSource);
-                }
 
                 OnBreak?.Invoke();
             }
@@ -225,13 +166,12 @@ public class EnemySpawner : DurationInteractable
         // Change from repaired to breaking
         if (_currentState == State.Repaired && CanBreak())
         {
-            // Switch model/play animation/etc.
-            _mat.color = _breakingColor;
-
             _currentState = State.Breaking;
             _timeSinceLastBroken = 0;
             CurrentBreakingTimer = _breakingDuration;
             ++_counter.Value;
+
+            OnStartBreaking?.Invoke();
         }
     }
 
@@ -259,7 +199,12 @@ public class EnemySpawner : DurationInteractable
         
         float timeChance = _timeSinceLastBroken * (_baseBreakChancePerMinute / 60);
         float distChance = distAvg * _breakChanceDistanceFactor;
-        float totalChance = (_maxBroken - _counter.Value) * (timeChance + distChance);
+        float totalChance = _breakChanceModifier * (_maxBroken - _counter.Value) * (timeChance + distChance);
         return (Random.Range(0f, 100f) < totalChance);
+    }
+
+    public void AddBreakChanceModifier(float modifier)
+    {
+        _breakChanceModifier += modifier;
     }
 }

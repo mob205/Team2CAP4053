@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class EnableInLevel : MonoBehaviour
 {
-    [Tooltip("Objects to enable when the Ready signal is given")]
-    [SerializeField] private GameObject[] _enableOnReady;
-
     private MeshRenderer _test;
+
+    private DurationInteractable[] _enableOnReady;
+
+    private void Awake()
+    {
+        _enableOnReady = GetComponentsInChildren<DurationInteractable>();
+    }
 
     private void Start()
     {
         foreach(var item in _enableOnReady)
         {
-            item.SetActive(false);
+            item.enabled = false;
         }
         ReadyUpManager.Instance.OnReadyUp.AddListener(EnableAll);
         GameStateManager.Instance.OnGameEnd.AddListener(DisableAll);
@@ -22,14 +26,14 @@ public class EnableInLevel : MonoBehaviour
     {
         foreach(var item in _enableOnReady)
         {
-            item.SetActive(true);
+            item.enabled = true;
         }
     }
     private void DisableAll()
     {
         foreach(var item in _enableOnReady)
         {
-            item.SetActive(false);
+            item.enabled = false;
         }
     }
 }

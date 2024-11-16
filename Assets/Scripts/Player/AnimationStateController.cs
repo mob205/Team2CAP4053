@@ -17,6 +17,7 @@ public class AnimationStateController : MonoBehaviour
     private PlayerController player;
     private PlayerHealth playerHealth;
     private PlayerInteractor playerInteractor;
+    private AudioSource audioSource;
 
     //PARTICLE SYSTEMS
 
@@ -39,6 +40,7 @@ public class AnimationStateController : MonoBehaviour
         player = GetComponentInParent<PlayerController>();
         playerHealth = player.GetComponent<PlayerHealth>();
         playerInteractor = player.GetComponent<PlayerInteractor>();
+        audioSource = GetComponent<AudioSource>();
 
 
         // If not found, attempt to find it in the scene (you may need to customize this)
@@ -57,11 +59,13 @@ public class AnimationStateController : MonoBehaviour
 
     void Update()
     {
+
         // If the player is dead, do not allow movement
         if (playerHealth != null && playerHealth.IsDead)
         {
             // Ensure IsMoving is set to false when dead
             animator.SetBool(isMovingHash, false);
+            animator.SetBool(IsToolingHash, false);
             return;
         }
 
@@ -119,5 +123,13 @@ public class AnimationStateController : MonoBehaviour
         animator.SetTrigger(reviveHash);
         //animator.ResetTrigger(reviveHash);
         animator.SetBool(isMovingHash, false);  // Stop moving on revive initially
+    }
+
+    public void PlayToolSFX()
+    {
+        if(playerInteractor && playerInteractor.HeldTool != null && playerInteractor.HeldTool.UseSound)
+        {
+            playerInteractor.HeldTool.UseSound.Play(audioSource);
+        }
     }
 }
