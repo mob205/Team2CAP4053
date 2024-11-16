@@ -49,6 +49,8 @@ public class EnemySpawner : DurationInteractable
     [Tooltip("The number of times a check for this spawner to break happens every second")]
     [SerializeField] private int _breakChecksPerSecond = 4;
 
+    private float _breakChanceModifier = 1;
+
     public UnityEvent OnStartBreaking;
     public UnityEvent OnBreak;
     public UnityEvent OnRepair;
@@ -197,7 +199,12 @@ public class EnemySpawner : DurationInteractable
         
         float timeChance = _timeSinceLastBroken * (_baseBreakChancePerMinute / 60);
         float distChance = distAvg * _breakChanceDistanceFactor;
-        float totalChance = (_maxBroken - _counter.Value) * (timeChance + distChance);
+        float totalChance = _breakChanceModifier * (_maxBroken - _counter.Value) * (timeChance + distChance);
         return (Random.Range(0f, 100f) < totalChance);
+    }
+
+    public void AddBreakChanceModifier(float modifier)
+    {
+        _breakChanceModifier += modifier;
     }
 }
