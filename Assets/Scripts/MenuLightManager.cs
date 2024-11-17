@@ -16,7 +16,7 @@ public class MenuLightController: MonoBehaviour
         areaLights = new List<Light>();
 
         // Assuming all area lights have a specific tag, like "MenuLight"
-        GameObject[] lightObjects = GameObject.FindGameObjectsWithTag("MenuLight");
+        GameObject[] lightObjects = GameObject.FindGameObjectsWithTag("MenuLights");
 
         // Add each light component from the found objects
         foreach (GameObject obj in lightObjects)
