@@ -30,7 +30,7 @@ public class PointDisplay : MonoBehaviour
 
     private void UpdateDisplay()
     {
-        _text.text = Mathf.CeilToInt(_points.Points).ToString();
+        _text.text = "Points: " + Mathf.CeilToInt(_points.Points).ToString();
         Invoke(nameof(UpdateDisplay), _updateDelay);
     }
 }
