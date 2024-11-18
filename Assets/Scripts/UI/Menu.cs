@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    private AsyncOperation _changeToLoadingScreen;
+    private void Start()
+    {
+        _changeToLoadingScreen = SceneManager.LoadSceneAsync("LoadingScreen");
+        _changeToLoadingScreen.allowSceneActivation = false;
+    }
     public void OnPlayButton() {
-	SceneManager.LoadScene("WTHLevel1");
+		SavedData.NextScene = 1;
+        _changeToLoadingScreen.allowSceneActivation = true;
 	}
 	
     public void OnQuitButton() {
