@@ -13,6 +13,8 @@ public class MoleAI : Enemy
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private LayerMask _viewBlocking;
 
+    [SerializeField] private Collider _deathBox;
+
     [SerializeField] private float _walkPointRange;
 
     [Tooltip("Speed to move at when chasing or fleeing")]
@@ -42,7 +44,7 @@ public class MoleAI : Enemy
         // Create states
         var chase = new ChaseState(this, _navAgent, _playerDetector, _runSpeed, _viewBlocking, _animator);
         var patrol = new PatrolState(_navAgent, _walkSpeed, _walkPointRange, _groundLayer, _animator);
-        var flee = new FleeState(this, _navAgent, _playerDetector, _runSpeed, _viewBlocking, _fleeTool, _animator);
+        var flee = new FleeState(this, _navAgent, _playerDetector, _runSpeed, _viewBlocking, _fleeTool, _animator, _deathBox);
 
         _stateMachine.AddTransition(patrol, flee, HasValidFleeTarget);
         _stateMachine.AddTransition(patrol, chase,  () => { return !HasValidFleeTarget() && HasAnyPlayerInSight(); });

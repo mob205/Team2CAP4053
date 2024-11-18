@@ -13,11 +13,12 @@ public class FleeState : IState
     private ToolType _fleeToolType;
     private MoleAI _mole;
     private Animator _animator;
+    private Collider _deathBox;
 
     private Func<PlayerInteractor, bool> _isValidTarget;
 
 
-    public FleeState(MoleAI mole, NavMeshAgent agent, PlayerDetector playerDetector, float moveSpeed, LayerMask viewBlocking, ToolType fleeToolType, Animator animator)
+    public FleeState(MoleAI mole, NavMeshAgent agent, PlayerDetector playerDetector, float moveSpeed, LayerMask viewBlocking, ToolType fleeToolType, Animator animator, Collider deathBox)
     {
         _mole = mole;
         _navAgent = agent;
@@ -26,6 +27,7 @@ public class FleeState : IState
         _viewBlocking = viewBlocking;
         _fleeToolType = fleeToolType;
         _animator = animator;
+        _deathBox = deathBox;
 
     }
     public void Enter()
@@ -34,6 +36,8 @@ public class FleeState : IState
 
         _animator.SetBool("isWalking", true);
         _animator.SetBool("isAttacking", false);
+
+        _deathBox.enabled = false;
 
         _isValidTarget = (player) =>
         {
@@ -47,7 +51,7 @@ public class FleeState : IState
 
     public void Exit()
     {
-
+        _deathBox.enabled = true;
     }
 
     public void Tick()

@@ -13,13 +13,13 @@ public class PointDisplay : MonoBehaviour
 
     private void Awake()
     {
-        _text = GetComponentInChildren<TextMeshProUGUI>();
+        _text = GetComponent<TextMeshProUGUI>();
     }
 
     private void Start()
     {
-        _points = FindObjectOfType<PointCalculator>();
-        if(_points == null)
+        _points = GameStateManager.Instance.GetComponent<PointCalculator>();
+        if(!_points)
         {
             Debug.Log("No PointsCalculator found. Deleting points display UI.");
             Destroy(this);

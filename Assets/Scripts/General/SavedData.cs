@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class SavedData 
 {
-    public static int NextScene { get; set; } = 1;
+    public static string NextScene { get; set; }
 }
