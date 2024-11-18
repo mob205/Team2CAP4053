@@ -15659,14 +15659,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 3194469947951391221, guid: ab50ed4e92d99274dba5939a57e3ab28, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 3194469947951391221, guid: ab50ed4e92d99274dba5939a57e3ab28, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 190
-      objectReference: {fileID: 0}
     - target: {fileID: 3504471673458175206, guid: ab50ed4e92d99274dba5939a57e3ab28, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -15758,14 +15750,6 @@ PrefabInstance:
     - target: {fileID: 3504471673458175206, guid: ab50ed4e92d99274dba5939a57e3ab28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8118326080655224624, guid: ab50ed4e92d99274dba5939a57e3ab28, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 8118326080655224624, guid: ab50ed4e92d99274dba5939a57e3ab28, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 160.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

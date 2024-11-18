@@ -728,6 +728,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b120f0af122c541c38caa05af054b648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UnityOnKilled:
+    m_PersistentCalls:
+      m_Calls: []
   _fleeTool: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
   _groundLayer:
     serializedVersion: 2
@@ -735,6 +738,7 @@ MonoBehaviour:
   _viewBlocking:
     serializedVersion: 2
     m_Bits: 520
+  _deathBox: {fileID: 3131337055931588352}
   _walkPointRange: 50
   _runSpeed: 2
   _walkSpeed: 1
@@ -890,6 +894,7 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  _ignoreToolType: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
 --- !u!1 &4782373381381529487
 GameObject:
   m_ObjectHideFlags: 0
