@@ -1780,6 +1780,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1273359723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &782393223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4471417736712195937, guid: f28773468a63cfd4da9d2f1b416b6a6f, type: 3}
+  m_PrefabInstance: {fileID: 1209131501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &787929238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2677,13 +2682,21 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: OnGameWin.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: OnGameLose.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 322768332}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameWin.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1579020130}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameWin.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2691,7 +2704,7 @@ PrefabInstance:
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameLose.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 782393223}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameLose.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3404,6 +3417,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
+--- !u!1 &1579020130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4471417736712195937, guid: f28773468a63cfd4da9d2f1b416b6a6f, type: 3}
+  m_PrefabInstance: {fileID: 445341658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1586255830
 GameObject:
   m_ObjectHideFlags: 0
@@ -3913,6 +3931,10 @@ PrefabInstance:
     - target: {fileID: 2981983503310499777, guid: 0ea513ed354ffcc4f8b8da38bcc7ad63, type: 3}
       propertyPath: m_Name
       value: Worm
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981983503310499777, guid: 0ea513ed354ffcc4f8b8da38bcc7ad63, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4708684512853313403, guid: 0ea513ed354ffcc4f8b8da38bcc7ad63, type: 3}
       propertyPath: m_LocalPosition.x

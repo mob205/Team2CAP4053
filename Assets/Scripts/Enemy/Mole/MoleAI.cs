@@ -1,5 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,8 +25,10 @@ public class MoleAI : Enemy
     [Tooltip("Speed to move at when patrolling")]
     [SerializeField] private float _walkSpeed;
 
-    private StateMachine _stateMachine;
+    [SerializeField] private float _deathEffectsDuration;
+    [SerializeField] private ParticleSystem _deathParticles;
 
+    private StateMachine _stateMachine;
 
     //Attacking
     [SerializeField] private float _timeBetweenAttacks;
@@ -91,5 +95,14 @@ public class MoleAI : Enemy
     private bool HasNoTarget()
     {
         return Target == null;
+    }
+    public override void Kill()
+    {
+        transform.DOScale(new Vector3(0, 0, 0), _deathEffectsDuration).SetEase(Ease.InBack).OnComplete(() => base.Kill()).easeOvershootOrAmplitude = 3f;
+
+        if(_deathParticles)
+        {
+            Instantiate(_deathParticles, transform.position, Quaternion.identity);
+        }
     }
 }

@@ -742,6 +742,7 @@ MonoBehaviour:
   _walkPointRange: 50
   _runSpeed: 2
   _walkSpeed: 1
+  _deathEffectsDuration: 0.5
   _timeBetweenAttacks: 0
 --- !u!65 &3210819191218014201
 BoxCollider:
