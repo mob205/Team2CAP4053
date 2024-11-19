@@ -743,6 +743,7 @@ MonoBehaviour:
   _runSpeed: 2
   _walkSpeed: 1
   _deathEffectsDuration: 0.5
+  _deathParticles: {fileID: 612217615780722764, guid: 271dec3be0cff8845b4ecdaf52313865, type: 3}
   _timeBetweenAttacks: 0
 --- !u!65 &3210819191218014201
 BoxCollider:

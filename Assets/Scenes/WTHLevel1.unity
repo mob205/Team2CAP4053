@@ -1311,6 +1311,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: _spawnDelayMinimum
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: _baseBreakChancePerMinute
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1754973432}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1754973432}
     - target: {fileID: 5898002490695370151, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1812,6 +1828,14 @@ PrefabInstance:
     - target: {fileID: 2914223431673262398, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: _spawnDelayMinimum
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: _baseBreakChancePerMinute
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5898002490695370151, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3639,6 +3663,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2914223431673262398, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
   m_PrefabInstance: {fileID: 602116373}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1754973432 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1022052208417713133, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+  m_PrefabInstance: {fileID: 826172112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1867804437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914223431673262398, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
@@ -3761,6 +3790,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: _spawnDelayMinimum
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: _baseBreakChancePerMinute
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1754973432}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1754973432}
     - target: {fileID: 5898002490695370151, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12027,6 +12072,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: _spawnDelayMinimum
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: _baseBreakChancePerMinute
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1754973432}
+    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
+      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1754973432}
     - target: {fileID: 5898002490695370151, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

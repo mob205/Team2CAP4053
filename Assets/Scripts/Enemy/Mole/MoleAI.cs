@@ -36,6 +36,7 @@ public class MoleAI : Enemy
     private PlayerDetector _playerDetector;
     private NavMeshAgent _navAgent;
     private Animator _animator;
+    private bool _isDead;
 
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class MoleAI : Enemy
         var chase = new ChaseState(this, _navAgent, _playerDetector, _runSpeed, _viewBlocking, _animator);
         var patrol = new PatrolState(_navAgent, _walkSpeed, _walkPointRange, _groundLayer, _animator);
         var flee = new FleeState(this, _navAgent, _playerDetector, _runSpeed, _viewBlocking, _fleeTool, _animator, _deathBox);
+        var death = new DeathState(_navAgent);
 
         _stateMachine.AddTransition(patrol, flee, HasValidFleeTarget);
         _stateMachine.AddTransition(patrol, chase,  () => { return !HasValidFleeTarget() && HasAnyPlayerInSight(); });
@@ -58,6 +60,8 @@ public class MoleAI : Enemy
 
         _stateMachine.AddTransition(chase, flee,    () => { return PlayerHasFleeTool(Target) && IsPlayerInSight(Target); });
         _stateMachine.AddTransition(chase, patrol,  () => { return HasNoTarget() || !IsPlayerAlive(Target); });
+
+        _stateMachine.AddAnyTransition(death, () => { return _isDead; });
 
         _stateMachine.SetState(patrol);
     }
@@ -98,11 +102,15 @@ public class MoleAI : Enemy
     }
     public override void Kill()
     {
-        transform.DOScale(new Vector3(0, 0, 0), _deathEffectsDuration).SetEase(Ease.InBack).OnComplete(() => base.Kill()).easeOvershootOrAmplitude = 3f;
-
-        if(_deathParticles)
+        _isDead = true;
+        transform.DOScale(new Vector3(0, 0, 0), _deathEffectsDuration).SetEase(Ease.InBack).OnComplete(FinishKill).easeOvershootOrAmplitude = 3f;
+    }
+    private void FinishKill()
+    {
+        if (_deathParticles)
         {
             Instantiate(_deathParticles, transform.position, Quaternion.identity);
         }
+        base.Kill();
     }
 }
