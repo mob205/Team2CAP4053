@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScreen.unity
     guid: 865aa467727ca9a4f80d7ab5400080f0
+  - enabled: 1
+    path: Assets/Scenes/WTHLevel2.unity
+    guid: e2e4a420c7cd5f440b5f3bd527a55fc2
   m_configObjects: {}

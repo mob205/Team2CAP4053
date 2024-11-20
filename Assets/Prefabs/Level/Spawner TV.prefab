@@ -361,8 +361,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <RequiredTool>k__BackingField: {fileID: 0}
   <InteractionPriority>k__BackingField: 3
+  <NumInteractorsRequired>k__BackingField: 1
   <MaxWindupDuration>k__BackingField: 4
-  <MaxWindDownDuration>k__BackingField: 25
+  <MaxWindDownDuration>k__BackingField: 30
   _selfWindupDelay: 8
   _spawnedEnemyObj: {fileID: 8783838554554634037, guid: a96287d46b1611f4db33c5e500c40b91, type: 3}
   _spawnOffset: {x: 1000, y: 0, z: 0}

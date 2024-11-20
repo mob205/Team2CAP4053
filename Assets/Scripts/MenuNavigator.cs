@@ -14,7 +14,7 @@ public class MenuNavigator : MonoBehaviour
     public UnityEvent OnBack;
 
     private Button _button;
-    private void Start()
+    private void Awake()
     {
         _button = GetComponent<Button>();
     }

@@ -13,7 +13,7 @@ public class ChangeColorOnSelect : MonoBehaviour
     private Image _image;
     private TextMeshProUGUI _text;
 
-    private void Start()
+    private void Awake()
     {
         _image = GetComponent<Image>();
         _text = GetComponentInChildren<TextMeshProUGUI>();
@@ -24,12 +24,24 @@ public class ChangeColorOnSelect : MonoBehaviour
 
     public void Select()
     {
-        _image.color = _selectColor;
-        _text.color = _selectFontColor;
+        if(_image)
+        {
+            _image.color = _selectColor;
+        }
+        if(_text)
+        {
+            _text.color = _selectFontColor;
+        }
     }
     public void Deselect()
     {
-        _image.color = _startColor;
-        _text.color = _startFontColor;
+        if(_image)
+        {
+            _image.color = _startColor;
+        }
+        if(_text)
+        {
+            _text.color = _startFontColor;
+        }
     }
 }

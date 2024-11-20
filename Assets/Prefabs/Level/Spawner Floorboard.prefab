@@ -384,18 +384,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <RequiredTool>k__BackingField: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
   <InteractionPriority>k__BackingField: 0
+  <NumInteractorsRequired>k__BackingField: 1
   <MaxRepairDuration>k__BackingField: 4
   _repairGracePeriod: 5
   _spawnedEnemyObj: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-  _spawnDelayMinimum: 7
+  _spawnDelayMinimum: 10
   _spawnDelayMaximum: 15
   _spawnPoint: {fileID: 3725060379378856372}
   _debugAllowSpawning: 1
   _counter: {fileID: 11400000, guid: 80060eb87930ad14d9286351d57f5930, type: 2}
   _maxBroken: 3
-  _breakingDuration: 5
-  _baseBreakChancePerMinute: 10
-  _breakChanceDistanceFactor: 0.1
+  _breakingDuration: 7
+  _baseBreakChancePerMinute: 9
+  _breakChanceDistanceFactor: 0.05
   _breakChecksPerSecond: 4
   OnStartBreaking:
     m_PersistentCalls:
@@ -783,7 +784,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa01a604aaf189741b671f3221b50024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeColor: 0
-  _inactiveColor: 3
   _flickerOnDuration: 0.5
   _flickerOffDuration: 0.5
