@@ -1,53 +1,63 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class ButtonSelector : MonoBehaviour
 {
-    [SerializeField] private Selectable _start;
-    private Selectable _current;
+    [SerializeField] private MenuNavigator _start;
+    private MenuNavigator _current;
 
     private void Start()
     {
         _current = _start;
+        _current.Select();
     }
     public void OnLeft(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
 
-        if (_current.FindSelectableOnLeft())
+        _current.Deselect();
+        if (_current.Left)
         {
-            _current = _current.FindSelectableOnLeft();
+            _current = _current.Left;
         }
+        _current.Select();
     }
     public void OnRight(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
 
-        if (_current.FindSelectableOnRight())
+        _current.Deselect();
+        if (_current.Right)
         {
-            _current = _current.FindSelectableOnRight();
+            _current = _current.Right;
         }
+        _current.Select();
     }
     public void OnNext(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
 
-        if (_current.FindSelectableOnUp())
+        _current.Click();
+
+        _current.Deselect();
+        if (_current.Next)
         {
-            _current = _current.FindSelectableOnUp();
+            _current = _current.Next;
         }
+        _current.Select();
     }
 
     public void OnBack(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
 
-        if(_current.FindSelectableOnDown())
+        _current.GoBack();
+
+        _current.Deselect();
+        if(_current.Back)
         {
-            _current = _current.FindSelectableOnDown();
+            _current = _current.Back;
         }
+        _current.Select();
     }
 }
