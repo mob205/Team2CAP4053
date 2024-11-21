@@ -8,12 +8,11 @@ public class UIHover : MonoBehaviour
     [SerializeField] private float _period;
     private Vector3 _initialPos;
 
-    private void Start()
+    private void Awake()
     {
         _initialPos = transform.position;
-        ApplyHover();
     }
-    private void FixedUpdate()
+    private void Update()
     {
         ApplyHover();
     }
