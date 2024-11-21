@@ -1,10 +1,14 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class ButtonSelector : MonoBehaviour
 {
     [SerializeField] private MenuNavigator _start;
+    [SerializeField] private float _lockoutTime;
     private MenuNavigator _current;
+
+    private bool _canInput = true;
 
     private void Start()
     {
@@ -14,6 +18,8 @@ public class ButtonSelector : MonoBehaviour
     public void OnLeft(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
+
+        _current.GoLeft();
 
         _current.Deselect();
         if (_current.Left)
@@ -26,6 +32,8 @@ public class ButtonSelector : MonoBehaviour
     {
         if (!context.performed) { return; }
 
+        _current.GoRight();
+
         _current.Deselect();
         if (_current.Right)
         {
@@ -35,7 +43,7 @@ public class ButtonSelector : MonoBehaviour
     }
     public void OnNext(InputAction.CallbackContext context)
     {
-        if (!context.performed) { return; }
+        if (!context.performed || !_canInput) { return; }
 
         _current.Click();
 
@@ -43,13 +51,14 @@ public class ButtonSelector : MonoBehaviour
         if (_current.Next)
         {
             _current = _current.Next;
+            StartCoroutine(LockInput());
         }
         _current.Select();
     }
 
     public void OnBack(InputAction.CallbackContext context)
     {
-        if (!context.performed) { return; }
+        if (!context.performed || !_canInput) { return; }
 
         _current.GoBack();
 
@@ -57,7 +66,15 @@ public class ButtonSelector : MonoBehaviour
         if(_current.Back)
         {
             _current = _current.Back;
+            StartCoroutine(LockInput());
         }
         _current.Select();
+    }
+
+    private IEnumerator LockInput()
+    {
+        _canInput = false;
+        yield return new WaitForSeconds(_lockoutTime);
+        _canInput = true;
     }
 }

@@ -286,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeInDuration: 10
   _fadeOutDuration: 2
+  _lingerDuration: 10
   _spawnSFX: {fileID: 11400000, guid: 327cf6364f8da3545bbe9f48b4637adf, type: 2}
   _deathSFX: {fileID: 11400000, guid: 49f49c8f14348f84ca8e8891e70cbe7d, type: 2}
 --- !u!82 &6597951468079479433
@@ -297,7 +298,7 @@ AudioSource:
   m_GameObject: {fileID: 5129095619416953091}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: fe2d1cd02ac8a0147bf50eb7d2f3feaf, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

@@ -13,6 +13,9 @@ public class MenuNavigator : MonoBehaviour
     public UnityEvent OnDeselected;
     public UnityEvent OnBack;
 
+    public UnityEvent OnLeft;
+    public UnityEvent OnRight;
+
     private Button _button;
     private void Awake()
     {
@@ -21,6 +24,14 @@ public class MenuNavigator : MonoBehaviour
     public void GoBack()
     {
         OnBack?.Invoke();
+    }
+    public void GoLeft()
+    {
+        OnLeft?.Invoke();
+    }
+    public void GoRight()
+    {
+        OnRight?.Invoke();
     }
     public void Click()
     {

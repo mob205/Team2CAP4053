@@ -11,10 +11,14 @@ public class UIHover : MonoBehaviour
     private void Start()
     {
         _initialPos = transform.position;
+        ApplyHover();
     }
     private void FixedUpdate()
     {
-
+        ApplyHover();
+    }
+    private void ApplyHover()
+    {
         if (_period == 0) { return; }
         var hoverDist = (_amplitude * Mathf.Sin(((2 * Mathf.PI) / _period) * Time.time));
         transform.position = _initialPos + transform.rotation * new Vector3(0, hoverDist, 0);

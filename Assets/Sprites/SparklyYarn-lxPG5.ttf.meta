@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b58b98d006e9b0d4caaddeb8edae014d
+guid: db13913b567733343b68d439aa3de182
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Segoe Script
+  - Sparkly Yarn
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
