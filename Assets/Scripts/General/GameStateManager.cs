@@ -2,6 +2,7 @@ using UnityEngine.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class GameStateManager : MonoBehaviour
     public float TimeRemaining { get; private set; }
     public int PlayersAlive { get; private set; }
     public int TotalPlayers { get; private set; }
+
+    public bool HasHighscore { get; private set; }
 
     private bool _isGameActive;
 
@@ -118,6 +121,12 @@ public class GameStateManager : MonoBehaviour
     {
         _isGameActive = false;
         KillAllEnemies();
+
+        if (TryGetComponent(out PointCalculator points))
+        {
+            HasHighscore = LevelManager.TrySetHighscore(SceneManager.GetActiveScene().name, points.Points);
+        }
+
         OnGameEnd?.Invoke();
     }
 
