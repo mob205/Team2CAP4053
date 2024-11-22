@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 class LevelInfo
 {
     public float ClearScore;
-    public float Highscore;
     public string NextLevel;
     public string PreviousLevel;
     public bool IsDefaultUnlocked;
@@ -13,7 +12,6 @@ class LevelInfo
     public LevelInfo(float clearScore, float highscore, string nextLevel, string previousLevel, bool isDefaultUnlocked)
     {
         ClearScore = clearScore;
-        Highscore = highscore;
         NextLevel = nextLevel;
         PreviousLevel = previousLevel;
         IsDefaultUnlocked = isDefaultUnlocked;
@@ -36,12 +34,6 @@ public static class LevelManager
         if (curHighScore < score)
         {
             PlayerPrefs.SetFloat(level, score);
-
-            if(_levels.ContainsKey(level))
-            {
-                _levels[level].Highscore = curHighScore;
-            }
-
             return true;
         }
         return false;
@@ -60,6 +52,15 @@ public static class LevelManager
         return null;
     }
 
+    public static string GetPreviousLevel(string level)
+    {
+        if(_levels.ContainsKey(level))
+        {
+            return _levels[level].PreviousLevel;
+        }
+        return null;
+    }
+
     public static int GetClearScore(string level)
     {
         if (_levels.ContainsKey(level))
@@ -71,11 +72,15 @@ public static class LevelManager
 
     public static bool IsLevelUnlocked(string level)
     {
+        Debug.Log("Checking " + level);
         if (level == null || !_levels.ContainsKey(level)) { return false; }
+        Debug.Log("Passed initial check.");
         if (_levels[level].PreviousLevel == null || _levels[level].IsDefaultUnlocked) { return true; }
+        Debug.Log("Passed secondary check.");
 
         var last = _levels[level].PreviousLevel;
-        return _levels[level].Highscore >= _levels[last].ClearScore;
+
+        return GetHighscore(last) >= _levels[level].ClearScore;
     }
 
     public static void InitializeLevels(LevelLock[] levelLocks)
@@ -98,7 +103,6 @@ public static class LevelManager
             _levels.Add(levelLock.Level, cur);
         }
 
-        PreloadLoadingScreen();
     }
 
     public static void LoadLevel(string level)
@@ -110,8 +114,7 @@ public static class LevelManager
         }
         SceneManager.LoadSceneAsync(level).completed += (_) => PreloadLoadingScreen();
     }
-
-    private static void PreloadLoadingScreen()
+    public static void PreloadLoadingScreen()
     {
         if(_changeToLoadingScreen == null)
         {

@@ -574,7 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <RequiredTool>k__BackingField: {fileID: 11400000, guid: 78d4a7f3a63e60d41b81d052c16b6ec1, type: 2}
-  <InteractionPriority>k__BackingField: 3
+  <InteractionPriority>k__BackingField: 99
 --- !u!65 &4984016632789419644
 BoxCollider:
   m_ObjectHideFlags: 0

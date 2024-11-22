@@ -22,9 +22,11 @@ public class PlayerController : MonoBehaviour
     }
     public void OnMove(InputAction.CallbackContext context)
     {
-        if(!_allowInput)
+        // Player shouldn't move if the interacting with an interactable
+        if(!_allowInput || (_interactor.CurrentInteractable != null))
         {
             MoveInput = Vector2.zero;
+            _movement.InputMove(MoveInput);
             return; 
         }
         MoveInput = context.ReadValue<Vector2>();

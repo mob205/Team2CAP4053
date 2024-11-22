@@ -15,9 +15,13 @@ public class MenuLevelLoader : MonoBehaviour
 {
     [SerializeField] private LevelLock[] _levels;
 
-    private void Start()
+    private void Awake()
     {
         LevelManager.InitializeLevels(_levels);   
+    }
+    private void Start()
+    {
+        LevelManager.PreloadLoadingScreen();
     }
     public void TryLoadLevel(string level)
     {

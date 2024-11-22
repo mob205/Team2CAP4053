@@ -102,6 +102,7 @@ public class MoleAI : Enemy
     }
     public override void Kill()
     {
+        if (_isDead) return;
         _isDead = true;
         transform.DOScale(new Vector3(0, 0, 0), _deathEffectsDuration).SetEase(Ease.InBack).OnComplete(FinishKill).easeOvershootOrAmplitude = 3f;
     }

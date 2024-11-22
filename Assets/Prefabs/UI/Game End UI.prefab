@@ -682,7 +682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3690284565704433385
 RectTransform:
   m_ObjectHideFlags: 0
@@ -805,9 +805,8 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 4158188593988278088, guid: b2d2b760a0bc1bd478287ad0dd5f0f55, type: 3}
-  _nextScene: WTHLevel2
-  _menuScene: Menu
-  _loadingScene: LoadingScreen
+  _nextButton: {fileID: 0}
+  _menuButton: {fileID: 0}
 --- !u!1 &4790983975695875508
 GameObject:
   m_ObjectHideFlags: 0

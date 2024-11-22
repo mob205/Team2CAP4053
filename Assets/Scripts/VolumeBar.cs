@@ -17,7 +17,7 @@ public class VolumeBar : MonoBehaviour
 
     private void Start()
     {
-        _currentVolume = _barPieces.Length;
+        SetVolume(PlayerPrefs.GetInt("VolumeBarTick", _barPieces.Length));
     }
 
     public void DecreaseVolume()
@@ -28,10 +28,14 @@ public class VolumeBar : MonoBehaviour
     {
         SetVolume(_currentVolume + 1);
     }
-    public void SetVolume(int volume)
+    public void SetVolume(int volumeStep)
     {
-        _currentVolume = Mathf.Clamp(volume, 0, _barPieces.Length);
+        _currentVolume = Mathf.Clamp(volumeStep, 0, _barPieces.Length);
+
+        float volume = _volumeCurve.Evaluate(_currentVolume);
         _mixer.SetFloat("Volume", _volumeCurve.Evaluate(_currentVolume));
+        PlayerPrefs.SetFloat("Volume", volume);
+        PlayerPrefs.SetInt("VolumeBarTick", volumeStep);
 
         for(int i = 0; i < _barPieces.Length; i++)
         {

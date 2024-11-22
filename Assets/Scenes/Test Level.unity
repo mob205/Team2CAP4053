@@ -1161,18 +1161,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Win UI
       objectReference: {fileID: 0}
-    - target: {fileID: 4471417736712195937, guid: f28773468a63cfd4da9d2f1b416b6a6f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5447411074359072554, guid: f28773468a63cfd4da9d2f1b416b6a6f, type: 3}
-      propertyPath: _nextScene
-      value: TestLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5447411074359072554, guid: f28773468a63cfd4da9d2f1b416b6a6f, type: 3}
-      propertyPath: _nextAction.m_UseReference
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

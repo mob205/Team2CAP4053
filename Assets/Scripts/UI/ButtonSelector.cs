@@ -41,6 +41,33 @@ public class ButtonSelector : MonoBehaviour
         }
         _current.Select();
     }
+
+    public void OnUp(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        _current.GoUp();
+
+        _current.Deselect();
+        if (_current.Up)
+        {
+            _current = _current.Up;
+        }
+        _current.Select();
+    }
+    public void OnDown(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        _current.GoDown();
+
+        _current.Deselect();
+        if (_current.Down)
+        {
+            _current = _current.Down;
+        }
+        _current.Select();
+    }
     public void OnNext(InputAction.CallbackContext context)
     {
         if (!context.performed || !_canInput) { return; }

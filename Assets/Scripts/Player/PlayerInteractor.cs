@@ -77,7 +77,6 @@ public class PlayerInteractor : MonoBehaviour
             }
         }
     }
-
     public ToolType GetHeldToolType()
     {
         if(HeldTool)

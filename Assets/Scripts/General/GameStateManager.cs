@@ -121,12 +121,6 @@ public class GameStateManager : MonoBehaviour
     {
         _isGameActive = false;
         KillAllEnemies();
-
-        if (TryGetComponent(out PointCalculator points))
-        {
-            HasHighscore = LevelManager.TrySetHighscore(SceneManager.GetActiveScene().name, points.Points);
-        }
-
         OnGameEnd?.Invoke();
     }
 
@@ -146,6 +140,12 @@ public class GameStateManager : MonoBehaviour
         if (TimeRemaining <= 0 && _isGameActive)
         {
             EndGame();
+
+            if (TryGetComponent(out PointCalculator points))
+            {
+                HasHighscore = LevelManager.TrySetHighscore(SceneManager.GetActiveScene().name, points.Points);
+            }
+
             OnGameWin?.Invoke();
         }
     }

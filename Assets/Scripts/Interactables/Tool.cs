@@ -31,6 +31,7 @@ public class Tool : MonoBehaviour, IInteractable
         {
             _heldPlayer = player;
         }
+        player.StopInteract();
     }
 
     public virtual void StopInteract(PlayerInteractor player)

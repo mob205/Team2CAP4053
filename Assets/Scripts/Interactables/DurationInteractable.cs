@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class DurationInteractable : MonoBehaviour, IInteractable
 {
@@ -17,6 +19,7 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
 
     public float TimeRemaining { get; private set; }
     public bool IsInProgress { get; private set; }
+    public UnityEvent OnInteractionFinished { get; }
 
     private List<PlayerInteractor> _interactors = new List<PlayerInteractor>();
 
@@ -51,6 +54,11 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
         {
             IsInProgress = false;
             CompleteInteraction();
+            
+            for(int i = _interactors.Count - 1; i >= 0; i--)
+            {
+                _interactors[i].StopInteract();
+            }
         }
     }
 
