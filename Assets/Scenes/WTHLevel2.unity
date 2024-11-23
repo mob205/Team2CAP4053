@@ -9586,9 +9586,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: L1MidDoor
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4269509616595633295, guid: 6f680d0eabad4b644a4c0c47b975bf82, type: 3}
-    - {fileID: 1646287978977705272, guid: 6f680d0eabad4b644a4c0c47b975bf82, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -23123,8 +23121,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: L1MidDoor (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4269509616595633295, guid: 6f680d0eabad4b644a4c0c47b975bf82, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
