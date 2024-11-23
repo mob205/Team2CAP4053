@@ -72,11 +72,8 @@ public static class LevelManager
 
     public static bool IsLevelUnlocked(string level)
     {
-        Debug.Log("Checking " + level);
         if (level == null || !_levels.ContainsKey(level)) { return false; }
-        Debug.Log("Passed initial check.");
         if (_levels[level].PreviousLevel == null || _levels[level].IsDefaultUnlocked) { return true; }
-        Debug.Log("Passed secondary check.");
 
         var last = _levels[level].PreviousLevel;
 

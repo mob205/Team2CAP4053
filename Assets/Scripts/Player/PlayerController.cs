@@ -20,17 +20,20 @@ public class PlayerController : MonoBehaviour
         _interactor = GetComponent<PlayerInteractor>(); 
         _playerID = nextID++;
     }
+    private void Update()
+    {
+        if(!_allowInput || _interactor && _interactor.CurrentInteractable != null)
+        {
+            _movement.InputMove(Vector2.zero);
+        }
+        else
+        {
+            _movement.InputMove(MoveInput);
+        }
+    }
     public void OnMove(InputAction.CallbackContext context)
     {
-        // Player shouldn't move if the interacting with an interactable
-        if(!_allowInput || (_interactor.CurrentInteractable != null))
-        {
-            MoveInput = Vector2.zero;
-            _movement.InputMove(MoveInput);
-            return; 
-        }
         MoveInput = context.ReadValue<Vector2>();
-        _movement.InputMove(MoveInput);
     }
     public void OnUse(InputAction.CallbackContext context)
     {
@@ -58,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if(!_allowInput)
         {
             _movement.InputMove(Vector2.zero);
+            _interactor.StopInteract();
             _interactor.UnequipTool();
         }
     }
