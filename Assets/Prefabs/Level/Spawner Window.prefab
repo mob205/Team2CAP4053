@@ -945,7 +945,7 @@ MonoBehaviour:
   _counter: {fileID: 11400000, guid: ed3c2fd7225c05e4ab336198d2808446, type: 2}
   _maxBroken: 2
   _breakingDuration: 7
-  _baseBreakChancePerMinute: 7
+  _baseBreakChancePerMinute: 6
   _breakChanceDistanceFactor: 0.05
   _breakChecksPerSecond: 4
   OnStartBreaking:

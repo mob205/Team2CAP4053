@@ -12,7 +12,19 @@ public class PlayerController : MonoBehaviour
     private int _playerID;
     private bool _allowInput = true;
 
-    public Vector2 MoveInput { get; private set; }
+    public Vector2 MoveVector
+    {
+        get
+        {
+            if (!_allowInput || (_interactor && _interactor.CurrentInteractable != null))
+            {
+                return Vector2.zero;
+            }
+            return _moveInput;
+        }
+    }
+
+    private Vector2 _moveInput;
 
     private void Awake()
     {
@@ -22,18 +34,21 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if(!_allowInput || _interactor && _interactor.CurrentInteractable != null)
-        {
-            _movement.InputMove(Vector2.zero);
-        }
-        else
-        {
-            _movement.InputMove(MoveInput);
-        }
+        _movement.InputMove(MoveVector);
+        //if(!_allowInput || _interactor && _interactor.CurrentInteractable != null)
+        //{
+        //    _movement.InputMove(Vector2.zero);
+        //    Debug.Log("Movement locked.");
+        //}
+        //else
+        //{
+        //    Debug.Log("Movement freed.");
+        //    _movement.InputMove(_moveInput);
+        //}
     }
     public void OnMove(InputAction.CallbackContext context)
     {
-        MoveInput = context.ReadValue<Vector2>();
+        _moveInput = context.ReadValue<Vector2>();
     }
     public void OnUse(InputAction.CallbackContext context)
     {

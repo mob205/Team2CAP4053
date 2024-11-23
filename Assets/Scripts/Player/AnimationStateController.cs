@@ -71,7 +71,7 @@ public class AnimationStateController : MonoBehaviour
 
         bool isMovingAnim = animator.GetBool(isMovingHash);
 
-        bool isMovingInput = player.MoveInput != Vector2.zero;
+        bool isMovingInput = player.MoveVector != Vector2.zero;
 
         // Set the "IsMoving" parameter based on input
         if (!isMovingAnim && isMovingInput)
@@ -86,9 +86,9 @@ public class AnimationStateController : MonoBehaviour
         }
 
         // If there's any movement, rotate the character to face the movement direction
-        if (player.MoveInput != Vector2.zero)
+        if (isMovingInput)
         {
-            var movementDirection = new Vector3(player.MoveInput.x, 0, player.MoveInput.y).normalized;
+            var movementDirection = new Vector3(player.MoveVector.x, 0, player.MoveVector.y).normalized;
             Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
