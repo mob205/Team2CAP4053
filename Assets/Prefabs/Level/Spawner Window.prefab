@@ -935,7 +935,7 @@ MonoBehaviour:
   <RequiredTool>k__BackingField: {fileID: 11400000, guid: 19e39217a8e59484aa1544efa3bb0957, type: 2}
   <InteractionPriority>k__BackingField: 0
   <NumInteractorsRequired>k__BackingField: 1
-  <MaxRepairDuration>k__BackingField: 4
+  <MaxRepairDuration>k__BackingField: 3
   _repairGracePeriod: 5
   _spawnedEnemyObj: {fileID: 6686326449874185604, guid: 0ea513ed354ffcc4f8b8da38bcc7ad63, type: 3}
   _spawnDelayMinimum: 10
