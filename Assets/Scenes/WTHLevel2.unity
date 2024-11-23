@@ -4646,7 +4646,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: L1MidDoor (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4269509616595633295, guid: 6f680d0eabad4b644a4c0c47b975bf82, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9585,7 +9586,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: L1MidDoor
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4269509616595633295, guid: 6f680d0eabad4b644a4c0c47b975bf82, type: 3}
+    - {fileID: 1646287978977705272, guid: 6f680d0eabad4b644a4c0c47b975bf82, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10826,6 +10829,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 10687a9fe0252774a934b6cd16d7d8e2, type: 2}
+    - target: {fileID: -3122091082524101052, guid: 7e33455a51c464648b3f57838db94e41, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 112.765434
+      objectReference: {fileID: 0}
+    - target: {fileID: -3122091082524101052, guid: 7e33455a51c464648b3f57838db94e41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.15
+      objectReference: {fileID: 0}
     - target: {fileID: -2357884022608881519, guid: 7e33455a51c464648b3f57838db94e41, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -23112,7 +23123,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: L1MidDoor (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4269509616595633295, guid: 6f680d0eabad4b644a4c0c47b975bf82, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
