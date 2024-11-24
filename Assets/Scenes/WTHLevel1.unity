@@ -170,18 +170,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 682697683}
     m_Modifications:
     - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.635001
       objectReference: {fileID: 0}
@@ -225,90 +213,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 959
-      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.b
-      value: 0.5368903
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.g
-      value: 0.5427332
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.r
-      value: 0.8962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnedEnemyObj
-      value: 
-      objectReference: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMaximum
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _completeBreakSound
-      value: 
-      objectReference: {fileID: 11400000, guid: cec7f32dc66d61a40898952ca8238e72, type: 2}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _debugAllowSpawning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakChanceDistanceFactor
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -880,18 +788,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 682697683}
     m_Modifications:
     - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.421002
       objectReference: {fileID: 0}
@@ -935,94 +831,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 959
-      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.b
-      value: 0.5368903
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.g
-      value: 0.5427332
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.r
-      value: 0.8962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnedEnemyObj
-      value: 
-      objectReference: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMaximum
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _completeBreakSound
-      value: 
-      objectReference: {fileID: 11400000, guid: cec7f32dc66d61a40898952ca8238e72, type: 2}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _debugAllowSpawning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakChanceDistanceFactor
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1199,22 +1011,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1754973432}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1754973432}
     - target: {fileID: 5898002490695370151, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1515,18 +1311,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 682697683}
     m_Modifications:
     - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.265
       objectReference: {fileID: 0}
@@ -1570,81 +1354,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 959
-      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.b
-      value: 0.5368903
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.g
-      value: 0.5427332
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.r
-      value: 0.8962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnedEnemyObj
-      value: 
-      objectReference: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMaximum
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _completeBreakSound
-      value: 
-      objectReference: {fileID: 11400000, guid: cec7f32dc66d61a40898952ca8238e72, type: 2}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _debugAllowSpawning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakChanceDistanceFactor
-      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1654,11 +1366,6 @@ PrefabInstance:
 --- !u!4 &787929239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-  m_PrefabInstance: {fileID: 787929238}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &787929240 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1996602469843486430, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
   m_PrefabInstance: {fileID: 787929238}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &826172112
@@ -1716,14 +1423,6 @@ PrefabInstance:
     - target: {fileID: 2914223431673262398, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5898002490695370151, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1887,18 +1586,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 682697683}
     m_Modifications:
     - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.318001
       objectReference: {fileID: 0}
@@ -1942,94 +1629,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 959
-      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.b
-      value: 0.5368903
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.g
-      value: 0.5427332
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.r
-      value: 0.8962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnedEnemyObj
-      value: 
-      objectReference: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMaximum
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _completeBreakSound
-      value: 
-      objectReference: {fileID: 11400000, guid: cec7f32dc66d61a40898952ca8238e72, type: 2}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _debugAllowSpawning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakChanceDistanceFactor
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2080,18 +1683,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 682697683}
     m_Modifications:
     - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1370002
       objectReference: {fileID: 0}
@@ -2135,94 +1726,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 959
-      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.b
-      value: 0.5368903
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.g
-      value: 0.5427332
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.r
-      value: 0.8962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnedEnemyObj
-      value: 
-      objectReference: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMaximum
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _completeBreakSound
-      value: 
-      objectReference: {fileID: 11400000, guid: cec7f32dc66d61a40898952ca8238e72, type: 2}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _debugAllowSpawning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakChanceDistanceFactor
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2449,18 +1956,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 682697683}
     m_Modifications:
     - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.209
       objectReference: {fileID: 0}
@@ -2504,94 +1999,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 959
-      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.b
-      value: 0.5368903
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.g
-      value: 0.5427332
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.r
-      value: 0.8962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnedEnemyObj
-      value: 
-      objectReference: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMaximum
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _completeBreakSound
-      value: 
-      objectReference: {fileID: 11400000, guid: cec7f32dc66d61a40898952ca8238e72, type: 2}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _debugAllowSpawning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakChanceDistanceFactor
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3021,18 +2432,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 682697683}
     m_Modifications:
     - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.44999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.039999966
       objectReference: {fileID: 0}
@@ -3076,94 +2475,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2201081521756992566, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 959
-      objectReference: {fileID: 0}
     - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 7132513813287690811, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _brokenColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.b
-      value: 0.5368903
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.g
-      value: 0.5427332
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakingColor.r
-      value: 0.8962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _repairedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnedEnemyObj
-      value: 
-      objectReference: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMaximum
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _completeBreakSound
-      value: 
-      objectReference: {fileID: 11400000, guid: cec7f32dc66d61a40898952ca8238e72, type: 2}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _debugAllowSpawning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: _breakChanceDistanceFactor
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3626,11 +2941,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2914223431673262398, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
   m_PrefabInstance: {fileID: 602116373}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1754973432 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1022052208417713133, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-  m_PrefabInstance: {fileID: 826172112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1867804437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914223431673262398, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
@@ -3692,14 +3002,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Spawner
       objectReference: {fileID: 0}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
-    - target: {fileID: 7293466062322248602, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 787929240}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3761,22 +3063,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1754973432}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1754973432}
     - target: {fileID: 5898002490695370151, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3918,21 +3204,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4308993087713182001, guid: 838120ead373ad24ab705e1ab90aa577, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4308993088500861496, guid: 838120ead373ad24ab705e1ab90aa577, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7571753191511110045, guid: 838120ead373ad24ab705e1ab90aa577, type: 3}
       propertyPath: m_Name
       value: Hammer (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4308993088500861496, guid: 838120ead373ad24ab705e1ab90aa577, type: 3}
-    - {fileID: 4308993087713182001, guid: 838120ead373ad24ab705e1ab90aa577, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12044,22 +11320,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: _spawnDelayMinimum
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: _baseBreakChancePerMinute
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: OnBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1754973432}
-    - target: {fileID: 4840982907596681345, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
-      propertyPath: OnRepair.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1754973432}
     - target: {fileID: 5898002490695370151, guid: 80f25b4a37727b64c96c8536db1ffcc6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -15320,22 +14580,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 877127232960930798, guid: 5eb7acba3e1f330438ab349910105dbc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 877127232960930798, guid: 5eb7acba3e1f330438ab349910105dbc, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 877127232960930798, guid: 5eb7acba3e1f330438ab349910105dbc, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 877127232960930798, guid: 5eb7acba3e1f330438ab349910105dbc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.19
-      objectReference: {fileID: 0}
     - target: {fileID: 2894210238442017649, guid: 5eb7acba3e1f330438ab349910105dbc, type: 3}
       propertyPath: m_Name
       value: Prayer Necklace
@@ -15350,7 +14594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3178447486126109657, guid: 5eb7acba3e1f330438ab349910105dbc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -33.104
+      value: -33.655
       objectReference: {fileID: 0}
     - target: {fileID: 3178447486126109657, guid: 5eb7acba3e1f330438ab349910105dbc, type: 3}
       propertyPath: m_LocalRotation.w

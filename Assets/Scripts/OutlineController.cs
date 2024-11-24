@@ -1,4 +1,3 @@
-using cakeslice;
 using System.Collections;
 using UnityEngine;
 
@@ -14,6 +13,10 @@ public class OutlineController : MonoBehaviour
     private void Awake()
     {
         _outline = GetComponent<Outline>();
+        if(!_outline)
+        {
+            Destroy(this);
+        }
     }
 
     private void Start()

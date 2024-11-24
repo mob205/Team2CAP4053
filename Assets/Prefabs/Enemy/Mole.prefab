@@ -394,6 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2436826753315018272}
   - component: {fileID: 4650300968356784943}
+  - component: {fileID: 1720182624848146315}
   m_Layer: 8
   m_Name: Burrow
   m_TagString: Untagged
@@ -497,6 +498,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.22272307, y: -0.055911213, z: 0.0000013709068}
     m_Extent: {x: 0.6295289, y: 0.43151852, z: 0.6325811}
   m_DirtyAABB: 0
+--- !u!114 &1720182624848146315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2860526242722326729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &3664537634006554521
 GameObject:
   m_ObjectHideFlags: 0

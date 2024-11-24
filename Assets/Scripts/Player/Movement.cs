@@ -24,7 +24,6 @@ public class Movement : MonoBehaviour
     }
     public void InputMove(Vector2 moveInput)
     {
-        Debug.Log($"Move received: {moveInput.x} | {moveInput.y}");
         _moveInput = moveInput.normalized;
     }
     private void FixedUpdate()

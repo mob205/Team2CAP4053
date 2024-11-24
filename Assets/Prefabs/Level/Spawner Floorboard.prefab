@@ -388,7 +388,7 @@ MonoBehaviour:
   <MaxRepairDuration>k__BackingField: 3
   _repairGracePeriod: 5
   _spawnedEnemyObj: {fileID: 1469991163566298556, guid: a23109a361e6843aab7dafe168ec56bc, type: 3}
-  _spawnDelayMinimum: 10
+  _spawnDelayMinimum: 7
   _spawnDelayMaximum: 15
   _spawnPoint: {fileID: 3725060379378856372}
   _debugAllowSpawning: 1
@@ -684,8 +684,8 @@ GameObject:
   - component: {fileID: 8239795039858555616}
   - component: {fileID: 2001697421676909040}
   - component: {fileID: 4917303299714755193}
-  - component: {fileID: 9037780425720883456}
   - component: {fileID: 2454284863014745077}
+  - component: {fileID: 554322525876452476}
   m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
@@ -758,20 +758,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9037780425720883456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7485915070741467640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 0
-  eraseRenderer: 0
 --- !u!114 &2454284863014745077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,3 +772,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flickerOnDuration: 0.5
   _flickerOffDuration: 0.5
+--- !u!114 &554322525876452476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7485915070741467640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
