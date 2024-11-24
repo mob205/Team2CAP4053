@@ -19,8 +19,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
       in configuration does not match rotation in animation file:\n\t'RigRibcage'
-      : rotation error = 24.884768 deg\n\t'RigNeck' : rotation error = 7.259557 deg\n\t'RigLArm1'
-      : rotation error = 42.654533 deg\n\t'RigLArmPalm' : rotation error = 8.799187
+      : rotation error = 24.884777 deg\n\t'RigNeck' : rotation error = 7.259559 deg\n\t'RigLArm1'
+      : rotation error = 42.654537 deg\n\t'RigLArmPalm' : rotation error = 8.799191
       deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
@@ -101,7 +101,7 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
