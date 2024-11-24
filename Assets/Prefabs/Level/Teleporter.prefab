@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1976098673229027028}
   - component: {fileID: 181443302824103092}
   - component: {fileID: 6591107540819794193}
-  m_Layer: 0
+  - component: {fileID: 1674341567775616326}
+  m_Layer: 12
   m_Name: Teleporter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,8 +56,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5000831, y: 1.6316425, z: 1.1383336}
-  m_Center: {x: -0.059090197, y: 0.70749134, z: 0.4308332}
+  m_Size: {x: 0.77160025, y: 1.6316425, z: 0.70904386}
+  m_Center: {x: -0.0029541254, y: 0.70749134, z: 0.21618849}
 --- !u!114 &181443302824103092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ MonoBehaviour:
   TeleportDestination: {fileID: 0}
   TeleportLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 8320
   _teleportParticles: {fileID: 1208347434222704543, guid: 6638b63ddd04c4641ada6a0d6215e56e, type: 3}
   _teleportSFX: {fileID: 11400000, guid: 424275ef4f2233c4ca1b63159b211373, type: 2}
 --- !u!82 &6591107540819794193
@@ -171,6 +172,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1674341567775616326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2216099771206951390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: 0}
+  m_EndPoint: {x: 10.252142, y: 2.4625628, z: -11.295189}
+  m_Width: 0
+  m_CostModifier: -1
+  m_Bidirectional: 1
+  m_AutoUpdatePosition: 0
+  m_Area: 0
 --- !u!1 &4244252713202900099
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +203,7 @@ GameObject:
   - component: {fileID: 6348527431864062886}
   - component: {fileID: 1743501999636300850}
   - component: {fileID: 7220311013903902776}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Teleport Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5080,6 +5101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheval Mirror 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3981014422482800788, guid: a8230dbfd0d32c545877ac0e4315156c, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4356308134809766446, guid: a8230dbfd0d32c545877ac0e4315156c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5119,6 +5144,10 @@ PrefabInstance:
     - target: {fileID: 4356308134809766446, guid: a8230dbfd0d32c545877ac0e4315156c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453117950753760717, guid: a8230dbfd0d32c545877ac0e4315156c, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

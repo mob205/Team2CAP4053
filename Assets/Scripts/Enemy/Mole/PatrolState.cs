@@ -24,6 +24,7 @@ public class PatrolState : IState
 
     public void Enter()
     {
+
         _navAgent.speed = _speed;
         _animator.SetBool("isWalking", true);
         _animator.SetBool("isAttacking", false);

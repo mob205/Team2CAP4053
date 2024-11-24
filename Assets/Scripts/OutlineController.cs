@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class OutlineController : MonoBehaviour
@@ -10,6 +11,9 @@ public class OutlineController : MonoBehaviour
 
     private Coroutine _flickerCoroutine;
 
+    private Color _enabledColor;
+    private Color _disabledColor;
+
     private void Awake()
     {
         _outline = GetComponent<Outline>();
@@ -17,22 +21,24 @@ public class OutlineController : MonoBehaviour
         {
             Destroy(this);
         }
+        _enabledColor = _outline.OutlineColor;
+        _disabledColor = Color.clear;
     }
 
     private void Start()
     {
-        _outline.enabled = false;
+        _outline.OutlineColor = _disabledColor;
     }
 
     public void SetInactive()
     {
         StopFlickering();
-        _outline.enabled = false;
+        _outline.OutlineColor = _disabledColor;
     }
     public void SetActive()
     {
         StopFlickering();
-        _outline.enabled = true;
+        _outline.OutlineColor = _enabledColor;
     }
 
     public void StartFlickering()
@@ -53,9 +59,9 @@ public class OutlineController : MonoBehaviour
     {
         while(true)
         {
-            _outline.enabled = true;
+            _outline.OutlineColor = _enabledColor;
             yield return new WaitForSeconds(_flickerOnDuration);
-            _outline.enabled = false;
+            _outline.OutlineColor = _disabledColor;
             yield return new WaitForSeconds(_flickerOffDuration);
         }
     }

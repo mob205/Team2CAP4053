@@ -1,4 +1,6 @@
+using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Teleporter : MonoBehaviour
 {
@@ -16,13 +18,13 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        var closestPlayer = collision.gameObject;
+        var target = collision.gameObject;
 
-        if (Helpers.IsInMask(TeleportLayers, closestPlayer.layer))
+        if (Helpers.IsInMask(TeleportLayers, target.layer))
         {
             if(_teleportParticles)
             {
-                Instantiate(_teleportParticles, closestPlayer.transform.position, Quaternion.identity);
+                Instantiate(_teleportParticles, target.transform.position, Quaternion.identity);
                 Instantiate(_teleportParticles, TeleportDestination.position, Quaternion.identity);
             }
             if(_teleportSFX)
@@ -30,7 +32,14 @@ public class Teleporter : MonoBehaviour
                 _teleportSFX.Play(_audioSource);
             }
 
-            closestPlayer.transform.position = TeleportDestination.position;
+            if(target.transform.parent && target.transform.parent.TryGetComponent(out NavMeshAgent agent))
+            {
+                agent.Warp(TeleportDestination.position);
+            }
+            else
+            {
+                target.transform.position = TeleportDestination.position;
+            }
         }
     }
 }

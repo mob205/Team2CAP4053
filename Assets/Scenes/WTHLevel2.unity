@@ -2307,6 +2307,18 @@ PrefabInstance:
       propertyPath: TeleportDestination
       value: 
       objectReference: {fileID: 1459710396}
+    - target: {fileID: 1674341567775616326, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
+      propertyPath: m_EndPoint.x
+      value: -10.333642
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674341567775616326, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
+      propertyPath: m_EndPoint.y
+      value: -2.5124435
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674341567775616326, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
+      propertyPath: m_EndPoint.z
+      value: 16.088842
+      objectReference: {fileID: 0}
     - target: {fileID: 2216099771206951390, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
       propertyPath: m_Name
       value: Teleporter (1)
@@ -8309,6 +8321,18 @@ PrefabInstance:
       propertyPath: TeleportDestination
       value: 
       objectReference: {fileID: 411070720}
+    - target: {fileID: 1674341567775616326, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
+      propertyPath: m_EndPoint.x
+      value: 4.604805
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674341567775616326, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
+      propertyPath: m_EndPoint.y
+      value: -2.6218524
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674341567775616326, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
+      propertyPath: m_EndPoint.z
+      value: 9.79451
+      objectReference: {fileID: 0}
     - target: {fileID: 2216099771206951390, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
       propertyPath: m_Name
       value: Teleporter (3)
@@ -23731,6 +23755,14 @@ PrefabInstance:
       propertyPath: TeleportDestination
       value: 
       objectReference: {fileID: 1578514379}
+    - target: {fileID: 1674341567775616326, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
+      propertyPath: m_EndPoint.x
+      value: -4.493077
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674341567775616326, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
+      propertyPath: m_EndPoint.z
+      value: -5.7886033
+      objectReference: {fileID: 0}
     - target: {fileID: 2216099771206951390, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
       propertyPath: m_Name
       value: Teleporter (2)
@@ -24534,37 +24566,9 @@ PrefabInstance:
       propertyPath: TeleportDestination
       value: 
       objectReference: {fileID: 2049220486}
-    - target: {fileID: 1976098673229027028, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
-      propertyPath: m_Size.x
-      value: 0.77160025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976098673229027028, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
-      propertyPath: m_Size.z
-      value: 0.70904386
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976098673229027028, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
-      propertyPath: m_Center.x
-      value: -0.0029541254
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976098673229027028, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
-      propertyPath: m_Center.z
-      value: 0.21618849
-      objectReference: {fileID: 0}
     - target: {fileID: 2216099771206951390, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
       propertyPath: m_Name
       value: Teleporter
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216099771206951390, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3411396790675227647, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244252713202900099, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5087821006528640566, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24605,10 +24609,6 @@ PrefabInstance:
     - target: {fileID: 5087821006528640566, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6036386089456531110, guid: 29f80d87a47f9e74d8a670cbef7f412d, type: 3}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
