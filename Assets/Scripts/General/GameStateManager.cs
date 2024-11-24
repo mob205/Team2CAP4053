@@ -20,13 +20,12 @@ public class GameStateManager : MonoBehaviour
     public static GameStateManager Instance { get; private set; }
     public List<PlayerInput> Players { get; private set; } = new();
 
+    public bool IsGameActive { get; private set; }
     public float TimeRemaining { get; private set; }
     public int PlayersAlive { get; private set; }
     public int TotalPlayers { get; private set; }
 
     public bool HasHighscore { get; private set; }
-
-    private bool _isGameActive;
 
     private List<Enemy> _spawnedEnemies = new();
 
@@ -62,7 +61,7 @@ public class GameStateManager : MonoBehaviour
 
     private void Update()
     {
-        if (_isGameActive)
+        if (IsGameActive)
         {
             TickTimer(Time.deltaTime);
         }
@@ -70,7 +69,7 @@ public class GameStateManager : MonoBehaviour
 
     public void StartGame()
     {
-        _isGameActive = true;
+        IsGameActive = true;
         OnGameStart?.Invoke();
     }
 
@@ -111,7 +110,7 @@ public class GameStateManager : MonoBehaviour
     }
     private void CheckAliveStatus()
     {
-        if (PlayersAlive <= 0 && _isGameActive)
+        if (PlayersAlive <= 0 && IsGameActive)
         {
             EndGame();
             OnGameLose?.Invoke();
@@ -119,7 +118,7 @@ public class GameStateManager : MonoBehaviour
     }
     private void EndGame()
     {
-        _isGameActive = false;
+        IsGameActive = false;
         KillAllEnemies();
         OnGameEnd?.Invoke();
     }
@@ -137,7 +136,7 @@ public class GameStateManager : MonoBehaviour
     private void TickTimer(float deltaTime)
     {
         TimeRemaining -= deltaTime;
-        if (TimeRemaining <= 0 && _isGameActive)
+        if (TimeRemaining <= 0 && IsGameActive)
         {
             EndGame();
 

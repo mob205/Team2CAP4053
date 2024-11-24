@@ -66,8 +66,6 @@ public class EnemySpawner : DurationInteractable
     public float CurrentBreakingTimer   { get; private set; }   // Time left for this item to break once it starts breaking
     public float BreakCheckTimer        { get; private set; }   // Time left for this item to potentially start breaking, if repaired
 
-    private List<GameObject> _players = new List<GameObject>();
-
     private State _currentState;
     private float _timeSinceLastBroken;
 
@@ -81,33 +79,9 @@ public class EnemySpawner : DurationInteractable
         UpdateBreaking();
     }
 
-    private void Start()
+    protected override void Start()
     {
         _counter.Value = 0;
-        if(PlayerInputManager.instance)
-        {
-            PlayerInputManager.instance.onPlayerJoined += OnPlayerJoin;
-            PlayerInputManager.instance.onPlayerLeft += OnPlayerLeave;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if(PlayerInputManager.instance)
-        {
-            PlayerInputManager.instance.onPlayerJoined -= OnPlayerJoin;
-            PlayerInputManager.instance.onPlayerLeft -= OnPlayerLeave;
-        }
-    }
-
-    void OnPlayerJoin(PlayerInput playerInput)
-    {
-        _players.Add(playerInput.gameObject);
-    }
-
-    void OnPlayerLeave(PlayerInput playerInput)
-    {
-        _players.Remove(playerInput.gameObject);
     }
     public override bool IsInteractable(ToolType tool)
     {
@@ -186,14 +160,17 @@ public class EnemySpawner : DurationInteractable
         BreakCheckTimer = 1f / _breakChecksPerSecond;
 
         float distAvg = 0;
-        if (_players.Count > 0)
+
+        var players = GameStateManager.Instance.Players;
+
+        if (players.Count > 0)
         {
             float distSum = 0;
-            foreach (var player in _players)
+            foreach (var player in players)
             {
                 distSum += (transform.position - player.transform.position).sqrMagnitude;
             }
-            distAvg = distSum / _players.Count;
+            distAvg = distSum / players.Count;
             distAvg /= 1000;
         }
         

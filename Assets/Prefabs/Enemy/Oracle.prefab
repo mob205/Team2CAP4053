@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2059340090406108860}
   - component: {fileID: 8684809183823869722}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Progress Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6918384084992738632}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 2727420875721744416}
   - component: {fileID: 7063465173446426069}
   - component: {fileID: 3051967606059794709}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 2449224945648627999}
   - component: {fileID: 4959860863632665236}
   - component: {fileID: 1887201793836239832}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Player Count Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ GameObject:
   - component: {fileID: 8395830738227459583}
   - component: {fileID: 4196061447892802069}
   - component: {fileID: 5938200376452111352}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5644,7 +5644,7 @@ GameObject:
   - component: {fileID: 6548698201109425237}
   - component: {fileID: 1119362864111070328}
   - component: {fileID: 7927308437056217907}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

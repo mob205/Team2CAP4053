@@ -14,8 +14,10 @@ public class PlayerReviver : DurationInteractable
     [Tooltip("The PlayerHealth component of the attached player")]
     [SerializeField] private PlayerHealth _playerHealth;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         if(_playerHealth == null)
         {
             Debug.LogError($"No player health found on player {gameObject.name}. Deleting this PlayerReviver");

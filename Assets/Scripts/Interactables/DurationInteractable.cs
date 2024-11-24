@@ -17,12 +17,29 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
 
     public float MaxDuration { get { return GetInteractionDuration(); } }
 
+
     public float TimeRemaining { get; private set; }
     public bool IsInProgress { get; private set; }
     public UnityEvent OnInteractionFinished { get; }
 
     private List<PlayerInteractor> _interactors = new List<PlayerInteractor>();
 
+    protected virtual void Start()
+    {
+        if(GameStateManager.Instance.IsGameActive)
+        {
+            UpdateNumInteractors();
+        }
+        else
+        {
+            GameStateManager.Instance.OnGameStart.AddListener(UpdateNumInteractors);
+        }
+    }
+
+    private void UpdateNumInteractors()
+    {
+        NumInteractorsRequired = Mathf.Min(NumInteractorsRequired, GameStateManager.Instance.Players.Count);
+    }
     public virtual bool IsInteractable(ToolType tool)
     {
         return _interactors.Count < NumInteractorsRequired && (RequiredTool == null || tool == RequiredTool);
@@ -32,7 +49,9 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
     {
         _interactors.Add(player);
 
-        if(_interactors.Count == NumInteractorsRequired)
+        var numInteractors = Mathf.Min(NumInteractorsRequired, GameStateManager.Instance.Players.Count);
+
+        if(_interactors.Count == numInteractors)
         {
             TimeRemaining = MaxDuration;
             IsInProgress = true;
