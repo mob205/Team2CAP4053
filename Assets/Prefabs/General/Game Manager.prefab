@@ -139,6 +139,11 @@ MonoBehaviour:
   - {fileID: 4948395831838786266, guid: 1e740d600af8322408e906ed13ef34fd, type: 3}
   - {fileID: 6750719865998541181, guid: 883571629b9c0c142a04dee7830eb42b, type: 3}
   - {fileID: 4822424384675739066, guid: ba72334f2039ce042b6a81a657cf8902, type: 3}
+  _playerOutlineColors:
+  - {r: 0, g: 0.17416191, b: 1, a: 1}
+  - {r: 1, g: 0.13618721, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0.084820986, a: 1}
+  - {r: 0.8426008, g: 1, b: 0, a: 1}
 --- !u!114 &8029905756050354791
 MonoBehaviour:
   m_ObjectHideFlags: 0

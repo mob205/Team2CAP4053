@@ -9,6 +9,7 @@ public class PlayerSpawnCustomizer : MonoBehaviour
 
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private GameObject[] _playerPrefabs;
+    [SerializeField] private Color[] _playerOutlineColors;
 
     private PlayerInputManager _inputManager;
 
@@ -25,6 +26,12 @@ public class PlayerSpawnCustomizer : MonoBehaviour
         GameObject player = input.gameObject;
 
         player.transform.position = _spawnPoints[_numPlayers % _spawnPoints.Length].position;
+
+        var outline = player.GetComponentInChildren<Outline>();
+        if(outline)
+        {
+            outline.OutlineColor = _playerOutlineColors[_numPlayers % _spawnPoints.Length];
+        }
 
         ++_numPlayers;
         _inputManager.playerPrefab = _playerPrefabs[_numPlayers % _playerPrefabs.Length];

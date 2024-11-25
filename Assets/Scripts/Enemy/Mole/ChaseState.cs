@@ -50,7 +50,6 @@ public class ChaseState : IState
 
     public void Tick()
     {
-        Debug.Log(_navAgent.nextPosition);
         if(_mole.Target)
         {
             var path = new NavMeshPath();
@@ -59,34 +58,11 @@ public class ChaseState : IState
             {
                 _navAgent.SetPath(path);
                 _lastValidTarget = _mole.Target.transform.position;
-                Debug.Log("Success!");
             }
             else
             {
-                Debug.Log("Failure");
                 _navAgent.SetDestination(_lastValidTarget);
             }
-            //_navAgent.CalculatePath
-            //_navAgent.SetDestination(_mole.Target.transform.position);
-
-            //if(_navAgent.path.status == NavMeshPathStatus.PathComplete)
-            //{
-            //    Debug.Log("Path is complete.");
-            //    _lastValidLocation = _mole.Target.transform.position;
-            //}
-            //else
-            //{
-            //    Debug.Log("Path is incomplete.");
-            //    _navAgent.SetDestination(_lastValidLocation);
-            //}
-            //if(_navAgent.path.status != NavMeshPathStatus.PathComplete)
-            //{
-            //    _navAgent.SetDestination(_lastValidLocation);
-            //}
-            //else
-            //{
-            //    _lastValidLocation = _mole.Target.transform.position;
-            //}
         }
     }
 }
