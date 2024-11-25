@@ -28,17 +28,17 @@ public abstract class DurationInteractable : MonoBehaviour, IInteractable
     {
         if(GameStateManager.Instance.IsGameActive)
         {
-            UpdateNumInteractors();
+            UpdateStatsByPlayer(GameStateManager.Instance.Players.Count);
         }
         else
         {
-            GameStateManager.Instance.OnGameStart.AddListener(UpdateNumInteractors);
+            GameStateManager.Instance.OnGameStart.AddListener(() => UpdateStatsByPlayer(GameStateManager.Instance.Players.Count));
         }
     }
 
-    private void UpdateNumInteractors()
+    protected virtual void UpdateStatsByPlayer(int playerCount)
     {
-        NumInteractorsRequired = Mathf.Min(NumInteractorsRequired, GameStateManager.Instance.Players.Count);
+        NumInteractorsRequired = Mathf.Min(NumInteractorsRequired, playerCount);
     }
     public virtual bool IsInteractable(ToolType tool)
     {

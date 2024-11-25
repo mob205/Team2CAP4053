@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0f295132d20e9439ba31d6f408ddaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxSpeed>k__BackingField: 2.5
+  <MaxSpeed>k__BackingField: 3
   <Acceleration>k__BackingField: 32.5
   <Deceleration>k__BackingField: 30
 --- !u!114 &5391505193654126142
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc05d604d1a74964dad2e84ea483a986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <RequiredTool>k__BackingField: {fileID: 11400000, guid: 2cdbd2126f4d1cc4b8a1d314d6da1edc, type: 2}
+  <RequiredTool>k__BackingField: {fileID: 0}
   <InteractionPriority>k__BackingField: 0
   <NumInteractorsRequired>k__BackingField: 1
   _revivesUsed: {fileID: 11400000, guid: bcaafe1469e9a5743b33a3a21c45e5ba, type: 2}
@@ -434,7 +434,7 @@ BoxCollider:
     m_Bits: 192
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 823
+    m_Bits: 16183
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -455,7 +455,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 12288
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0

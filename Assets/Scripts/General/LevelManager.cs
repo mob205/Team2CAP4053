@@ -104,6 +104,7 @@ public static class LevelManager
 
     public static void LoadLevel(string level)
     {
+        Debug.Log("loading level" + level);
         if(_changeToLoadingScreen != null)
         {
             _changeToLoadingScreen.allowSceneActivation = true;

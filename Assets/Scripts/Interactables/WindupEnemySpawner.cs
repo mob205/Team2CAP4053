@@ -4,10 +4,12 @@ using UnityEngine.Events;
 public class WindupEnemySpawner : DurationInteractable
 {
     [field: Tooltip("Amount of time needed to interact with this spawner to wind it up, in seconds")]
-    [field: SerializeField] public float MaxWindupDuration { get; private set; } = 4f;
+    [SerializeField] private float[] _windupDurations = new float[4];
+    public float MaxWindupDuration { get; private set; } = 4f;
 
     [field: Tooltip("Amount of time needed for this spawner to fully wind down and spawn an enemy, in seconds")]
-    [field: SerializeField] public float MaxWindDownDuration { get; private set; } = 20f;
+    [SerializeField] private float[] _windDownDurations = new float[4];
+    public float MaxWindDownDuration { get; private set; } = 20f;
 
     [field: Tooltip("Amount of time for the spawner to re-wind itself up after being wound down, in seconds")]
     [field: SerializeField] private float _selfWindupDelay = 10f;
@@ -29,6 +31,13 @@ public class WindupEnemySpawner : DurationInteractable
         _windupRemaining = MaxWindDownDuration;
     }
 
+    protected override void UpdateStatsByPlayer(int playerCount)
+    {
+        base.UpdateStatsByPlayer(playerCount);
+        playerCount = Mathf.Min(playerCount - 1, 3);
+        MaxWindupDuration = _windupDurations[playerCount];
+        MaxWindDownDuration = _windDownDurations[playerCount];
+    }
     protected override void Update()
     {
         _windupRemaining -= Time.deltaTime;
