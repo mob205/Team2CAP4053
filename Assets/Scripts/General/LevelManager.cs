@@ -20,13 +20,14 @@ class LevelInfo
 
 public static class LevelManager
 {
-    //public static string NextScene { get; set; }
+    public static string LoadingLevel { get; set; }
 
     private static Dictionary<string, LevelInfo> _levels = new Dictionary<string, LevelInfo>();
     private static bool[] _isUnlocked;
 
     private static string _loadingScene = "LoadingScreen";
     private static AsyncOperation _changeToLoadingScreen;
+    private static AsyncOperation _changeToLevel;
 
     public static bool TrySetHighscore(string level, float score)
     {
@@ -104,13 +105,32 @@ public static class LevelManager
 
     public static void LoadLevel(string level)
     {
-        Debug.Log("loading level" + level);
         if(_changeToLoadingScreen != null)
         {
             _changeToLoadingScreen.allowSceneActivation = true;
             _changeToLoadingScreen = null;
         }
-        SceneManager.LoadSceneAsync(level).completed += (_) => PreloadLoadingScreen();
+        _changeToLevel = SceneManager.LoadSceneAsync(level);
+        _changeToLevel.allowSceneActivation = false;
+        _changeToLevel.completed += (_) => PreloadLoadingScreen();
+        LoadingLevel = level;
+    }
+    public static void FinishLoading()
+    {
+        if(_changeToLevel != null)
+        {
+            _changeToLevel.allowSceneActivation = true;
+            _changeToLevel = null;
+        }
+        LoadingLevel = null;
+    }
+    public static float GetLoadingProgress()
+    {
+        if(_changeToLevel != null)
+        {
+            return _changeToLevel.progress;
+        }
+        return 0;
     }
     public static void PreloadLoadingScreen()
     {
