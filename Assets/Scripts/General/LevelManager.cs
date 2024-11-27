@@ -20,10 +20,9 @@ class LevelInfo
 
 public static class LevelManager
 {
-    public static string LoadingLevel { get; set; }
+    public static string LoadingLevel { get; private set; } = "Menu";
 
     private static Dictionary<string, LevelInfo> _levels = new Dictionary<string, LevelInfo>();
-    private static bool[] _isUnlocked;
 
     private static string _loadingScene = "LoadingScreen";
     private static AsyncOperation _changeToLoadingScreen;
@@ -105,6 +104,7 @@ public static class LevelManager
 
     public static void LoadLevel(string level)
     {
+        if(_changeToLevel != null) { return; }
         if(_changeToLoadingScreen != null)
         {
             _changeToLoadingScreen.allowSceneActivation = true;
