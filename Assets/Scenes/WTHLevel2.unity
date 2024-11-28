@@ -21618,29 +21618,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1664433107039684444, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
-      propertyPath: m_Volume
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1664433107039684444, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6812227ee5893544b829f9e198dc4899, type: 3}
-    - target: {fileID: 1664433107039684444, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: fe2d1cd02ac8a0147bf50eb7d2f3feaf, type: 2}
+      objectReference: {fileID: 8300000, guid: 51e2ad76221a57c46bde9b1522937f18, type: 3}
     - target: {fileID: 2493912798006599290, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 4f3a6baad7c3d1b4cbf9bc85eeb700bd, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2609600325734920342, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6dc1bcf49d6e0bf47b7c0a40750f59bf, type: 3}
-    - target: {fileID: 2609600325734920342, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: fe2d1cd02ac8a0147bf50eb7d2f3feaf, type: 2}
+      objectReference: {fileID: 8300000, guid: b2edf7a48c38b2140a3bb871a2602e81, type: 3}
     - target: {fileID: 7116176387748876850, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
       propertyPath: m_Name
       value: Music Player

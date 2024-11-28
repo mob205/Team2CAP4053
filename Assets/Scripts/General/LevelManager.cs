@@ -77,7 +77,6 @@ public static class LevelManager
         if (_levels[level].PreviousLevel == null || _levels[level].IsDefaultUnlocked) { return true; }
 
         var last = _levels[level].PreviousLevel;
-        Debug.Log(level + ": " + GetHighscore(last) + " >= " + _levels[level].ClearScore + ": " + (GetHighscore(last) >= _levels[level].ClearScore));
         return GetHighscore(last) >= _levels[last].ClearScore;
     }
 

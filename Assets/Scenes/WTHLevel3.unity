@@ -43038,6 +43038,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 425324495}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 023558bdb90180b4e8a5b741a4f09da7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1372722864}
     - targetCorrespondingSourceObject: {fileID: -7029948723529949830, guid: 023558bdb90180b4e8a5b741a4f09da7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 646682161}
@@ -43054,6 +43057,23 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 526538485}
   m_SourcePrefab: {fileID: 100100000, guid: 023558bdb90180b4e8a5b741a4f09da7, type: 3}
+--- !u!1 &1372722863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 023558bdb90180b4e8a5b741a4f09da7, type: 3}
+  m_PrefabInstance: {fileID: 1372722862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1372722864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372722863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906280958f09ec143a6e3f3dda97421e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1373110309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1359921622665844, guid: d0f9eb7b2b6651a42b667748b216fc74, type: 3}
@@ -48788,23 +48808,15 @@ PrefabInstance:
     - target: {fileID: 1664433107039684444, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6812227ee5893544b829f9e198dc4899, type: 3}
-    - target: {fileID: 1664433107039684444, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: fe2d1cd02ac8a0147bf50eb7d2f3feaf, type: 2}
+      objectReference: {fileID: 8300000, guid: 5df5ff6ca47503a47a29ca3e5dbdbe2e, type: 3}
     - target: {fileID: 2493912798006599290, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 4f3a6baad7c3d1b4cbf9bc85eeb700bd, type: 3}
+      objectReference: {fileID: 8300000, guid: d9659bfbde76f8040baeb87f8faca7de, type: 3}
     - target: {fileID: 2609600325734920342, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6dc1bcf49d6e0bf47b7c0a40750f59bf, type: 3}
-    - target: {fileID: 2609600325734920342, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: fe2d1cd02ac8a0147bf50eb7d2f3feaf, type: 2}
+      objectReference: {fileID: 8300000, guid: d5a376e773232e3448dffe67249db5b5, type: 3}
     - target: {fileID: 7116176387748876850, guid: 4d97d131e3bc80142ad86a2e36e9b6ee, type: 3}
       propertyPath: m_Name
       value: Music Player

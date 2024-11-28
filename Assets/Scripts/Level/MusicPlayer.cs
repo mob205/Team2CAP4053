@@ -17,7 +17,14 @@ public class MusicPlayer : MonoBehaviour
     private void PlayTransition()
     {
         _pregameMusic.Stop();
-        _transition.Play();
-        _gameMusic.PlayDelayed(_transition.clip.length * .8f); 
+        if(_transition.clip != null)
+        {
+            _transition.Play();
+            _gameMusic.PlayDelayed(_transition.clip.length * .8f);
+        }
+        else
+        {
+            _gameMusic.Play();
+        }
     }
 }
