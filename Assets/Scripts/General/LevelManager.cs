@@ -104,7 +104,7 @@ public static class LevelManager
 
     public static void LoadLevel(string level)
     {
-        if(_changeToLevel != null) { Debug.Log(LoadingLevel); return; }
+        if(_changeToLevel != null) { return; }
 
         _changeToLevel = SceneManager.LoadSceneAsync(level);
         _changeToLevel.completed += (_) => PreloadLoadingScreen();
@@ -115,6 +115,11 @@ public static class LevelManager
 
             _changeToLoadingScreen.allowSceneActivation = true;
             _changeToLoadingScreen = null;
+        }
+        else
+        {
+            _changeToLevel.allowSceneActivation = true;
+            _changeToLevel = null;
         }
 
         LoadingLevel = level;
