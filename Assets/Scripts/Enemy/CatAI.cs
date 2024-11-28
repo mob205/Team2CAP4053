@@ -18,19 +18,21 @@ public class CatAI : Tool
     [SerializeField] private Collider _teleportCollider;
 
     private NavMeshAgent _agent;
-
+    private Animator _animator;
     private float _holdTimeRemaining;
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
     }
     protected override void Update()
     {
         base.Update();
         _agent.SetDestination(_catTarget.position);
 
-        if(_isHeld && _holdTimeRemaining >= 0)
+
+        if (_isHeld && _holdTimeRemaining >= 0)
         {
             _holdTimeRemaining -= Time.deltaTime;
         }
@@ -39,6 +41,10 @@ public class CatAI : Tool
             // Forces player to drop tool
             _heldPlayer.UnequipTool();
         }
+        else
+        {
+            _animator.SetBool("IsWalking", _agent.remainingDistance > .1);
+        }
     }
     public override void StartInteract(PlayerInteractor player)
     {
@@ -46,6 +52,7 @@ public class CatAI : Tool
 
         _agent.isStopped = true;
         _teleportCollider.enabled = false;
+        _animator.SetBool("IsWalking", false);
 
         _holdTimeRemaining = Random.Range(_catMinHoldDuration, _catMaxHoldDuration);
 
@@ -58,5 +65,6 @@ public class CatAI : Tool
         _agent.isStopped = false;
         _agent.Warp(_agent.transform.position);
         _teleportCollider.enabled = true;
+        _animator.SetBool("IsWalking", true);
     }
 }
