@@ -104,15 +104,19 @@ public static class LevelManager
 
     public static void LoadLevel(string level)
     {
-        if(_changeToLevel != null) { return; }
-        if(_changeToLoadingScreen != null)
+        if(_changeToLevel != null) { Debug.Log(LoadingLevel); return; }
+
+        _changeToLevel = SceneManager.LoadSceneAsync(level);
+        _changeToLevel.completed += (_) => PreloadLoadingScreen();
+
+        if (_changeToLoadingScreen != null)
         {
+            _changeToLevel.allowSceneActivation = false;
+
             _changeToLoadingScreen.allowSceneActivation = true;
             _changeToLoadingScreen = null;
         }
-        _changeToLevel = SceneManager.LoadSceneAsync(level);
-        _changeToLevel.allowSceneActivation = false;
-        _changeToLevel.completed += (_) => PreloadLoadingScreen();
+
         LoadingLevel = level;
     }
     public static void FinishLoading()

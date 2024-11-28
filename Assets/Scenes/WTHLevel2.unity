@@ -13997,6 +13997,10 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
+      propertyPath: <LevelDuration>k__BackingField
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 322768332}

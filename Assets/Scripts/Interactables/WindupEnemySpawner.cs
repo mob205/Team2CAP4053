@@ -25,18 +25,18 @@ public class WindupEnemySpawner : DurationInteractable
     float _windupRemaining;
     bool _hasSpawned = false;
 
-
     private void Awake()
     {
         _windupRemaining = MaxWindDownDuration;
     }
-
     protected override void UpdateStatsByPlayer(int playerCount)
     {
         base.UpdateStatsByPlayer(playerCount);
         playerCount = Mathf.Min(playerCount - 1, 3);
         MaxWindupDuration = _windupDurations[playerCount];
         MaxWindDownDuration = _windDownDurations[playerCount];
+
+        _windupRemaining = MaxWindDownDuration;
     }
     protected override void Update()
     {

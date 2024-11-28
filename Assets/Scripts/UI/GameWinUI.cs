@@ -36,12 +36,10 @@ public class GameWinUI : MonoBehaviour
             {
                 if (_canGoNext)
                 {
-                    Debug.Log("NEXT");
                     _nextButton.onClick.Invoke();
                 }
                 else
                 {
-                    Debug.Log("RETRY");
                     _retryButton.onClick.Invoke();
                 }
             };
