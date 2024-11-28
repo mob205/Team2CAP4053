@@ -8,6 +8,7 @@ class LevelInfo
     public string NextLevel;
     public string PreviousLevel;
     public bool IsDefaultUnlocked;
+    public bool ForceUnlocked;
 
     public LevelInfo(float clearScore, float highscore, string nextLevel, string previousLevel, bool isDefaultUnlocked)
     {
@@ -74,7 +75,7 @@ public static class LevelManager
     public static bool IsLevelUnlocked(string level)
     {
         if (level == null || !_levels.ContainsKey(level)) { return false; }
-        if (_levels[level].PreviousLevel == null || _levels[level].IsDefaultUnlocked) { return true; }
+        if (_levels[level].PreviousLevel == null || _levels[level].IsDefaultUnlocked || _levels[level].ForceUnlocked) { return true; }
 
         var last = _levels[level].PreviousLevel;
         return GetHighscore(last) >= _levels[last].ClearScore;
@@ -156,6 +157,14 @@ public static class LevelManager
         {
             _changeToLoadingScreen = SceneManager.LoadSceneAsync(_loadingScene);
             _changeToLoadingScreen.allowSceneActivation = false;
+        }
+    }
+
+    public static void SetForcedLocks(bool isUnlocked)
+    {
+        foreach(var level in _levels)
+        {
+            level.Value.ForceUnlocked = isUnlocked;
         }
     }
 }

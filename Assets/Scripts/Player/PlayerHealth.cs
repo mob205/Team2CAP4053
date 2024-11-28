@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private LayerMask _deathIgnoreLayers;
 
-    [SerializeField] private bool DebugIsInvulnerable = false;
+    [SerializeField] private bool _isInvulnerable = false;
 
     public bool IsDead { get; private set; }
 
@@ -21,10 +21,12 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         _reviveCollider.enabled = false;
+
+        _isInvulnerable = PlayerPrefs.GetInt("IsInvulnerable", 0) == 1;
     }
     public void Kill()
     {
-        if (!IsDead && !DebugIsInvulnerable)
+        if (!IsDead && !_isInvulnerable)
         {
             IsDead = true;
             OnDeath?.Invoke(this);
