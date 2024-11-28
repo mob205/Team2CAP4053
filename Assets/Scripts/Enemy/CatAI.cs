@@ -17,6 +17,9 @@ public class CatAI : Tool
 
     [SerializeField] private Collider _teleportCollider;
 
+    [SerializeField] private AudioEvent _meowSfx;
+
+    private AudioSource _audio;
     private NavMeshAgent _agent;
     private Animator _animator;
     private float _holdTimeRemaining;
@@ -25,6 +28,7 @@ public class CatAI : Tool
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _audio = GetComponent<AudioSource>();
     }
     protected override void Update()
     {
@@ -56,6 +60,10 @@ public class CatAI : Tool
 
         _holdTimeRemaining = Random.Range(_catMinHoldDuration, _catMaxHoldDuration);
 
+        if(_meowSfx && _audio)
+        {
+            _meowSfx.Play(_audio);
+        }
     }
 
     public override void OnDropTool()
@@ -66,5 +74,10 @@ public class CatAI : Tool
         _agent.Warp(_agent.transform.position);
         _teleportCollider.enabled = true;
         _animator.SetBool("IsWalking", true);
+
+        if (_meowSfx && _audio)
+        {
+            _meowSfx.Play(_audio);
+        }
     }
 }

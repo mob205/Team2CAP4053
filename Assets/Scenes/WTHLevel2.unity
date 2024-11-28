@@ -17931,11 +17931,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2104626499}
   m_SourcePrefab: {fileID: 100100000, guid: 6f7c39f16e318dd429cb1d1d2ad14181, type: 3}
---- !u!65 &1438265924 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8595214196570322096, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
-  m_PrefabInstance: {fileID: 2011842632}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1439804079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19678,7 +19673,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.05
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: a3fd243c4e4677c42a868de681cf3124, type: 2}
   m_BuildHeightMesh: 0
@@ -28434,18 +28429,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3216739742557352465, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3216739742557352465, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3216739742557352465, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3216739742557352465, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.40047836
       objectReference: {fileID: 0}
@@ -28489,14 +28472,6 @@ PrefabInstance:
       propertyPath: _catTarget
       value: 
       objectReference: {fileID: 468713907}
-    - target: {fileID: 4895631970534445581, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
-      propertyPath: _teleportCollider
-      value: 
-      objectReference: {fileID: 1438265924}
-    - target: {fileID: 4923707946022190367, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5292557196798183720, guid: 15c534e785da724429e985b3c3f01d5c, type: 3}
       propertyPath: m_Name
       value: Cat
