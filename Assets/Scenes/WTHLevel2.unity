@@ -9909,6 +9909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reviver
       objectReference: {fileID: 0}
+    - target: {fileID: 7571753191511110045, guid: db17a893287c3b64f92cea8700653f06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13995,10 +13999,6 @@ PrefabInstance:
     - target: {fileID: 2821446785865351724, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: m_Name
       value: Game Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
-      propertyPath: <LevelDuration>k__BackingField
-      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6846145323877246979, guid: 6cc963611c800ee4aa6dab72de3051ed, type: 3}
       propertyPath: OnGameEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target

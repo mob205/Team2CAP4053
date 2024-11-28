@@ -897,6 +897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reviver
       objectReference: {fileID: 0}
+    - target: {fileID: 7571753191511110045, guid: db17a893287c3b64f92cea8700653f06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1510,11 +1514,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0016bd35138c8994d829f5361b2d3e2a, type: 3}
---- !u!4 &884194413 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4075252983599544152, guid: db17a893287c3b64f92cea8700653f06, type: 3}
-  m_PrefabInstance: {fileID: 388872098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &900228419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1572,11 +1571,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0016bd35138c8994d829f5361b2d3e2a, type: 3}
---- !u!1 &900273617 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3844060196139311237, guid: aca80424d639bfa48a6186ac3fefecd0, type: 3}
-  m_PrefabInstance: {fileID: 1341552712}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &928489609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2274,15 +2268,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8570890663078443545, guid: aca80424d639bfa48a6186ac3fefecd0, type: 3}
       propertyPath: m_text
-      value: Use the syringe to revive fallen players!
+      value: Interact with fallen players to revive them!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3844060196139311237, guid: aca80424d639bfa48a6186ac3fefecd0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1566296925}
     - targetCorrespondingSourceObject: {fileID: 6778902957353967896, guid: aca80424d639bfa48a6186ac3fefecd0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -2362,7 +2353,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.05
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: ce77e8815a87a0948a247858492d3cf6, type: 2}
   m_BuildHeightMesh: 0
@@ -2465,19 +2456,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1350336924800033781, guid: e7918278f37b9e14aa191846844f99fb, type: 3}
   m_PrefabInstance: {fileID: 1549361634}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1566296925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900273617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7c58e0599e356942b3aca5d45d1dd59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 884194413}
 --- !u!1001 &1572765582
 PrefabInstance:
   m_ObjectHideFlags: 0
