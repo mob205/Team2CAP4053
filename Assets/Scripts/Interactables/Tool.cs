@@ -38,15 +38,15 @@ public class Tool : MonoBehaviour, IInteractable
     {
         // Do nothing, since the tool should be held even when the player released Interact input
     }
-    public virtual void OnDropTool()
+    public virtual void OnDropTool(PlayerInteractor interactor)
     {
         _isHeld = false;
         _heldPlayer = null;
 
-        Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo);
+        Physics.Raycast(interactor.transform.position, Vector3.down, out RaycastHit hitInfo);
 
         transform.SetPositionAndRotation(
-            new Vector3(transform.position.x, hitInfo.point.y, transform.position.z), 
+            new Vector3(interactor.transform.position.x, hitInfo.point.y, interactor.transform.position.z), 
             Quaternion.identity
             );
     }

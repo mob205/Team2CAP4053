@@ -22,7 +22,7 @@ public class PlayerInteractor : MonoBehaviour
         if (HeldTool == null) { return; }
         StopInteract();
 
-        HeldTool.OnDropTool();
+        HeldTool.OnDropTool(this);
         HeldTool = null;
     }
     public void StartInteract()

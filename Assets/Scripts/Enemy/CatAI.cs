@@ -66,9 +66,9 @@ public class CatAI : Tool
         }
     }
 
-    public override void OnDropTool()
+    public override void OnDropTool(PlayerInteractor interactor)
     {
-        base.OnDropTool();
+        base.OnDropTool(interactor);
 
         _agent.isStopped = false;
         _agent.Warp(_agent.transform.position);
