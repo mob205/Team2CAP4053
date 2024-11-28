@@ -17,9 +17,13 @@ public class CutscenePlayer : MonoBehaviour
     [SerializeField] private GameObject _skipButton;
     [SerializeField] private GameObject _throbber;
 
+    [SerializeField] private AudioSource _songIntro;
+    [SerializeField] private AudioSource _songLoop;
+
     private VideoPlayer _player;
     private bool _isPlayingCutscene;
     private bool _canSkip;
+
 
     private void Awake()
     {
@@ -83,6 +87,10 @@ public class CutscenePlayer : MonoBehaviour
         _throbber.SetActive(false);
         _player.clip = video;
         _player.Play();
+
+        _songIntro.Play();
+        _songLoop.PlayDelayed(_songIntro.clip.length);
+
         Invoke(nameof(EndCutscene), (float) video.length);
         _isPlayingCutscene = true;
     }

@@ -4988,6 +4988,9 @@ MonoBehaviour:
   - Level: WTHLevel3
     ClearScore: 50
     IsDefaultUnlocked: 0
+  - Level: End Scene
+    ClearScore: 0
+    IsDefaultUnlocked: 0
 --- !u!4 &1023196824
 Transform:
   m_ObjectHideFlags: 0

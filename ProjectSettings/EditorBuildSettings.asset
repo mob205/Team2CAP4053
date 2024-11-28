@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WTHLevel3.unity
     guid: 42d1a813a1d20e5429f546a4f4bbfae9
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: 1f1d33c3a6000054695135e8a84bca2e
   m_configObjects: {}
