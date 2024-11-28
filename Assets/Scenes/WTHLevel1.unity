@@ -18350,10 +18350,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1374460161905173831, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_text
-      value: Retry
-      objectReference: {fileID: 0}
     - target: {fileID: 3393946476828947264, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
       propertyPath: m_Name
       value: Game Win UI

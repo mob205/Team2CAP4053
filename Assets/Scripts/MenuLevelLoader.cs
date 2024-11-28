@@ -27,7 +27,7 @@ public class MenuLevelLoader : MonoBehaviour
     {
         if(LevelManager.IsLevelUnlocked(level))
         {
-            LevelManager.LoadLevel(level);
+            LevelManager.LoadLevel(level, true);
         }
     }
 }

@@ -27,9 +27,19 @@ public class CutscenePlayer : MonoBehaviour
     }
     private void Start()
     {
-        LevelManager.LoadLevel(LevelManager.LoadingLevel);
+
+        // The game launches to the loading screen to play the intro cutscene
+        // So, the menu needs to be loaded
+        LevelManager.StartLoadingLevel(LevelManager.LoadingLevel);
 
         _skipButton.SetActive(false);
+
+        if (!LevelManager.ShouldPlayCutscene)
+        {
+            LevelManager.FinishLoading();
+            return;
+        }
+
 
         var video = GetVideo(LevelManager.LoadingLevel);
         if(video != null)

@@ -15,7 +15,7 @@ public class LevelDisplayerUI : MonoBehaviour
         }
         else
         {
-            _text.text = "LOCKED!\nRequires score of\n" + LevelManager.GetClearScore(_level) + "\n on previous level to unlock.";
+            _text.text = "LOCKED!\nRequires score of\n" + LevelManager.GetClearScore(LevelManager.GetPreviousLevel(_level)) + "\n on previous level to unlock.";
         }
     }
 }

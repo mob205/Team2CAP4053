@@ -7,6 +7,6 @@ public class ProgressResetter : MonoBehaviour
     public void ResetProgress()
     {
         PlayerPrefs.DeleteAll();
-        LevelManager.LoadLevel("Menu");
+        LevelManager.LoadLevel("Menu", true);
     }
 }

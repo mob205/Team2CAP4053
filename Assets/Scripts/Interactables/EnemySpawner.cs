@@ -21,12 +21,12 @@ public class EnemySpawner : DurationInteractable
 
     [Tooltip("Minimum amount of time it takes for a monster to spawn, in seconds")]
     [SerializeField] private float[] _spawnDelayMinimums = new float[4];
-    private float _spawnDelayMinimum;
+    private float _spawnDelayMinimum = 999;
 
 
     [Tooltip("Maximum amount of time it takes for a monster to spawn, in seconds")]
     [SerializeField] private float[] _spawnDelayMaximums = new float[4];
-    private float _spawnDelayMaximum;
+    private float _spawnDelayMaximum = 999;
 
     [Tooltip("Where to spawn enemies from")]
     [SerializeField] private Transform _spawnPoint;
@@ -49,10 +49,10 @@ public class EnemySpawner : DurationInteractable
 
     [Tooltip("Rate at which the likelihood of this spawner begins breaking increases. Likelihood is % chance of it happening any given check")]
     [SerializeField] private float[] _baseBreakChancesPerMinute = new float[4];
-    private float _baseBreakChancePerMinute;
+    private float _baseBreakChancePerMinute = 0;
 
     [Tooltip("Factor to increase the spawner's likelihood to break with average distance from all players")]
-    [SerializeField] private float _breakChanceDistanceFactor;
+    [SerializeField] private float _breakChanceDistanceFactor = 0;
 
     [Tooltip("The number of times a check for this spawner to break happens every second")]
     [SerializeField] private int _breakChecksPerSecond = 4;

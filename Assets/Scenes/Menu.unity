@@ -4980,13 +4980,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levels:
   - Level: WTHLevel1
-    ClearScore: 5000
+    ClearScore: 50
     IsDefaultUnlocked: 1
   - Level: WTHLevel2
-    ClearScore: 5000
-    IsDefaultUnlocked: 1
+    ClearScore: 50
+    IsDefaultUnlocked: 0
   - Level: WTHLevel3
-    ClearScore: 10000
+    ClearScore: 50
     IsDefaultUnlocked: 0
 --- !u!4 &1023196824
 Transform:
@@ -5699,7 +5699,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1269581276}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1023196823}
+        m_TargetAssemblyTypeName: MenuLevelLoader, Assembly-CSharp
+        m_MethodName: TryLoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: WTHLevel3
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1269581276
 MonoBehaviour:
   m_ObjectHideFlags: 0

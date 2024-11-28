@@ -21,6 +21,7 @@ class LevelInfo
 public static class LevelManager
 {
     public static string LoadingLevel { get; private set; } = "Menu";
+    public static bool ShouldPlayCutscene { get; private set; } = true;
 
     private static Dictionary<string, LevelInfo> _levels = new Dictionary<string, LevelInfo>();
 
@@ -76,8 +77,8 @@ public static class LevelManager
         if (_levels[level].PreviousLevel == null || _levels[level].IsDefaultUnlocked) { return true; }
 
         var last = _levels[level].PreviousLevel;
-
-        return GetHighscore(last) >= _levels[level].ClearScore;
+        Debug.Log(level + ": " + GetHighscore(last) + " >= " + _levels[level].ClearScore + ": " + (GetHighscore(last) >= _levels[level].ClearScore));
+        return GetHighscore(last) >= _levels[last].ClearScore;
     }
 
     public static void InitializeLevels(LevelLock[] levelLocks)
@@ -101,13 +102,22 @@ public static class LevelManager
         }
 
     }
-
-    public static void LoadLevel(string level)
+    
+    public static void StartLoadingLevel(string level)
     {
         if(_changeToLevel != null) { return; }
 
         _changeToLevel = SceneManager.LoadSceneAsync(level);
         _changeToLevel.completed += (_) => PreloadLoadingScreen();
+        _changeToLevel.allowSceneActivation = false;
+
+        LoadingLevel = level;
+    }
+    public static void LoadLevel(string level, bool playCutscene)
+    {
+        if(_changeToLevel != null) { return; }
+
+        StartLoadingLevel(level);
 
         if (_changeToLoadingScreen != null)
         {
@@ -115,14 +125,13 @@ public static class LevelManager
 
             _changeToLoadingScreen.allowSceneActivation = true;
             _changeToLoadingScreen = null;
+            ShouldPlayCutscene = playCutscene;
         }
         else
         {
             _changeToLevel.allowSceneActivation = true;
             _changeToLevel = null;
         }
-
-        LoadingLevel = level;
     }
     public static void FinishLoading()
     {
@@ -130,6 +139,7 @@ public static class LevelManager
         {
             _changeToLevel.allowSceneActivation = true;
             _changeToLevel = null;
+            ShouldPlayCutscene = false;
         }
         LoadingLevel = null;
     }
