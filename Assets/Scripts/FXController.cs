@@ -30,6 +30,8 @@ public class FXController : MonoBehaviour
     {
         _spawners = FindObjectsByType<WindupEnemySpawner>(FindObjectsSortMode.None);
         _volume.enabled = true;
+
+        GameStateManager.Instance.OnGameEnd.AddListener(StopAudioEffects);
     }
 
     void Update()
@@ -47,5 +49,10 @@ public class FXController : MonoBehaviour
         _aberration.intensity.value = _currentIntensity;
         _grain.intensity.value = _currentIntensity;
         _mixer.SetFloat("Pitch", 1 - _currentIntensity * (1 - _minPitch));
+    }
+
+    private void StopAudioEffects()
+    {
+        _mixer.SetFloat("Pitch", 1);
     }
 }
