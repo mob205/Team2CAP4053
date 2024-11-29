@@ -6,16 +6,27 @@ using UnityEngine.InputSystem;
 using UnityEngine.Video;
 
 [Serializable]
-struct LevelCutscene
+class LevelCutscene
 {
     public string Level;
-    public VideoClip Cutscene;
+    public VideoClip Video;
+    public int SongIndex;
 }
+
+[Serializable]
+struct CutsceneMusic
+{
+    public AudioClip Intro;
+    public AudioClip Loop;
+}
+
 public class CutscenePlayer : MonoBehaviour
 {
     [SerializeField] private LevelCutscene[] _cutscenes;
     [SerializeField] private GameObject _skipButton;
     [SerializeField] private GameObject _throbber;
+
+    [SerializeField] private CutsceneMusic[] _musicTracks;
 
     [SerializeField] private AudioSource _songIntro;
     [SerializeField] private AudioSource _songLoop;
@@ -45,10 +56,10 @@ public class CutscenePlayer : MonoBehaviour
         }
 
 
-        var video = GetVideo(LevelManager.LoadingLevel);
-        if(video != null)
+        var cutscene = GetCutscene(LevelManager.LoadingLevel);
+        if(cutscene != null)
         {
-            PlayCutscene(video);
+            PlayCutscene(cutscene);
         }
         else
         {
@@ -63,13 +74,13 @@ public class CutscenePlayer : MonoBehaviour
             _canSkip = true;
         }
     }
-    private VideoClip GetVideo(string level)
+    private LevelCutscene GetCutscene(string level)
     {
         foreach(var cutscene in _cutscenes)
         {
             if(cutscene.Level == level)
             {
-                return cutscene.Cutscene;
+                return cutscene;
             }
         }
         return null;
@@ -82,16 +93,19 @@ public class CutscenePlayer : MonoBehaviour
         }
     }
 
-    private void PlayCutscene(VideoClip video)
+    private void PlayCutscene(LevelCutscene cutscene)
     {
         _throbber.SetActive(false);
-        _player.clip = video;
+        _player.clip = cutscene.Video;
         _player.Play();
 
+        CutsceneMusic music = _musicTracks[cutscene.SongIndex];
+        _songIntro.clip = music.Intro;
         _songIntro.Play();
+        _songLoop.clip = music.Loop;
         _songLoop.PlayDelayed(_songIntro.clip.length);
 
-        Invoke(nameof(EndCutscene), (float) video.length);
+        Invoke(nameof(EndCutscene), (float) cutscene.Video.length);
         _isPlayingCutscene = true;
     }
     private void EndCutscene()

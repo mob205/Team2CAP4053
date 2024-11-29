@@ -1569,10 +1569,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WELL TO HELL
+  m_text: Well To Hell
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 96d6492c2f622c44dbf6b1104f14d51a, type: 2}
-  m_sharedMaterial: {fileID: -5781984799938263848, guid: 96d6492c2f622c44dbf6b1104f14d51a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 92a1276b9d6a2d94493092e9d92b7e2c, type: 2}
+  m_sharedMaterial: {fileID: 8702969895420632622, guid: 92a1276b9d6a2d94493092e9d92b7e2c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1596,8 +1596,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
