@@ -7573,10 +7573,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Lose UI
       objectReference: {fileID: 0}
-    - target: {fileID: 5201549224661254862, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5869238605066377744, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7655,54 +7651,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5869238605066377744, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_text
-      value: DEFEAT
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_fontSize
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 96d6492c2f622c44dbf6b1104f14d51a, type: 2}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -5781984799938263848, guid: 96d6492c2f622c44dbf6b1104f14d51a, type: 2}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190335
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317001780634974861, guid: 0761dfc2a6afe1e43b006c6c8736a527, type: 3}
-      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -18402,49 +18350,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 704442298798352239, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_text
-      value: HIGHSCORE!
-      objectReference: {fileID: 0}
-    - target: {fileID: 704442298798352239, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: af01cdd1f46afca47bbe315a2ec8a20d, type: 2}
-    - target: {fileID: 704442298798352239, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -2518981401668762086, guid: af01cdd1f46afca47bbe315a2ec8a20d, type: 2}
-    - target: {fileID: 704442298798352239, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 756965324990435087, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: af01cdd1f46afca47bbe315a2ec8a20d, type: 2}
-    - target: {fileID: 756965324990435087, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -2518981401668762086, guid: af01cdd1f46afca47bbe315a2ec8a20d, type: 2}
-    - target: {fileID: 756965324990435087, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 756965324990435087, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3393946476828947264, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
       propertyPath: m_Name
       value: Game Win UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3393946476828947264, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586569096715664303, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4371155478183986576, guid: 4d8d7ab78605dd448bbc45672686d811, type: 3}
       propertyPath: m_Pivot.x

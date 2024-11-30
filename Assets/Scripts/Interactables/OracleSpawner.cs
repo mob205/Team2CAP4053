@@ -19,6 +19,8 @@ public class OracleSpawner : MonoBehaviour
     [Tooltip("Locations where an oracle can spawn")]
     [SerializeField] private Transform[] _spawnLocations;
 
+    [SerializeField] private Vector3 _spawnLocationOffset;
+
     private bool[] _hasActiveOracle;
 
 
@@ -65,7 +67,7 @@ public class OracleSpawner : MonoBehaviour
         _hasActiveOracle[spawnIndex] = true;
         _numCurSpawned++;
 
-        var oracle = Instantiate(_oraclePrefab, _spawnLocations[spawnIndex].position, Quaternion.identity);
+        var oracle = Instantiate(_oraclePrefab, _spawnLocations[spawnIndex].position + _spawnLocationOffset, Quaternion.identity);
         oracle.OnKilled += (Enemy) => OnOracleDeath(spawnIndex);
 
         GameStateManager.Instance.RegisterEnemy(oracle);
