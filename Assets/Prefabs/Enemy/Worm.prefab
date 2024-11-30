@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6314532330373785194}
   - component: {fileID: 1291700091818174605}
   - component: {fileID: 1377877406666310988}
-  - component: {fileID: 82866003855874968}
   m_Layer: 8
   m_Name: Worm Tooth L
   m_TagString: Untagged
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &82866003855874968
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169642236153762879}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
-  m_Center: {x: -0.000007629398, y: 0, z: -0.00000023841835}
 --- !u!1 &1736634193163467579
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +711,6 @@ GameObject:
   - component: {fileID: 8631078969964976781}
   - component: {fileID: 8899725077504480476}
   - component: {fileID: 7656281188840272858}
-  - component: {fileID: 6582799629011095137}
   m_Layer: 8
   m_Name: Eye L
   m_TagString: Untagged
@@ -806,27 +783,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6582799629011095137
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4578117334096994069}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
-  m_Center: {x: -0.000007629398, y: 0, z: -0.00000023841835}
 --- !u!1 &5165384063527428170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,7 +2026,6 @@ GameObject:
   - component: {fileID: 6014313114869236885}
   - component: {fileID: 470415754692275503}
   - component: {fileID: 1854395400685512900}
-  - component: {fileID: 487705328360734667}
   m_Layer: 8
   m_Name: Worm Tooth R
   m_TagString: Untagged
@@ -2143,27 +2098,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &487705328360734667
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7636014203439104508}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
-  m_Center: {x: -0.000007629398, y: 0, z: -0.00000023841835}
 --- !u!1 &7734310743086820333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,7 +2383,6 @@ GameObject:
   - component: {fileID: 492097394062551516}
   - component: {fileID: 2253321752459397110}
   - component: {fileID: 6363502750670751317}
-  - component: {fileID: 6972531111562194051}
   m_Layer: 8
   m_Name: Eye R
   m_TagString: Untagged
@@ -2522,27 +2455,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6972531111562194051
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8048492560713720357}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
-  m_Center: {x: -0.000007629398, y: 0, z: -0.00000023841835}
 --- !u!1 &9050051348622596839
 GameObject:
   m_ObjectHideFlags: 0
