@@ -11,8 +11,9 @@ public class PatrolState : IState
     private Vector3 _newWalkPoint;
     private Vector3 _setWalkPoint;
     private LayerMask _groundLayer;
-    bool _isPatrolSet;
+    private bool _isPatrolSet;
 
+    private Vector3 _lastPosition;
     public PatrolState(NavMeshAgent navAgent, float speed, float patrolRange, LayerMask groundLayer, Animator animator)
     {
         _navAgent = navAgent;
@@ -28,6 +29,7 @@ public class PatrolState : IState
         _navAgent.speed = _speed;
         _animator.SetBool("isWalking", true);
         _animator.SetBool("isAttacking", false);
+        _lastPosition = _navAgent.transform.position;
     }
 
     public void Exit()
@@ -37,8 +39,17 @@ public class PatrolState : IState
 
     public void Tick()
     {
-        if (!_isPatrolSet) SetRandomTarget();
-        if(_newWalkPoint != _setWalkPoint)
+        if((_lastPosition - _navAgent.transform.position).sqrMagnitude > _speed)
+        {
+            _isPatrolSet = false;
+        }
+        _lastPosition = _navAgent.transform.position;
+
+        for(int i = 0; i < 10 && !_isPatrolSet; i++)
+        {
+            SetRandomTarget();
+        }
+        if (_newWalkPoint != _setWalkPoint)
         {
             _navAgent.SetDestination(_newWalkPoint);
             _setWalkPoint = _newWalkPoint;
