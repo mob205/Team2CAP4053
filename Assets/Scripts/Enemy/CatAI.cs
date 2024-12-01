@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CatAI : Tool
+public class CatAI : Tool, ITeleportable
 {
     [Tooltip("The area the cat will walk toward when not held")]
     [SerializeField] private Transform _catTarget;
@@ -30,11 +30,13 @@ public class CatAI : Tool
         _animator = GetComponent<Animator>();
         _audio = GetComponent<AudioSource>();
     }
+    private void Start()
+    {
+        _agent.SetDestination(_catTarget.position);
+    }
     protected override void Update()
     {
         base.Update();
-        _agent.SetDestination(_catTarget.position);
-
 
         if (_isHeld && _holdTimeRemaining >= 0)
         {
@@ -72,6 +74,7 @@ public class CatAI : Tool
 
         _agent.isStopped = false;
         _agent.Warp(_agent.transform.position);
+        _agent.SetDestination(_catTarget.position);
         _teleportCollider.enabled = true;
         _animator.SetBool("IsWalking", true);
 
@@ -79,5 +82,9 @@ public class CatAI : Tool
         {
             _meowSfx.Play(_audio);
         }
+    }
+    public void OnTeleport()
+    {
+        _agent.SetDestination(_catTarget.position);
     }
 }

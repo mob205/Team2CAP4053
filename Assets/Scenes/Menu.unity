@@ -5783,13 +5783,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levels:
   - Level: WTHLevel1
-    ClearScore: 50
+    ClearScore: 4500
     IsDefaultUnlocked: 1
   - Level: WTHLevel2
-    ClearScore: 50
+    ClearScore: 2500
     IsDefaultUnlocked: 0
   - Level: WTHLevel3
-    ClearScore: 50
+    ClearScore: 1000
     IsDefaultUnlocked: 0
   - Level: End Scene
     ClearScore: 0

@@ -81,14 +81,16 @@ public class OracleSpawner : MonoBehaviour
 
     private int GetUnusedSpawnIndex()
     {
+        List<int> validIndices = new List<int>();
         for(int i = 0; i < _spawnLocations.Length; i++)
         {
             if (!_hasActiveOracle[i])
             {
-                return i;
+                validIndices.Add(i);
             }
         }
-        return 0;
+        if(validIndices.Count == 0) { return 0; }
+        return validIndices[Random.Range(0, validIndices.Count)];
     }
 }
 

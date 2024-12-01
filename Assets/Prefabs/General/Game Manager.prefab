@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532979af8c0353548b046ae680332d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LevelDuration>k__BackingField: 90
+  <LevelDuration>k__BackingField: 120
   _numRevivesUsed: {fileID: 11400000, guid: bcaafe1469e9a5743b33a3a21c45e5ba, type: 2}
   OnGameWin:
     m_PersistentCalls:

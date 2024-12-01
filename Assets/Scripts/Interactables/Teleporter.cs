@@ -35,6 +35,10 @@ public class Teleporter : MonoBehaviour
             if(target.transform.parent && target.transform.parent.TryGetComponent(out NavMeshAgent agent))
             {
                 agent.Warp(TeleportDestination.position);
+                if(agent.TryGetComponent(out ITeleportable teleportable))
+                {
+                    teleportable.OnTeleport();
+                }
             }
             else
             {

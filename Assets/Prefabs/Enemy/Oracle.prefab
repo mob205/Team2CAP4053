@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ff9798de809c84d8143367af610ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <RequiredTool>k__BackingField: {fileID: 0}
+  <RequiredTool>k__BackingField: {fileID: 11400000, guid: c29491e9ef39aef48ae0882ec50cc6e0, type: 2}
   <InteractionPriority>k__BackingField: 0
   <NumInteractorsRequired>k__BackingField: 2
   _interactionDuration: 3
