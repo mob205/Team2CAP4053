@@ -11,9 +11,13 @@ public class BlinkingAlertUI : MonoBehaviour
 
     private Image _alertImage;
 
-    private void Start()
+    private void Awake()
     {
         _alertImage = GetComponent<Image>();
+    }
+    private void OnEnable()
+    {
+        StopAllCoroutines();   
         StartCoroutine(Blink());
     }
 
