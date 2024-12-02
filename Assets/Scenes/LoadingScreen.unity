@@ -445,6 +445,7 @@ MonoBehaviour:
     SongIndex: 1
   _skipButton: {fileID: 1368867900}
   _throbber: {fileID: 3348199990764743857}
+  _videoUI: {fileID: 1523040364}
   _musicTracks:
   - Intro: {fileID: 8300000, guid: 31daef1610adfe04c9333dd886d17359, type: 3}
     Loop: {fileID: 8300000, guid: efa14f518001a6e4d82ffaaaaf681abf, type: 3}
@@ -1455,7 +1456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1523040365
 RectTransform:
   m_ObjectHideFlags: 0

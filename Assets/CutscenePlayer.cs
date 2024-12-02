@@ -25,6 +25,7 @@ public class CutscenePlayer : MonoBehaviour
     [SerializeField] private LevelCutscene[] _cutscenes;
     [SerializeField] private GameObject _skipButton;
     [SerializeField] private GameObject _throbber;
+    [SerializeField] private GameObject _videoUI;
 
     [SerializeField] private CutsceneMusic[] _musicTracks;
 
@@ -95,6 +96,8 @@ public class CutscenePlayer : MonoBehaviour
 
     private void PlayCutscene(LevelCutscene cutscene)
     {
+        _videoUI.SetActive(true);
+
         _throbber.SetActive(false);
         _player.clip = cutscene.Video;
         _player.Play();
